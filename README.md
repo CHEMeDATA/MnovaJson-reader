@@ -34,3 +34,5 @@ Notes about the Mnova .json files:
 ```zsh
 node src/main.mjs
 ```  
+
+npm install puppeteer --save-dev
