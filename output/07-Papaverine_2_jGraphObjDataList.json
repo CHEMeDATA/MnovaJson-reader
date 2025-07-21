@@ -183,5 +183,256 @@
         }
       ]
     }
+  ],
+  [
+    {
+      "couplings": [
+        5.560302734375,
+        5.560302734375
+      ],
+      "area": 1549.2314301089677,
+      "category": "t",
+      "f1_shift": 7.924390764102533,
+      "maximum": 1549.2314301089677,
+      "nuclides": 1,
+      "name": "3",
+      "mode": "Auto",
+      "is_reference": true,
+      "f1rangePPM": [
+        7.9634,
+        7.8836
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "08b00206-ee0d-43e9-9ecb-ec756925218a"
+    },
+    {
+      "couplings": [
+        6.45458984375
+      ],
+      "area": 1379.1750155596415,
+      "category": "d",
+      "f1_shift": 7.594763284080798,
+      "maximum": 1379.1750155596415,
+      "nuclides": 1,
+      "name": "4",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        7.6278,
+        7.5617
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "fed12f54-ed4b-4468-8d7c-836acd4d9bcd"
+    },
+    {
+      "couplings": [],
+      "area": 1224.3219854198205,
+      "category": "s",
+      "f1_shift": 7.325777115836138,
+      "maximum": 1224.3219854198205,
+      "nuclides": 1,
+      "name": "9",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        7.3508,
+        7.3008
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "58a2358c-b208-4d18-8161-0624bc758d89"
+    },
+    {
+      "couplings": [],
+      "area": 1276.4413300854496,
+      "category": "s",
+      "f1_shift": 7.033335602579686,
+      "maximum": 1276.4413300854496,
+      "nuclides": 1,
+      "name": "6",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        7.0679,
+        6.9994
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "ce9b5803-c508-4ec4-9c22-d11b426dd83b"
+    },
+    {
+      "couplings": [
+        2.0244140625
+      ],
+      "area": 1290.637516541438,
+      "category": "d",
+      "f1_shift": 6.921267781953297,
+      "maximum": 1290.637516541438,
+      "nuclides": 1,
+      "name": "17",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        6.9488,
+        6.8937
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "20e7c0d3-d693-45c0-9375-eee879d7f579"
+    },
+    {
+      "couplings": [
+        2.0247802734375,
+        8.1966552734375
+      ],
+      "area": 1408.738901787684,
+      "category": "dd",
+      "f1_shift": 6.622194073737604,
+      "maximum": 1408.738901787684,
+      "nuclides": 1,
+      "name": "21",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        6.66,
+        6.5844
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "611f4bca-9fa7-4ebe-894b-3085f4f46858"
+    },
+    {
+      "couplings": [
+        0.9136962890625,
+        8.2830810546875
+      ],
+      "area": 1374.6849290123346,
+      "category": "dd",
+      "f1_shift": 6.420711352656384,
+      "maximum": 1374.6849290123346,
+      "nuclides": 1,
+      "name": "20",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        6.4572,
+        6.3738
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "92684da1-fb99-44e5-9924-635470181adf"
+    },
+    {
+      "couplings": [],
+      "area": 2746.1143712272697,
+      "category": "s",
+      "f1_shift": 4.676269442055013,
+      "maximum": 2746.1143712272697,
+      "nuclides": 2,
+      "name": "15",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        4.7013,
+        4.6513
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "205c18a1-60fd-4926-8bb7-da27716f1218"
+    },
+    {
+      "couplings": [
+        0.863525390625
+      ],
+      "area": 3903.637100380133,
+      "category": "d",
+      "f1_shift": 3.7935231124335247,
+      "maximum": 3903.637100380133,
+      "nuclides": 3,
+      "name": "14",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        3.8196,
+        3.7674
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "ad78053a-c3f1-427b-861a-55d7da2f846f"
+    },
+    {
+      "couplings": [],
+      "area": 3780.5645161982598,
+      "category": "s",
+      "f1_shift": 3.729338349062559,
+      "maximum": 3780.5645161982598,
+      "nuclides": 3,
+      "name": "12",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        3.7543,
+        3.7043
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "00401926-c60d-458e-bf80-ed0655ec791b"
+    },
+    {
+      "couplings": [
+        1.009765625,
+        17.6900634765625
+      ],
+      "area": 7932.558934190348,
+      "category": "dd",
+      "f1_shift": 3.496761553062653,
+      "maximum": 7915.320220932622,
+      "nuclides": 6,
+      "name": "23,25",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        3.5451,
+        3.4484
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "0f27635f-93ef-4fbb-b56f-8dc4040df18f"
+    }
   ]
 ]

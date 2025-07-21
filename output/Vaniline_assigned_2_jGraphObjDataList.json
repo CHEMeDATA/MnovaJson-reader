@@ -74,5 +74,119 @@
       ],
       "listOfJs": []
     }
+  ],
+  [
+    {
+      "couplings": [],
+      "area": 92732937.75,
+      "category": "s",
+      "f1_shift": 9.53123412681817,
+      "maximum": 92732937.75,
+      "nuclides": 1,
+      "name": "8",
+      "mode": "Manual",
+      "is_reference": true,
+      "f1rangePPM": [
+        9.571876274004874,
+        9.483015326267779
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "81989415-3a57-4506-98ec-0b3f624e50a1"
+    },
+    {
+      "couplings": [
+        1.8858642578125,
+        8.1219482421875
+      ],
+      "area": 95822264.5,
+      "category": "dd",
+      "f1_shift": 7.359199409017426,
+      "maximum": 95822264.5,
+      "nuclides": 1,
+      "name": "1",
+      "mode": "Manual",
+      "is_reference": false,
+      "f1rangePPM": [
+        7.387202728215085,
+        7.336552882878534
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "7b8cf080-2f69-4438-adf0-7b404cd8b67d"
+    },
+    {
+      "couplings": [
+        1.85400390625
+      ],
+      "area": 92468100.5,
+      "category": "d",
+      "f1_shift": 7.315821119528945,
+      "maximum": 92468100.5,
+      "nuclides": 1,
+      "name": "5",
+      "mode": "Manual",
+      "is_reference": false,
+      "f1rangePPM": [
+        7.336552882878534,
+        7.287422532902079
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "dcb7972b-c207-44bc-9e6c-b59c59c54926"
+    },
+    {
+      "couplings": [
+        8.08642578125
+      ],
+      "area": 91797345.5,
+      "category": "d",
+      "f1_shift": 6.887509656006727,
+      "maximum": 91797345.5,
+      "nuclides": 1,
+      "name": "2",
+      "mode": "Manual",
+      "is_reference": false,
+      "f1rangePPM": [
+        6.928821627919301,
+        6.842716890847164
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "3cc92ee9-9d71-41bb-a11e-a7200334ddb2"
+    },
+    {
+      "couplings": [],
+      "area": 287249962.75,
+      "category": "s",
+      "f1_shift": 3.7650046471714163,
+      "maximum": 287249962.75,
+      "nuclides": 3,
+      "name": "9",
+      "mode": "Manual",
+      "is_reference": false,
+      "f1rangePPM": [
+        3.821887355410584,
+        3.7133714040874106
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "7c405a7b-5d8a-4a13-9730-496345605491"
+    }
   ]
 ]
