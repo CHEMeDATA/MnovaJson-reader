@@ -29,3 +29,8 @@ Notes about the Mnova .json files:
 - The `spectra.peaks.uuid` in the spectra json are used in the arrays `spectra.multiplets.list.peaks` and `molecule.assignments.shifts.assignedMultiplets`.
 - The molecules files include, atoms, bonds, assignments, predictions. The first two are quite similar to the content of .mol files.
 - It should be possible to reconstruct a .mol file from the molecule json file.
+
+
+```zsh
+node src/main.mjs
+```  

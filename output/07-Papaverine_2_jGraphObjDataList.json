@@ -1,0 +1,187 @@
+[
+  [
+    {
+      "assignedMultipletMnovaHash": "{08b00206-ee0d-43e9-9ecb-ec756925218a}",
+      "chemShift": 7.924688307775289,
+      "labelsColumn": [
+        "3"
+      ],
+      "atomIndicesMol": [
+        3
+      ],
+      "listOfJs": []
+    },
+    {
+      "assignedMultipletMnovaHash": "{fed12f54-ed4b-4468-8d7c-836acd4d9bcd}",
+      "chemShift": 7.595370188272751,
+      "labelsColumn": [
+        "4"
+      ],
+      "atomIndicesMol": [
+        4
+      ],
+      "listOfJs": [
+        {
+          "coupling": 6.45458984375,
+          "atomIndexMol": []
+        }
+      ]
+    },
+    {
+      "assignedMultipletMnovaHash": "{58a2358c-b208-4d18-8161-0624bc758d89}",
+      "chemShift": 7.325777115836138,
+      "labelsColumn": [
+        "9"
+      ],
+      "atomIndicesMol": [
+        9
+      ],
+      "listOfJs": []
+    },
+    {
+      "assignedMultipletMnovaHash": "{ce9b5803-c508-4ec4-9c22-d11b426dd83b}",
+      "chemShift": 7.033335602579686,
+      "labelsColumn": [
+        "6"
+      ],
+      "atomIndicesMol": [
+        6
+      ],
+      "listOfJs": []
+    },
+    {
+      "assignedMultipletMnovaHash": "{20e7c0d3-d693-45c0-9375-eee879d7f579}",
+      "chemShift": 6.921828165413763,
+      "labelsColumn": [
+        "17"
+      ],
+      "atomIndicesMol": [
+        17
+      ],
+      "listOfJs": [
+        {
+          "coupling": 2.0244140625,
+          "atomIndexMol": []
+        }
+      ]
+    },
+    {
+      "assignedMultipletMnovaHash": "{611f4bca-9fa7-4ebe-894b-3085f4f46858}",
+      "chemShift": 6.621342421238874,
+      "labelsColumn": [
+        "21"
+      ],
+      "atomIndicesMol": [
+        21
+      ],
+      "listOfJs": [
+        {
+          "coupling": 2.0247802734375,
+          "atomIndexMol": []
+        },
+        {
+          "coupling": 8.1966552734375,
+          "atomIndexMol": []
+        }
+      ]
+    },
+    {
+      "assignedMultipletMnovaHash": "{92684da1-fb99-44e5-9924-635470181adf}",
+      "chemShift": 6.421208535693644,
+      "labelsColumn": [
+        "20"
+      ],
+      "atomIndicesMol": [
+        20
+      ],
+      "listOfJs": [
+        {
+          "coupling": 0.9136962890625,
+          "atomIndexMol": []
+        },
+        {
+          "coupling": 8.2830810546875,
+          "atomIndexMol": []
+        }
+      ]
+    },
+    {
+      "assignedMultipletMnovaHash": "{205c18a1-60fd-4926-8bb7-da27716f1218}",
+      "chemShift": 4.676269442055013,
+      "labelsColumn": [
+        "15"
+      ],
+      "atomIndicesMol": [
+        15
+      ],
+      "listOfJs": []
+    },
+    {
+      "assignedMultipletMnovaHash": "{ad78053a-c3f1-427b-861a-55d7da2f846f}",
+      "chemShift": 3.7931633810333025,
+      "labelsColumn": [
+        "14"
+      ],
+      "atomIndicesMol": [
+        14
+      ],
+      "listOfJs": [
+        {
+          "coupling": 0.863525390625,
+          "atomIndexMol": []
+        }
+      ]
+    },
+    {
+      "assignedMultipletMnovaHash": "{00401926-c60d-458e-bf80-ed0655ec791b}",
+      "chemShift": 3.729338349062559,
+      "labelsColumn": [
+        "12"
+      ],
+      "atomIndicesMol": [
+        12
+      ],
+      "listOfJs": []
+    },
+    {
+      "assignedMultipletMnovaHash": "{0f27635f-93ef-4fbb-b56f-8dc4040df18f}",
+      "chemShift": 3.496306192031723,
+      "labelsColumn": [
+        "23"
+      ],
+      "atomIndicesMol": [
+        23
+      ],
+      "listOfJs": [
+        {
+          "coupling": 1.009765625,
+          "atomIndexMol": []
+        },
+        {
+          "coupling": 17.6900634765625,
+          "atomIndexMol": []
+        }
+      ]
+    },
+    {
+      "assignedMultipletMnovaHash": "{0f27635f-93ef-4fbb-b56f-8dc4040df18f}",
+      "chemShift": 3.496306192031723,
+      "labelsColumn": [
+        "25"
+      ],
+      "atomIndicesMol": [
+        25
+      ],
+      "listOfJs": [
+        {
+          "coupling": 1.009765625,
+          "atomIndexMol": []
+        },
+        {
+          "coupling": 17.6900634765625,
+          "atomIndexMol": []
+        }
+      ]
+    }
+  ]
+]

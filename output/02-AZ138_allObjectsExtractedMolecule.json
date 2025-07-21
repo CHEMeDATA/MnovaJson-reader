@@ -1,0 +1,353 @@
+{
+  "assignments": [
+    {
+      "atom": {
+        "atomCode": "C;1"
+      },
+      "shifts": [
+        {
+          "shift": 124.9667813535274,
+          "shiftMin": 122.20688535974377,
+          "shiftMax": 127.65177171929993,
+          "assignedMultiplets": [
+            "{77b34dd1-7182-484e-bba5-8c73bfa90f7c}"
+          ]
+        }
+      ],
+      "correlations": [
+        {
+          "experiment": "HSQC",
+          "correlatedAtoms": [
+            {
+              "atomCode": "H;1"
+            }
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.7977403992707752
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "H;1"
+      },
+      "shifts": [
+        {
+          "shift": 7.279159408921878,
+          "shiftMin": 7.262751328223115,
+          "shiftMax": 7.298433727522305,
+          "assignedMultiplets": [
+            "{77b34dd1-7182-484e-bba5-8c73bfa90f7c}",
+            "{bf3e3b6f-b12b-421e-b7d6-6d28d601ffbc}"
+          ]
+        }
+      ],
+      "correlations": [
+        {
+          "experiment": "HSQC",
+          "correlatedAtoms": [
+            {
+              "atomCode": "C;1"
+            }
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.8620689655172413
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "C;2"
+      },
+      "shifts": [
+        {
+          "shift": 124.9667813535274,
+          "shiftMin": 121.03914865396857,
+          "shiftMax": 127.65177171929993,
+          "assignedMultiplets": [
+            "{77b34dd1-7182-484e-bba5-8c73bfa90f7c}"
+          ]
+        }
+      ],
+      "correlations": [
+        {
+          "experiment": "HSQC",
+          "correlatedAtoms": [
+            {
+              "atomCode": "H;2"
+            }
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.8563183746199415
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "H;2"
+      },
+      "shifts": [
+        {
+          "shift": 7.126413798949577,
+          "shiftMin": 7.112320111893196,
+          "shiftMax": 7.1468397915905,
+          "assignedMultiplets": [
+            "{38693164-df9b-41a2-b5ae-65da4a60c2c1}",
+            "{77b34dd1-7182-484e-bba5-8c73bfa90f7c}"
+          ]
+        }
+      ],
+      "correlations": [
+        {
+          "experiment": "HSQC",
+          "correlatedAtoms": [
+            {
+              "atomCode": "C;2"
+            }
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.541337835244343
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "C;3"
+      },
+      "shifts": [
+        {
+          "shift": 123.1530540842976,
+          "shiftMin": 121.1207136700382,
+          "shiftMax": 125.18539449855699,
+          "assignedMultiplets": [
+            "{c36139d8-d553-448c-a7e2-e8d2469c0872}"
+          ]
+        }
+      ],
+      "correlations": [
+        {
+          "experiment": "HSQC",
+          "correlatedAtoms": [
+            {
+              "atomCode": "H;3"
+            }
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.8539970836479397
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "H;3"
+      },
+      "shifts": [
+        {
+          "shift": 7.565829217730124,
+          "shiftMin": 7.555229010386462,
+          "shiftMax": 7.5770468760217815,
+          "assignedMultiplets": [
+            "{c36139d8-d553-448c-a7e2-e8d2469c0872}",
+            "{f95e4561-bb9b-4342-a4b1-a88c7baffdca}"
+          ]
+        }
+      ],
+      "correlations": [
+        {
+          "experiment": "HSQC",
+          "correlatedAtoms": [
+            {
+              "atomCode": "C;3"
+            }
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.859987022751844
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "C;6"
+      },
+      "shifts": [
+        {
+          "shift": 111.8939237592752,
+          "shiftMin": 109.8615833450158,
+          "shiftMax": 113.92626417353459,
+          "assignedMultiplets": [
+            "{0a476a0b-33a5-4c4e-b2cc-b157be69093a}"
+          ]
+        }
+      ],
+      "correlations": [
+        {
+          "experiment": "HSQC",
+          "correlatedAtoms": [
+            {
+              "atomCode": "H;6"
+            }
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.8036266658347101
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "H;6"
+      },
+      "shifts": [
+        {
+          "shift": 7.126413798949577,
+          "shiftMin": 7.112320111893196,
+          "shiftMax": 7.1468397915905,
+          "assignedMultiplets": [
+            "{0a476a0b-33a5-4c4e-b2cc-b157be69093a}",
+            "{38693164-df9b-41a2-b5ae-65da4a60c2c1}"
+          ]
+        }
+      ],
+      "correlations": [
+        {
+          "experiment": "HSQC",
+          "correlatedAtoms": [
+            {
+              "atomCode": "C;6"
+            }
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.5423354918132876
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "H;7"
+      },
+      "shifts": [
+        {
+          "shift": 11.887422992854031,
+          "shiftMin": 11.861840320967932,
+          "shiftMax": 11.913005664740128,
+          "assignedMultiplets": [
+            "{3d83794e-4de5-4fbb-9eb0-99b0fb4530a1}"
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.857519291987921
+      }
+    }
+  ],
+  "atoms": [
+    {
+      "coordinates": {
+        "x": -2.3155,
+        "y": 0.7475,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "1",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -2.3155,
+        "y": -0.7474999999999998,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "2",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -1.0027999999999997,
+        "y": -1.5132,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "3",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 0.29170000000000007,
+        "y": -0.7474999999999998,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "4",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 0.29170000000000007,
+        "y": 0.7475,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "5",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -1.0027999999999997,
+        "y": 1.5132,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "6",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 1.7138000000000009,
+        "y": 1.2033,
+        "z": 0
+      },
+      "elementSymbol": "N",
+      "number": "7",
+      "valence": 3
+    },
+    {
+      "coordinates": {
+        "x": 2.5889000000000006,
+        "y": 0.018199999999999772,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "8",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 3.7889,
+        "y": 0.026899999999999924,
+        "z": 0
+      },
+      "elementSymbol": "O",
+      "number": "9",
+      "valence": 2
+    },
+    {
+      "coordinates": {
+        "x": 1.7138000000000009,
+        "y": -1.2033000000000003,
+        "z": 0
+      },
+      "elementSymbol": "S",
+      "number": "10",
+      "valence": 2
+    }
+  ],
+  "$mnova_schema": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule"
+}

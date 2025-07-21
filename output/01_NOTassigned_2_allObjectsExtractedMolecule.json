@@ -1,0 +1,147 @@
+{
+  "atoms": [
+    {
+      "coordinates": {
+        "x": -3.989,
+        "y": 3.8991,
+        "z": 0
+      },
+      "elementSymbol": "O",
+      "number": "1",
+      "valence": 2
+    },
+    {
+      "coordinates": {
+        "x": -3.2745000000000006,
+        "y": 3.4866,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "2",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -3.2745000000000006,
+        "y": 2.6615999999999995,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "3",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -2.56,
+        "y": 2.2491,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "4",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -2.56,
+        "y": 1.4240999999999993,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "5",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -3.2745000000000006,
+        "y": 1.0116,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "6",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -3.989,
+        "y": 1.4240999999999993,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "7",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -3.989,
+        "y": 2.2491,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "8",
+      "valence": 4
+    },
+    {
+      "charge": 1,
+      "coordinates": {
+        "x": -3.2745000000000006,
+        "y": 0.18659999999999943,
+        "z": 0
+      },
+      "elementSymbol": "N",
+      "number": "9",
+      "valence": 3
+    },
+    {
+      "coordinates": {
+        "x": -3.989,
+        "y": -0.2259000000000002,
+        "z": 0
+      },
+      "elementSymbol": "O",
+      "number": "10",
+      "valence": 2
+    },
+    {
+      "charge": -1,
+      "coordinates": {
+        "x": -2.56,
+        "y": -0.2259000000000002,
+        "z": 0
+      },
+      "elementSymbol": "O",
+      "number": "11",
+      "valence": 2
+    },
+    {
+      "coordinates": {
+        "x": -1.8456000000000001,
+        "y": 2.6615999999999995,
+        "z": 0
+      },
+      "elementSymbol": "Br",
+      "number": "12",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": -2.56,
+        "y": 3.8991,
+        "z": 0
+      },
+      "elementSymbol": "O",
+      "number": "13",
+      "valence": 2
+    },
+    {
+      "coordinates": {
+        "x": -2.56,
+        "y": 4.7241,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "14",
+      "valence": 4
+    }
+  ],
+  "$mnova_schema": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule"
+}

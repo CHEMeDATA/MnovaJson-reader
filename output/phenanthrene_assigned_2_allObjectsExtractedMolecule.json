@@ -1,0 +1,765 @@
+{
+  "assignments": [
+    {
+      "atom": {
+        "atomCode": "C;1"
+      },
+      "shifts": [
+        {
+          "shift": 132.09118949392328,
+          "shiftMin": 132.09118949392328,
+          "shiftMax": 132.09118949392328,
+          "assignedPeaks": [
+            "{85afcb80-5df8-4aa1-a293-b4271786f4bf}"
+          ]
+        }
+      ]
+    },
+    {
+      "atom": {
+        "atomCode": "C;2"
+      },
+      "shifts": [
+        {
+          "shift": 130.34098505972966,
+          "shiftMin": 130.34098505972966,
+          "shiftMax": 130.34098505972966,
+          "assignedPeaks": [
+            "{ef090e15-dfc9-41e3-a275-beedc4d2cd7e}"
+          ]
+        }
+      ]
+    },
+    {
+      "atom": {
+        "atomCode": "C;3"
+      },
+      "shifts": [
+        {
+          "shift": 122.69815296330165,
+          "shiftMin": 122.69815296330165,
+          "shiftMax": 122.69815296330165,
+          "assignedPeaks": [
+            "{1e8aec96-3466-4f85-8d36-189b294e2c67}"
+          ]
+        }
+      ]
+    },
+    {
+      "atom": {
+        "atomCode": "H;3"
+      },
+      "shifts": [
+        {
+          "shift": 8.714139318765211,
+          "shiftMin": 8.714139318765211,
+          "shiftMax": 8.714139318765211,
+          "assignedMultiplets": [
+            "{535126bc-1897-4a27-9853-663c46601c40}"
+          ]
+        }
+      ],
+      "J-couplings": [
+        {
+          "coupledAtom": {
+            "atomCode": "H;6"
+          },
+          "coupling": 0.3
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;4"
+          },
+          "coupling": 6.98
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;5"
+          },
+          "coupling": 1.3
+        }
+      ],
+      "quality": {
+        "quality": 0.22372700010987565
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "C;4"
+      },
+      "shifts": [
+        {
+          "shift": 126.61049140473305,
+          "shiftMin": 126.61049140473305,
+          "shiftMax": 126.61049140473305,
+          "assignedPeaks": [
+            "{05ec0621-bdc3-4ffb-8f50-ca84c9ed8f8e}"
+          ]
+        }
+      ]
+    },
+    {
+      "atom": {
+        "atomCode": "H;4"
+      },
+      "shifts": [
+        {
+          "shift": 7.680754909418705,
+          "shiftMin": 7.680754909418705,
+          "shiftMax": 7.680754909418705,
+          "assignedMultiplets": [
+            "{5b94e4a2-e1f8-4a4f-86de-9b43e2955ecf}"
+          ]
+        }
+      ],
+      "J-couplings": [
+        {
+          "coupledAtom": {
+            "atomCode": "H;3"
+          },
+          "coupling": 6.98
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;6"
+          },
+          "coupling": 1.56
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;5"
+          },
+          "coupling": 8.4
+        }
+      ],
+      "quality": {
+        "quality": 0.7142857142857143
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "C;5"
+      },
+      "shifts": [
+        {
+          "shift": 126.61049140473305,
+          "shiftMin": 126.61049140473305,
+          "shiftMax": 126.61049140473305,
+          "assignedPeaks": [
+            "{05ec0621-bdc3-4ffb-8f50-ca84c9ed8f8e}"
+          ]
+        }
+      ]
+    },
+    {
+      "atom": {
+        "atomCode": "H;5"
+      },
+      "shifts": [
+        {
+          "shift": 7.620076877069557,
+          "shiftMin": 7.620076877069557,
+          "shiftMax": 7.620076877069557,
+          "assignedMultiplets": [
+            "{b599e154-0d4f-4b82-9559-27f19d429393}"
+          ]
+        }
+      ],
+      "J-couplings": [
+        {
+          "coupledAtom": {
+            "atomCode": "H;3"
+          },
+          "coupling": 1.3
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;4"
+          },
+          "coupling": 8.4
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;6"
+          },
+          "coupling": 7.71
+        }
+      ],
+      "quality": {
+        "quality": 0.7142857142857143
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "C;6"
+      },
+      "shifts": [
+        {
+          "shift": 128.61704327694434,
+          "shiftMin": 128.61704327694434,
+          "shiftMax": 128.61704327694434,
+          "assignedPeaks": [
+            "{bdb983bc-cfca-4251-99f3-034a6e5c01a1}"
+          ]
+        }
+      ]
+    },
+    {
+      "atom": {
+        "atomCode": "H;6"
+      },
+      "shifts": [
+        {
+          "shift": 7.911433460707128,
+          "shiftMin": 7.911433460707128,
+          "shiftMax": 7.911433460707128,
+          "assignedMultiplets": [
+            "{4423a399-fef5-4eff-ba59-1983683fc62d}"
+          ]
+        }
+      ],
+      "J-couplings": [
+        {
+          "coupledAtom": {
+            "atomCode": "H;3"
+          },
+          "coupling": 0.3
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;7"
+          },
+          "coupling": 0.9
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;4"
+          },
+          "coupling": 1.56
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;5"
+          },
+          "coupling": 7.71
+        }
+      ],
+      "quality": {
+        "quality": 0.7142857142857143
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "C;7"
+      },
+      "shifts": [
+        {
+          "shift": 126.96380512982216,
+          "shiftMin": 126.96380512982216,
+          "shiftMax": 126.96380512982216,
+          "assignedPeaks": [
+            "{d3242305-f1cc-4b65-89f8-21f4f642b9a9}"
+          ]
+        }
+      ],
+      "correlations": [
+        {
+          "experiment": "HSQC",
+          "correlatedAtoms": [
+            {
+              "atomCode": "H;7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "atom": {
+        "atomCode": "H;7"
+      },
+      "shifts": [
+        {
+          "shift": 7.762,
+          "shiftMin": 7.762,
+          "shiftMax": 7.762,
+          "assignedMultiplets": [
+            "{6fb79d0a-2e49-4168-a1bb-d9a9938b8db3}"
+          ]
+        }
+      ],
+      "J-couplings": [
+        {
+          "coupledAtom": {
+            "atomCode": "H;6"
+          },
+          "coupling": 0.9
+        }
+      ],
+      "correlations": [
+        {
+          "experiment": "HSQC",
+          "correlatedAtoms": [
+            {
+              "atomCode": "C;7"
+            }
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.7142857142857143
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "C;8"
+      },
+      "shifts": [
+        {
+          "shift": 126.96380512982216,
+          "shiftMin": 126.96380512982216,
+          "shiftMax": 126.96380512982216,
+          "assignedPeaks": [
+            "{d3242305-f1cc-4b65-89f8-21f4f642b9a9}"
+          ]
+        }
+      ],
+      "correlations": [
+        {
+          "experiment": "HSQC",
+          "correlatedAtoms": [
+            {
+              "atomCode": "H;8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "atom": {
+        "atomCode": "H;8"
+      },
+      "shifts": [
+        {
+          "shift": 7.762,
+          "shiftMin": 7.762,
+          "shiftMax": 7.762,
+          "assignedMultiplets": [
+            "{6fb79d0a-2e49-4168-a1bb-d9a9938b8db3}"
+          ]
+        }
+      ],
+      "J-couplings": [
+        {
+          "coupledAtom": {
+            "atomCode": "H;11"
+          },
+          "coupling": 0.9
+        }
+      ],
+      "correlations": [
+        {
+          "experiment": "HSQC",
+          "correlatedAtoms": [
+            {
+              "atomCode": "C;8"
+            }
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.7142857142857143
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "C;9"
+      },
+      "shifts": [
+        {
+          "shift": 132.09118949392328,
+          "shiftMin": 132.09118949392328,
+          "shiftMax": 132.09118949392328,
+          "assignedPeaks": [
+            "{85afcb80-5df8-4aa1-a293-b4271786f4bf}"
+          ]
+        }
+      ]
+    },
+    {
+      "atom": {
+        "atomCode": "C;10"
+      },
+      "shifts": [
+        {
+          "shift": 130.34098505972966,
+          "shiftMin": 130.34098505972966,
+          "shiftMax": 130.34098505972966,
+          "assignedPeaks": [
+            "{ef090e15-dfc9-41e3-a275-beedc4d2cd7e}"
+          ]
+        }
+      ]
+    },
+    {
+      "atom": {
+        "atomCode": "C;11"
+      },
+      "shifts": [
+        {
+          "shift": 128.61704327694434,
+          "shiftMin": 128.61704327694434,
+          "shiftMax": 128.61704327694434,
+          "assignedPeaks": [
+            "{bdb983bc-cfca-4251-99f3-034a6e5c01a1}"
+          ]
+        }
+      ]
+    },
+    {
+      "atom": {
+        "atomCode": "H;11"
+      },
+      "shifts": [
+        {
+          "shift": 7.911433460707128,
+          "shiftMin": 7.911433460707128,
+          "shiftMax": 7.911433460707128,
+          "assignedMultiplets": [
+            "{4423a399-fef5-4eff-ba59-1983683fc62d}"
+          ]
+        }
+      ],
+      "J-couplings": [
+        {
+          "coupledAtom": {
+            "atomCode": "H;8"
+          },
+          "coupling": 0.9
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;13"
+          },
+          "coupling": 1.48
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;12"
+          },
+          "coupling": 6.86
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;14"
+          },
+          "coupling": 0.3
+        }
+      ],
+      "quality": {
+        "quality": 0.7142857142857143
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "C;12"
+      },
+      "shifts": [
+        {
+          "shift": 126.61049140473305,
+          "shiftMin": 126.61049140473305,
+          "shiftMax": 126.61049140473305,
+          "assignedPeaks": [
+            "{05ec0621-bdc3-4ffb-8f50-ca84c9ed8f8e}"
+          ]
+        }
+      ]
+    },
+    {
+      "atom": {
+        "atomCode": "H;12"
+      },
+      "shifts": [
+        {
+          "shift": 7.620076877069557,
+          "shiftMin": 7.620076877069557,
+          "shiftMax": 7.620076877069557,
+          "assignedMultiplets": [
+            "{b599e154-0d4f-4b82-9559-27f19d429393}"
+          ]
+        }
+      ],
+      "J-couplings": [
+        {
+          "coupledAtom": {
+            "atomCode": "H;11"
+          },
+          "coupling": 6.86
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;13"
+          },
+          "coupling": 8.4
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;14"
+          },
+          "coupling": 1.3
+        }
+      ],
+      "quality": {
+        "quality": 0.7141032299569204
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "C;13"
+      },
+      "shifts": [
+        {
+          "shift": 126.61049140473305,
+          "shiftMin": 126.61049140473305,
+          "shiftMax": 126.61049140473305,
+          "assignedPeaks": [
+            "{05ec0621-bdc3-4ffb-8f50-ca84c9ed8f8e}"
+          ]
+        }
+      ]
+    },
+    {
+      "atom": {
+        "atomCode": "H;13"
+      },
+      "shifts": [
+        {
+          "shift": 7.680754909418705,
+          "shiftMin": 7.680754909418705,
+          "shiftMax": 7.680754909418705,
+          "assignedMultiplets": [
+            "{5b94e4a2-e1f8-4a4f-86de-9b43e2955ecf}"
+          ]
+        }
+      ],
+      "J-couplings": [
+        {
+          "coupledAtom": {
+            "atomCode": "H;11"
+          },
+          "coupling": 1.48
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;12"
+          },
+          "coupling": 8.4
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;14"
+          },
+          "coupling": 6.98
+        }
+      ],
+      "quality": {
+        "quality": 0.7142857142857143
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "C;14"
+      },
+      "shifts": [
+        {
+          "shift": 122.69815296330165,
+          "shiftMin": 122.69815296330165,
+          "shiftMax": 122.69815296330165,
+          "assignedPeaks": [
+            "{1e8aec96-3466-4f85-8d36-189b294e2c67}"
+          ]
+        }
+      ]
+    },
+    {
+      "atom": {
+        "atomCode": "H;14"
+      },
+      "shifts": [
+        {
+          "shift": 8.714139318765211,
+          "shiftMin": 8.714139318765211,
+          "shiftMax": 8.714139318765211,
+          "assignedMultiplets": [
+            "{535126bc-1897-4a27-9853-663c46601c40}"
+          ]
+        }
+      ],
+      "J-couplings": [
+        {
+          "coupledAtom": {
+            "atomCode": "H;11"
+          },
+          "coupling": 0.3
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;12"
+          },
+          "coupling": 1.3
+        },
+        {
+          "coupledAtom": {
+            "atomCode": "H;13"
+          },
+          "coupling": 6.98
+        }
+      ],
+      "quality": {
+        "quality": 0.22372700010987565
+      }
+    }
+  ],
+  "atoms": [
+    {
+      "coordinates": {
+        "x": -0.45269509743277525,
+        "y": 3.625,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "1",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -0.03936479108111157,
+        "y": 3.3863636363636367,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "2",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -0.03936479108111146,
+        "y": 2.9090909090909096,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "3",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -0.45269509743277525,
+        "y": 2.670454545454546,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "4",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -0.8660254037844387,
+        "y": 2.909090909090909,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "5",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -0.866025403784439,
+        "y": 3.3863636363636362,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "6",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -0.4526950974327751,
+        "y": 4.102272727272727,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "7",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -0.03936479108111146,
+        "y": 4.340909090909091,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "8",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 0.3739655152705521,
+        "y": 4.102272727272727,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "9",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 0.3739655152705519,
+        "y": 3.625,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "10",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 0.7872958216222157,
+        "y": 4.34090909090909,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "11",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 1.2006261279738786,
+        "y": 4.102272727272727,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "12",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 1.2006261279738781,
+        "y": 3.625,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "13",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 0.7872958216222143,
+        "y": 3.386363636363637,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "14",
+      "valence": 4
+    }
+  ],
+  "$mnova_schema": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule"
+}

@@ -1,0 +1,62 @@
+[
+  [
+    {
+      "assignedMultipletMnovaHash": "{2c82111c-6221-4195-b59c-55f1c6780925}",
+      "chemShift": 8.600048174986378,
+      "labelsColumn": [
+        "5"
+      ],
+      "atomIndicesMol": [
+        5
+      ],
+      "listOfJs": []
+    },
+    {
+      "assignedMultipletMnovaHash": "{3e0152e5-f4a6-4624-a3f2-b10763011e19}",
+      "chemShift": 8.349799662571353,
+      "labelsColumn": [
+        "7"
+      ],
+      "atomIndicesMol": [
+        7
+      ],
+      "listOfJs": [
+        {
+          "coupling": 2.5025634765625,
+          "atomIndexMol": []
+        },
+        {
+          "coupling": 8.5450439453125,
+          "atomIndexMol": []
+        }
+      ]
+    },
+    {
+      "assignedMultipletMnovaHash": "{5070c71d-1174-430e-81af-c3bef5efae70}",
+      "chemShift": 7.950208000065253,
+      "labelsColumn": [
+        "8"
+      ],
+      "atomIndicesMol": [
+        8
+      ],
+      "listOfJs": [
+        {
+          "coupling": 8.5263671875,
+          "atomIndexMol": []
+        }
+      ]
+    },
+    {
+      "assignedMultipletMnovaHash": "{f5ccb730-a954-47a1-9e34-35256093c050}",
+      "chemShift": 3.9500093897162074,
+      "labelsColumn": [
+        "14"
+      ],
+      "atomIndicesMol": [
+        14
+      ],
+      "listOfJs": []
+    }
+  ]
+]

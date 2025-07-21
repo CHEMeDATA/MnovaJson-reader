@@ -1,0 +1,221 @@
+{
+  "assignments": [
+    {
+      "atom": {
+        "atomCode": "H;5"
+      },
+      "shifts": [
+        {
+          "shift": 8.600048174986378,
+          "shiftMin": 8.59646632209012,
+          "shiftMax": 8.603704128348134,
+          "assignedMultiplets": [
+            "{2c82111c-6221-4195-b59c-55f1c6780925}"
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.7959400010983012
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "H;7"
+      },
+      "shifts": [
+        {
+          "shift": 8.349799662571353,
+          "shiftMin": 8.336021583203564,
+          "shiftMax": 8.364556349372354,
+          "assignedMultiplets": [
+            "{3e0152e5-f4a6-4624-a3f2-b10763011e19}"
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.8069322073829877
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "H;8"
+      },
+      "shifts": [
+        {
+          "shift": 7.950208000065253,
+          "shiftMin": 7.938610081014402,
+          "shiftMax": 7.961006638648357,
+          "assignedMultiplets": [
+            "{5070c71d-1174-430e-81af-c3bef5efae70}"
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.8065937389757987
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "H;14"
+      },
+      "shifts": [
+        {
+          "shift": 3.9500093897162074,
+          "shiftMin": 3.949551623297732,
+          "shiftMax": 3.950467156134683,
+          "assignedMultiplets": [
+            "{f5ccb730-a954-47a1-9e34-35256093c050}"
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.8081713877036019
+      }
+    }
+  ],
+  "atoms": [
+    {
+      "coordinates": {
+        "x": -3.989,
+        "y": 3.8991,
+        "z": 0
+      },
+      "elementSymbol": "O",
+      "number": "1",
+      "valence": 2
+    },
+    {
+      "coordinates": {
+        "x": -3.2745000000000006,
+        "y": 3.4866,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "2",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -3.2745000000000006,
+        "y": 2.6615999999999995,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "3",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -2.56,
+        "y": 2.2491,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "4",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -2.56,
+        "y": 1.4240999999999993,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "5",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -3.2745000000000006,
+        "y": 1.0116,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "6",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -3.989,
+        "y": 1.4240999999999993,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "7",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -3.989,
+        "y": 2.2491,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "8",
+      "valence": 4
+    },
+    {
+      "charge": 1,
+      "coordinates": {
+        "x": -3.2745000000000006,
+        "y": 0.18659999999999943,
+        "z": 0
+      },
+      "elementSymbol": "N",
+      "number": "9",
+      "valence": 3
+    },
+    {
+      "coordinates": {
+        "x": -3.989,
+        "y": -0.2259000000000002,
+        "z": 0
+      },
+      "elementSymbol": "O",
+      "number": "10",
+      "valence": 2
+    },
+    {
+      "charge": -1,
+      "coordinates": {
+        "x": -2.56,
+        "y": -0.2259000000000002,
+        "z": 0
+      },
+      "elementSymbol": "O",
+      "number": "11",
+      "valence": 2
+    },
+    {
+      "coordinates": {
+        "x": -1.8456000000000001,
+        "y": 2.6615999999999995,
+        "z": 0
+      },
+      "elementSymbol": "Br",
+      "number": "12",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": -2.56,
+        "y": 3.8991,
+        "z": 0
+      },
+      "elementSymbol": "O",
+      "number": "13",
+      "valence": 2
+    },
+    {
+      "coordinates": {
+        "x": -2.56,
+        "y": 4.7241,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "14",
+      "valence": 4
+    }
+  ],
+  "$mnova_schema": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule"
+}

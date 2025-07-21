@@ -11,7 +11,8 @@
 }
 
 function processMnovaJsonSpectrum(
-  jsonDataInitial,type,
+  jsonDataInitial,
+  type,
   fieldsToKeep,
 ) {
   // may be either an array or not. If not put at in an array...
@@ -480,8 +481,6 @@ function processSf(jsonDataInitial, type) {
 
 export async function processSfFile(jsonFilePath, type) {
   try {
-    // Load the JSON data using D3
-    //const jsonDataInitial = await d3.json(jsonFilePath);
     const jsonDataInitial = await loadJson(jsonFilePath);
     return processSf(jsonDataInitial, type);
    

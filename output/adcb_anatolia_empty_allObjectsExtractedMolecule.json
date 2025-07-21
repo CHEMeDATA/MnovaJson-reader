@@ -1,0 +1,159 @@
+{
+  "assignments": [
+    {
+      "atom": {
+        "atomCode": "H;1"
+      },
+      "shifts": [
+        {
+          "shift": 7.52322329521552,
+          "shiftMin": 7.49531268434414,
+          "shiftMax": 7.555588768438316,
+          "assignedMultiplets": [
+            "{6db6f45e-b560-43db-b2f4-f50a2788ed89}"
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.09919295030603696
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "H;2"
+      },
+      "shifts": [
+        {
+          "shift": 7.31469387789005,
+          "shiftMin": 7.2823280963210815,
+          "shiftMax": 7.342548301072886,
+          "assignedMultiplets": [
+            "{09738324-6356-4366-859b-dcc189ea2d7d}"
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.16157566762561265
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "H;3"
+      },
+      "shifts": [
+        {
+          "shift": 7.31469387789005,
+          "shiftMin": 7.2823280963210815,
+          "shiftMax": 7.342548301072886,
+          "assignedMultiplets": [
+            "{09738324-6356-4366-859b-dcc189ea2d7d}"
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.16157566762561265
+      }
+    },
+    {
+      "atom": {
+        "atomCode": "H;4"
+      },
+      "shifts": [
+        {
+          "shift": 7.52322329521552,
+          "shiftMin": 7.49531268434414,
+          "shiftMax": 7.555588768438316,
+          "assignedMultiplets": [
+            "{6db6f45e-b560-43db-b2f4-f50a2788ed89}"
+          ]
+        }
+      ],
+      "quality": {
+        "quality": 0.09919295030603696
+      }
+    }
+  ],
+  "atoms": [
+    {
+      "coordinates": {
+        "x": -30.855618376443147,
+        "y": 1,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "1",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -29.161951974536507,
+        "y": 0.02216124694177679,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "2",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -29.161951974536507,
+        "y": -1.9335162591746693,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "3",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -30.855618376443147,
+        "y": -2.9113550122328933,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "4",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -32.54928477834979,
+        "y": -1.933516259174671,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "5",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -32.54928477834979,
+        "y": 0.022161246941775237,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "6",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": -34.242951180256426,
+        "y": 0.9999999999999983,
+        "z": 0
+      },
+      "elementSymbol": "Cl",
+      "number": "7",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": -34.242951180256426,
+        "y": -2.9113550122328946,
+        "z": 0
+      },
+      "elementSymbol": "Cl",
+      "number": "8",
+      "valence": 1
+    }
+  ],
+  "$mnova_schema": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule"
+}

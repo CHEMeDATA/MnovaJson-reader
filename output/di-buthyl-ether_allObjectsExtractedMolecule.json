@@ -1,0 +1,215 @@
+{
+  "atoms": [
+    {
+      "coordinates": {
+        "x": 3.7381073442907318,
+        "y": -2.856433201282356,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "1",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 6.344213313073663,
+        "y": -1.365526254302595,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "2",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 8.9384295882283,
+        "y": -2.877026754732986,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "3",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 11.544535557011232,
+        "y": -1.3861198077532237,
+        "z": 0
+      },
+      "elementSymbol": "O",
+      "number": "4",
+      "valence": 2
+    },
+    {
+      "coordinates": {
+        "x": 14.138751832165868,
+        "y": -2.897620308183616,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "5",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 16.7448578009488,
+        "y": -1.4067133612038538,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "6",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 19.33907407610344,
+        "y": -2.9182138616342455,
+        "z": 0
+      },
+      "elementSymbol": "C",
+      "number": "7",
+      "valence": 4
+    },
+    {
+      "coordinates": {
+        "x": 5.229014291270496,
+        "y": -5.462539170065287,
+        "z": 0
+      },
+      "elementSymbol": "H",
+      "number": "1a",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": 1.1320013755078016,
+        "y": -4.34734014826212,
+        "z": 0
+      },
+      "elementSymbol": "H",
+      "number": "1b",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": 2.2472003973109684,
+        "y": -0.25032723249942745,
+        "z": 0
+      },
+      "elementSymbol": "H",
+      "number": "1c",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": 4.423411040382168,
+        "y": 0.9420938345122258,
+        "z": 0
+      },
+      "elementSymbol": "H",
+      "number": "2a",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": 8.283231653233841,
+        "y": 0.9268087390177548,
+        "z": 0
+      },
+      "elementSymbol": "H",
+      "number": "2b",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": 10.859231860919799,
+        "y": -5.184646843547802,
+        "z": 0
+      },
+      "elementSymbol": "H",
+      "number": "3a",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": 6.999411248068128,
+        "y": -5.169361748053337,
+        "z": 0
+      },
+      "elementSymbol": "H",
+      "number": "3b",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": 16.059554104857362,
+        "y": -5.2052403969984375,
+        "z": 0
+      },
+      "elementSymbol": "H",
+      "number": "5a",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": 12.199733492005693,
+        "y": -5.189955301503966,
+        "z": 0
+      },
+      "elementSymbol": "H",
+      "number": "5b",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": 14.824055528257304,
+        "y": 0.9009067276109677,
+        "z": 0
+      },
+      "elementSymbol": "H",
+      "number": "6a",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": 18.68387614110898,
+        "y": 0.8856216321164971,
+        "z": 0
+      },
+      "elementSymbol": "H",
+      "number": "6b",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": 20.850574576533827,
+        "y": -0.3239975864796054,
+        "z": 0
+      },
+      "elementSymbol": "H",
+      "number": "7a",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": 21.93329035125808,
+        "y": -4.429714362064632,
+        "z": 0
+      },
+      "elementSymbol": "H",
+      "number": "7b",
+      "valence": 1
+    },
+    {
+      "coordinates": {
+        "x": 17.827573575673053,
+        "y": -5.512430136788886,
+        "z": 0
+      },
+      "elementSymbol": "H",
+      "number": "7c",
+      "valence": 1
+    }
+  ],
+  "$mnova_schema": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule"
+}

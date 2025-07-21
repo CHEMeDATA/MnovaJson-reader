@@ -1,0 +1,48 @@
+[
+  [
+    {
+      "assignedMultipletMnovaHash": "{6db6f45e-b560-43db-b2f4-f50a2788ed89}",
+      "chemShift": 7.52322329521552,
+      "labelsColumn": [
+        "1"
+      ],
+      "atomIndicesMol": [
+        1
+      ],
+      "listOfJs": []
+    },
+    {
+      "assignedMultipletMnovaHash": "{6db6f45e-b560-43db-b2f4-f50a2788ed89}",
+      "chemShift": 7.52322329521552,
+      "labelsColumn": [
+        "4"
+      ],
+      "atomIndicesMol": [
+        4
+      ],
+      "listOfJs": []
+    },
+    {
+      "assignedMultipletMnovaHash": "{09738324-6356-4366-859b-dcc189ea2d7d}",
+      "chemShift": 7.31469387789005,
+      "labelsColumn": [
+        "2"
+      ],
+      "atomIndicesMol": [
+        2
+      ],
+      "listOfJs": []
+    },
+    {
+      "assignedMultipletMnovaHash": "{09738324-6356-4366-859b-dcc189ea2d7d}",
+      "chemShift": 7.31469387789005,
+      "labelsColumn": [
+        "3"
+      ],
+      "atomIndicesMol": [
+        3
+      ],
+      "listOfJs": []
+    }
+  ]
+]

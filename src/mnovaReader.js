@@ -130,7 +130,8 @@ export async function processData(
 			fileNameSpectrum,
 			"spectra",
 			["data", "raw_data", "multiplets"]
-			//['$mnova_schema', 'data', 'raw_data', 'multiplets', 'peaks', 'processing', 'parameters'],
+			//['$mnova_schema', 'data', 'raw_data', 'multiplets', 'peaks', 'processing', 'parameters']
+			//['data', 'raw_data', 'multiplets', 'peaks', 'processing', 'parameters']
 		);
 		if (typeof allSpectraObjectsExtracted === "undefined") {
 			console.error("allSpectraObjectsExtracted", allSpectraObjectsExtracted);
@@ -216,8 +217,23 @@ export async function processData(
 			}
 		}
 
+ 
+
+
 		if ("assignments" in allObjectsExtractedMolecule) {
 			const jGraphObj = ingestMoleculeObject(
+				allObjectsExtractedMolecule,
+				allSpectraObjectsExtracted[0][0].multiplets
+			);
+			console.log("jGraphObjZ 1 ", jGraphObj);
+			console.log("OKOKOOOKOKO1 ", fileResulstSF);
+			console.log("OKOKOOOKOKO1 jGraphObj", jGraphObj);
+
+			jGraphObjDataList.push(jGraphObj);
+		}
+
+    if ("assignments" in allObjectsExtractedMolecule) {
+			const jGraphObj = ingestSpectrumRegions(
 				allObjectsExtractedMolecule,
 				allSpectraObjectsExtracted[0][0].multiplets
 			);
