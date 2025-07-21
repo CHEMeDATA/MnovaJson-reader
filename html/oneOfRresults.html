@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+	<h4>Mnova json demonstration page</h4>
+	<p>This page reads the json serialization of Mnova document and uses JSmol and CHEMeDATA viewers for their
+		visualization.</p>
+	<style>
+		.code-box {
+			background: #f4f4f4;
+			padding: 10px;
+			font-family: monospace;
+		}
+	</style>
+
+	<script type="text/javascript" src="src/JSmol.min.js"></script>
+	<p id="textMainPage" style="height:20px">J-graph output</p>
+	<script>
+
+		var molec = "Vaniline_assigned";
+		molec = "07-Papaverine_H"; // not working
+		molec = "08-paper22"; // OK
+		molec = "01_NOTassigned"; // OK
+		molec = "adcb_anatolia_empty"; // OK
+		molec = "02-AZ138"; // OK
+		molec = "07-Papaverine"; // OK 
+		molec = "phenanthrene_assigned"; // OK 
+		molec = "di-buthyl-ether"; // OK 
+		molec = "Ibuprofen_slow"; // OK 
+		molec = "01_assigned"; // OK 
+
+		compoundStructure = {
+
+			script: "set antialiasDisplay true;load ../testSpinFit_assigned/" + molec + ".mol;cartoon on;color cartoon structure; rotate z 45.0;rotate x 80;",
+			width: 350,
+			height: 200,
+			j2sPath: "src/j2s",
+			disableJ2SLoadMonitor: false,
+			isableInitialConsole: true
+		}
+		Jmol.getApplet("JmolAppletAz", compoundStructure);
+	</script>
+
+	<div id="my_dataviz"></div>
+
+	<script type="module">
+		import { jGraph } from "../src/mnovaReader.js";
+		var fName1 = "../testSpinFit_assigned/" + molec + "_Set.spectra.json";
+		var fNameN = "../testSpinFit_assigned/" + molec + "_molecule.json"
+		var fName3008 = "../testSpinFit_assigned/" + molec + "_Set.spinFitResult.json"
+		//var ajgraph = jGraph(fName1, fNameN, JmolAppletAz, "my_dataviz")
+		var ajgraph = jGraph(fName1, fNameN, JmolAppletAz, "my_dataviz", fName3008)
+
+		// const fName2008 = "../testSpinFit_assigned/" + window.mainName008 + "_molecule.json";
+		//              const fName1008 = "../testSpinFit_assigned/" + window.mainName008 + "_Set.spectra.json";
+		//             const fName3008 = "../testSpinFit_assigned/" + window.mainName008 + "_Set.spinFitResult.json";
+
+		//             const ajgraphZ008 = jGraph(fName1008, fName2008, window.JmolAppletA008, "plJg008", fName3008, window.parallelCoord008);
+
+
+	</script>
+	Brush horizontally to zoom and double-click to restore the full spectrum.
+	<h2>J Graph</h2>
+	<p>The coupling constants are represented with dots (or blocks when assigned) on the vertical axes, given in Hz.</p>
+	<p>Hover over the labels to highlight the relevant atom(s) on the 3D model.</p>
+	<p>Hover over the dots/blocks to display the value of the coupling constant and dihedral angles with potential
+		coupling partners.</p>
+	<p>Double-click on the coupling to pair the coupling constants when the ruler is green, indicating that the coupling
+		partner is unambiguous.</p>
+
+	<h4>Make your own assignement page from Mnova documents</h4>
+	Use "Save as" in Mnova >=15.1 and select the relevant (*.json) entries or use Mnova scripting:
+	<div class="code-box">
+		<pre><code>
+serialization.save("c:/FILENAME.mol", "mol"); // for JSmol
+serialization.save("c:/FILENAME_molecule.json", "JSON Molecule (*.json)") // for the J-graph
+serialization.save("c:/FILENAME_spectrum.json", "JSON NMR (*.json)") // for the spectrum
+</code></pre>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+[
+	{
+		"objectType": "nmrAssignment",
+		"filesAnd": [
+			{
+				"shortNameFile": "molecule",
+				"comment": "The identification of the molecule json files can be done using the presence, withing the first 1000 characters of the string",
+				"string1000": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule"
+			},
+			{
+				"shortNameFile": "nmr",
+				"comment": "The identification of the NMR spectra json files can be done using the presence, withing the first 1000 characters of the string",
+				"string1000": "https://mestrelab.com/json-schemas/mnova/2023-07/01/nmr/spec"
+			}
+		]
+	}
+]

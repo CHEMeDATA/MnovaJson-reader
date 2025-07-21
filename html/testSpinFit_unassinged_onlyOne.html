@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Parallel Coordinates Plot</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        body {
+            font: 10px sans-serif;
+        }
+
+        /* Additional styling */
+        .plot-container {
+            width: 100%;
+            min-height: 400px;
+            /* Adjust based on your needs */
+        }
+
+        /* Base styles for larger screens */
+        .color-axis-selector-label,
+        .color-axis-selector {
+            font-size: 14px;
+            /* default font size for desktops */
+        }
+
+        .note-text {
+            font-size: 14px;
+            /* default font size for desktops */
+        }
+
+        /* Media query for tablets */
+        @media (max-width: 768px) {
+            .note-text {
+                font-size: 16px;
+                /* slightly larger font size for tablets */
+            }
+
+            .color-axis-selector-label,
+            .color-axis-selector {
+                font-size: 16px;
+                /* slightly larger font size for tablets */
+            }
+        }
+
+        /* Media query for phones */
+        @media (max-width: 480px) {
+            .note-text {
+                font-size: 20px;
+                /* larger font size for phones */
+            }
+
+            .color-axis-selector-label,
+            .color-axis-selector {
+                font-size: 20px;
+                /* larger font size for phones */
+            }
+        }
+    </style>
+    <script type="text/javascript" src="src/JSmol.min.js"></script>
+    <script type="text/javascript" src="src/Jmol2.js"></script>
+    <script type="text/javascript">
+        Jmol.Info = {
+            jarPath: "src",
+            jarFile: "JmolApplet0.jar",
+            j2sPath: "src/j2s",
+            use: "HTML5",
+            disableJ2SLoadMonitor: false,
+            disableInitialConsole: true,
+        };
+
+        function sync() {
+            var syncing = document.getElementById("drive").checked;
+            var s = (syncing ? "sync * on;sync * 'set syncMouse TRUE'" : "sync * off");
+            jmolScript(s, "JmolAppletA0");
+        }
+    </script>
+    <style>
+    /* Style for the table */
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin: 20px 0;
+    }
+
+    /* Style for table headers and cells */
+    th, td {
+      border: 1px solid #ddd;  /* Single line border */
+      padding: 8px;
+      text-align: left;
+    }
+
+    /* Style for the table border */
+    table, th, td {
+      border: 1px solid #333; /* Modern thin border */
+    }
+  </style>
+</head>
+<body>
+<table id="sortableTable" >
+    <tr>
+    <th onclick="sortTable(0)">Structure</th>
+    <th onclick="sortTable(1)">Parallel coordinates / spectra & J-graph</th>
+    </tr>
+
+    <tr>
+        <td id="mol000">
+            <script>
+                window.mainName000 = "01_NOTassigned";// var makes the scop extend to following
+                window.JmolAppletA000 = jmolApplet(200, "load ../testSpinFit_unassigned/" + window.mainName000 + ".mol ;cartoon on;color cartoon structure;", "JmolAppletA000");
+            </script>
+        </td> 
+        <td id="parallel000" class="plot-container"></div>
+            <script type="module">
+                import { ParallelCoordChem } from "../testSpinFit_unassigned/srcJgraph/ParallelCoordChem.js"; 
+                window.parallelCoord000 = new ParallelCoordChem(`#parallel000`, { 
+                    jsonPath: "../testSpinFit_unassigned/processed_data.json" , 
+                    width: 3000, 
+                    colorMap: "Cool", 
+                    filterKeepKey: "MnovaDocumentShortName", 
+                    filterKeepValue: window.mainName000,
+                });
+            </script>
+        </td> 
+    </tr>
+    <tr>
+        <td id="title000">
+            <script>
+                document.getElementById("title000").textContent = window.mainName000;
+                document.getElementById("title000").style.fontSize = "14px";
+            </script>
+        </td> 
+        <td id="plJg000">
+            <script type="module">
+                import { jGraph } from "../src/mnovaReader.js";
+
+                const fName2000 = "../testSpinFit_unassigned/" + window.mainName000 + "_molecule.json";
+                const fName1000 = "../testSpinFit_unassigned/" + window.mainName000 + "_Set.spectra.json"; 
+                const fName3000 = "../testSpinFit_unassigned/" + window.mainName000 + "_Set.spinFitResult.json";
+
+                const ajgraphZ000 = jGraph(fName1000, fName2000, window.JmolAppletA000, "plJg000", fName3000, window.parallelCoord000);
+
+            </script>
+
+            <p class="note-text">Note: Brush the scales filter data and ALT-click to cancel.</p>
+        </td>
+    </tr>
+        <td> </td>
+        <td> </td> 
+    <tr>
+    </tr>
+
+</table>
+     <script>
+        function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch;
+            var dir = "asc", switchcount = 0;
+            table = document.getElementById("sortableTable");
+            switching = true;
+
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+
+                    var xContent = x.innerHTML.toLowerCase();
+                    var yContent = y.innerHTML.toLowerCase();
+                    var xValue = isNaN(Date.parse(xContent)) ? isNaN(parseFloat(xContent)) ? xContent : parseFloat(xContent) : new Date(xContent).getTime();
+                    var yValue = isNaN(Date.parse(yContent)) ? isNaN(parseFloat(yContent)) ? yContent : parseFloat(yContent) : new Date(yContent).getTime();
+
+                    if (dir == "asc") {
+                        if (xValue > yValue) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (xValue < yValue) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount++;
+                } else if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

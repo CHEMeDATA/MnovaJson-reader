@@ -1,0 +1,7 @@
+**/hidden/
+**/.DS_Store
+node_modules/
+.vscode/
+testSpinFit_assigned/
+testSpinFit_unassigned/
+output/

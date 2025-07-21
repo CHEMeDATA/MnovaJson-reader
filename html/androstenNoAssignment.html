@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+<script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+  <h4>J-graph demonstration page</h4>
+  <p>This demo is still under development... The assignement is incorrect to faciliate tests of different features.</p>
+  <script type="text/javascript" src="src/JSmol.min.js"></script>
+  <script>
+    Cholest = {
+      script: "set antialiasDisplay true;load ../data/androsten/Androsten_forMult_analysis_3d_fromAvogadro.mol;cartoon on;color cartoon structure; rotate z 45.0;rotate x 80;",
+      width: 350,
+      height: 200,
+      j2sPath: "src/j2s",
+      disableJ2SLoadMonitor: false,
+      isableInitialConsole: true
+    }
+
+    Jmol.getApplet("JmolAppletAz", Cholest);
+  </script>
+  <p id="textMainPage" style="height:20px">J-graph output</p>
+  <div id="my_dataviz"></div>
+  <script type="module">
+ 
+ import { jGraph } from "../src/index.js"; 
+      var fName1 = "../data/androsten/Androsten_spectrum.csv";
+      var fName2 = "../data/androsten/androstenNoAssignment.csv"
+      console.log("JmolAppletAz", JmolAppletAz)
+      var ajgraph = jGraph(fName1, fName2, JmolAppletAz)
+  
+  </script>
+
+  <h2>J Graph</h2>
+  <p>For each multiplet, the coupling constants are represented with colored dots or blocks at a height proportional
+    their values.</p>
+  <p>When the coupling are assigned, horizontal lines connect the coupling partners. </p>
+  <p>Unassigned coupling constants are represented with larger colored dots. When the rolling over them, the candidate
+    partners are
+    highlighted. When only one is found the ruler (dotted horizontal line) is green, indicating that the two spins could
+    be paired.</p>
+  <p>The coupling network of androsten was used as an example. The geminal coupling constants were set to negative
+    values. Coupling constants based on DFT/GIAO are <a
+      href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ange.201500831">also available</a>. A few coupling partners
+    were disconnected to show how J-graph can be used to assign couplings.</p>
+  <p>Note that enlargement are obtained by brushing the spectrum. A double-click restores the full display.</p>
+
+  <p> More information on the <a href="https://nmredatainitiative.github.io/color-map-J-coupling/">color code</a>.</p>
+  <h4>Version 0.9</h4>
+  <p>This page is a demo. The visualisation uses the <a href="https://d3js.org">D3 library</a> and a crude javascript
+    code controls the user interactions. The input data of this demo were produced using a simple data generator written
+    in C++). The possibility to read the <a
+      href="../data/androsten/Androsten_forMult_analysis1.sdf">NMReDATA file</a> directly and determining the line paths
+    in the javascript code is necessary before it can be applied to other cases easily.</p>
+  <p>A visualization of the chemical structure highlighting the selected protons would be very useful and should be easy
+    to implement.</p>
+  <p></p>
+  <p> <a href="https://nmredatainitiative.github.io/J-graph">Main page</a>.</p>
+</body>
+
+</html>
