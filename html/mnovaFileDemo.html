@@ -8,7 +8,8 @@
 
 <body>
   <h4>Mnova json demonstration page</h4>
-  <p>This page reads the json serialization of Mnova document and uses JSmol and CHEMeDATA viewers for their visualization.</p>
+  <p>This page reads the json serialization of Mnova document and uses JSmol and CHEMeDATA viewers for their
+    visualization.</p>
   <style>
     .code-box {
       background: #f4f4f4;
@@ -18,7 +19,7 @@
   </style>
 
   <script type="text/javascript" src="src/JSmol.min.js"></script>
-    <p id="textMainPage" style="height:20px">J-graph output</p>
+  <p id="textMainPage" style="height:20px">J-graph output</p>
   <script>
     compoundStructure = {
       script: "set antialiasDisplay true;load ../data/santonin/santonin.mol;cartoon on;color cartoon structure; rotate z 45.0;rotate x 80;",
@@ -32,19 +33,45 @@
   </script>
   <div id="my_dataviz"></div>
   <script type="module">
-    import { jGraph } from "../src/mnovaReader.js";
+
+    import { processData } from "../src/mnovaReader.js";
+    import { makeGraphic } from "../src/nmrSpectrum.js";
+
     var fName1 = "../data/santonin/santonin_spectrum.json";
     var fNameN = "../data/santonin/santonin_molecule.json"
-   fNameN = "../data/santonin/santonin_moleculeWithAssignment.json"; // with partial assignment of J's
-    var ajgraph = jGraph(fName1, fNameN, JmolAppletAz, "my_dataviz")
+    fNameN = "../data/santonin/santonin_moleculeWithAssignment.json"; // with partial assignment of J's
+
+    // import { jGraph } from "../src/mnovaReader.js";
+    //    var ajgraph = jGraph(fName1, fNameN, JmolAppletAz, "my_dataviz")
+
+    const {
+      jGraphObjDataList,
+      allObjectsExtractedMolecule,
+      spectrumDataAllChopped,
+      regionsData,
+    } = await processData(fName1, fNameN, "");
+
+    makeGraphic(
+      jGraphObjDataList,
+      allObjectsExtractedMolecule,
+      {},
+      spectrumDataAllChopped,
+      "my_dataviz",
+      regionsData,
+      JmolAppletAz
+    );
+
+
   </script>
   Brush horizontally to zoom and double-click to restore the full spectrum.
   <h2>J Graph</h2>
-<p>The coupling constants are represented with dots (or blocks when assigned) on the vertical axes, given in Hz.</p>
-<p>Hover over the labels to highlight the relevant atom(s) on the 3D model.</p>
-<p>Hover over the dots/blocks to display the value of the coupling constant and dihedral angles with potential coupling partners.</p>
-<p>Double-click on the coupling to pair the coupling constants when the ruler is green, indicating that the coupling partner is unambiguous. Try, for example, with J(8a,7a).</p>
- 
+  <p>The coupling constants are represented with dots (or blocks when assigned) on the vertical axes, given in Hz.</p>
+  <p>Hover over the labels to highlight the relevant atom(s) on the 3D model.</p>
+  <p>Hover over the dots/blocks to display the value of the coupling constant and dihedral angles with potential
+    coupling partners.</p>
+  <p>Double-click on the coupling to pair the coupling constants when the ruler is green, indicating that the coupling
+    partner is unambiguous. Try, for example, with J(8a,7a).</p>
+
   <h4>Make your own assignement page from Mnova documents</h4>
   Use "Save as" in Mnova >=15.1 and select the relevant (*.json) entries or use Mnova scripting:
   <div class="code-box">

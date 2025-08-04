@@ -754,15 +754,46 @@ export class NmrAssignment extends GraphBase {
           );
         });
       }
-      const obj = {
-        chemShift: item.chemShift.toString(),
-        labelColumn: item.labelsColumn.join(','),
-        MyIndex: index, //  needs to be sorted by chemical shifts before
-        atomIndexMol: item.atomIndicesMol[0].toString(),
-        atomIndicesMol: item.atomIndicesMol,
-        listOfJs: listOfJs,
-      };
-      dataColumns.push(obj);
+			if (item.chemShift !== undefined) {
+				const obj = {
+					chemShift: item.chemShift.toString(),
+					labelColumn: item.labelsColumn.join(","),
+					MyIndex: index, //  needs to be sorted by chemical shifts before
+					atomIndexMol: item.atomIndicesMol[0].toString(),
+					atomIndicesMol: item.atomIndicesMol,
+					listOfJs: listOfJs,
+				};
+				dataColumns.push(obj);
+			} 
+      			if (item.f1_shift !== undefined) { // canceled
+                    console.log("tita item", item);
+
+const obj = {
+					chemShift: item.f1_shift.toString(),
+					labelColumn: item.name,
+					MyIndex: index, //  needs to be sorted by chemical shifts before
+					atomIndexMol: "nopi",
+					atomIndicesMol: 0,
+					listOfJs: listOfJs,
+				};
+			//	dataColumns.push(obj);
+/*
+        area: 55108341.13451096
+category: "ddd"
+couplings: Array(3) [ 2.23455810546875, 3.839141845703125, 13.56689453125 ]
+f1_shift: 1.9097828333243703
+f1rangePPM: Array [ 1.9600795081547668, 1.8625088398548115 ]
+f2rangePPM: Array [ null, null ]
+is_reference: false
+maximum: 55108341.13451096
+mode: "Manual"
+name: "5b"
+nuclides: 1
+type: "Compound"
+uuid: "a0046e50-0498-401c-bd23-2e9468af3047"
+*/
+
+      }
     });
 
     dataColumns.sort((a, b) => parseFloat(b.chemShift) - parseFloat(a.chemShift));

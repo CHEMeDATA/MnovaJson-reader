@@ -9,6 +9,7 @@ import { processSfFile } from './mnovaJsonReader.js';
 import { getRegionsWithSignal } from './mnovaJsonReader.js'; // Adjust the path as necessary
 import { filterOutPointsOutsideRegions } from './mnovaJsonReader.js'; // Adjust the path as necessary
 
+import { makeGraphic } from './nmrSpectrum.js';
 import { NmrSpectrum } from './nmrSpectrum.js';
 import { NmrAssignment } from './nmrAssignement.js';
 
@@ -23,100 +24,6 @@ export function jGraphNmredata(
   dataviz,
 ) {
   jGraph(fileNameSpectrum, fileNameData, JmolAppletAr, dataviz);
-}
-
-function initializeSettings(overrideSettings = {}) {
-  // Default settings
-  //const smallScreenDEL = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent, );
-      const smallScreen = typeof navigator !== 'undefined' && /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  let defaultSettings = {
-    spectrum: {
-      margin: smallScreen
-        ? { top: 50, right: 10, bottom: 30, left: 10 }
-        : { top: 10, right: 30, bottom: 30, left: 60 },
-      bodyWidth: 800,
-      bodyHeight: smallScreen ? 1000 : 450,
-      lineWidth: smallScreen ? 5 : 1.5,
-      darkMode: false,
-      smallScreen: smallScreen,
-    },
-  };
-
-  // Merge default settings with overrides
-  let settings = { ...defaultSettings, ...overrideSettings };
-
-  // Calculate derived values
-  settings.spectrum.widthOfThePlot =
-    settings.spectrum.bodyWidth -
-    settings.spectrum.margin.left -
-    settings.spectrum.margin.right;
-  settings.spectrum.height =
-    settings.spectrum.bodyHeight -
-    settings.spectrum.margin.top -
-    settings.spectrum.margin.bottom;
-
-  return settings;
-}
-
-async function loadSpectrum(fileName) {
-  try {
-    const spectrumData = await d3.csv(fileName, (d) => ({
-      chemShift: +d.x,
-      value: +d.y,
-    }));
-    return spectrumData;
-  } catch (error) {
-    console.error('Error loading or processing data from :' + fileName, error);
-  }
-}
-
-async function readDataFile(fileNameData) {
-  try {
-    // Ensure d3.csv properly loads the data
-    const jGraphData = await d3.csv(fileNameData);
-    console.log('Loaded data from ' + fileNameData);
-    if (!Array.isArray(jGraphData)) {
-      throw new Error('Data loaded ' + fileNameData + ' is not an array.');
-    } else {
-      return jGraphData;
-    }
-  } catch (error) {
-    console.error(
-      'Error processing or visualizing the data for ' + fileNameData + ':',
-      error,
-    );
-  }
-}
-
-function createSVG(dataviz, settings) {
-  return (
-    d3
-      .select('#' + dataviz)
-      .append('svg')
-      .attr(
-        'width',
-        settings.spectrum.widthOfThePlot +
-          settings.spectrum.margin.left +
-          settings.spectrum.margin.right,
-      )
-      .attr(
-        'height',
-        settings.spectrum.height +
-          settings.spectrum.margin.top +
-          settings.spectrum.margin.bottom,
-      )
-      //           .style('border', '1px solid black') // Add a black border around the SVG
-      // .style('background-color', 'lightblue') // Set the background color
-      .append('g')
-      .attr(
-        'transform',
-        'translate(' +
-          settings.spectrum.margin.left +
-          ',' +
-          settings.spectrum.margin.top +
-          ')',
-      )
-  );
 }
 
 export async function processData(
@@ -198,7 +105,7 @@ export async function processData(
 		var jGraphObjDataList = [];
 		if (fileResulstSF !== "") {
 			const jGraphObj3 = await processSfFile(fileResulstSF, "variableSet");
-			jGraphObjDataList.push(jGraphObj3);
+		//	jGraphObjDataList.push(jGraphObj3);
 			if (jGraphObj3) {
 				if (jGraphObj3.data) {
 					if (jGraphObj3.data.length > 0) {
@@ -232,6 +139,7 @@ export async function processData(
 			jGraphObjDataList.push(jGraphObj);
 		}
 
+    // this is not done or finished....
     if ("assignments" in allObjectsExtractedMolecule) {
 			const jGraphObj = ingestSpectrumRegions(
 				allObjectsExtractedMolecule,
@@ -241,7 +149,7 @@ export async function processData(
 			console.log("OKOKOOOKOKO1 ", fileResulstSF);
 			console.log("OKOKOOOKOKO1 jGraphObj", jGraphObj);
 
-			jGraphObjDataList.push(jGraphObj);
+		//	jGraphObjDataList.push(jGraphObj);
 		}
 	
  return {
@@ -256,65 +164,7 @@ export async function processData(
   }
 }
 
-
-async function makeGraphic (jGraphObjDataList, allObjectsExtractedMolecule, parallelCoord, spectrumDataAllChopped, dataviz, regionsData, JmolAppletAr) {
-			const settings = initializeSettings({});
-			var svg = createSVG(dataviz, settings);
-			var spectrum = new NmrSpectrum(
-				spectrumDataAllChopped,
-				svg,
-				settings,
-				settings.smallScreen, // default true
-				//{totalCoveredPPM: 7.0,regions: [{ start: 8.0, end: 1.0 }]},
-				regionsData // default {}
-			);
-
-			const settings_with_spectrum_settings = spectrum.getSettings();
-
-			var nmrAssignmentList = [];
-
-			for (const jGraphObj2 of jGraphObjDataList) {
-				console.log("OKOKOOOKOKO2 jGraphObj2", jGraphObj2);
-
-				nmrAssignmentList.push(
-					new NmrAssignment(
-						jGraphObj2,
-						svg,
-						settings_with_spectrum_settings.smallScreen,
-						settings_with_spectrum_settings,
-						JmolAppletAr,
-						nmrAssignmentList.length
-					)
-				);
-			}
-
-			// Register each class as a receiver for every other class based on data type compatibility
-			const classes = [...nmrAssignmentList, spectrum];
-			if (parallelCoord && Object.entries(parallelCoord).length !== 0) {
-				classes.push(parallelCoord);
-				console.log("AOKOKOO parallelCoord", parallelCoord);
-			} else {
-				console.log(" NO AOKOKOO parallelCoord", parallelCoord);
-			}
-			classes.forEach((sender) => {
-				classes.forEach((receiver) => {
-					if (sender !== receiver) {
-						sender.getExportTypes().forEach((sendType) => {
-							if (receiver.getImportTypes().includes(sendType)) {
-								sender.registerReceiver(receiver, sendType);
-							}
-						});
-					}
-				});
-			});
-
-			spectrum.triggerSendAxis();
-
-			nmrAssignmentList.forEach((nmrAssignment) => {
-				nmrAssignment.build();
-			});
-		}
-
+// dont use this function. Nothing to do here. Will be removed. Deprication
 export async function jGraph(
   fileNameSpectrum,
   fileNameData,

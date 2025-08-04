@@ -54,7 +54,28 @@
 		var fNameN = "../testSpinFit_assigned/" + molec + "_molecule.json"
 		var fName3008 = "../testSpinFit_assigned/" + molec + "_Set.spinFitResult.json"
 		//var ajgraph = jGraph(fName1, fNameN, JmolAppletAz, "my_dataviz")
-		var ajgraph = jGraph(fName1, fNameN, JmolAppletAz, "my_dataviz", fName3008)
+		//var ajgraph = jGraph(fName1, fNameN, JmolAppletAz, "my_dataviz", fName3008)
+
+		import { processData } from "../src/mnovaReader.js";
+		import { makeGraphic } from "../src/nmrSpectrum.js";
+
+		// Main call
+		const {
+			jGraphObjDataList,
+			allObjectsExtractedMolecule,
+			spectrumDataAllChopped,
+			regionsData,
+		} = await processData(fName1, fNameN, fName3008);
+		makeGraphic(
+			jGraphObjDataList,
+			allObjectsExtractedMolecule,
+			{},
+			spectrumDataAllChopped,
+			"my_dataviz",
+			regionsData,
+			JmolAppletAz
+		);
+
 
 		// const fName2008 = "../testSpinFit_assigned/" + window.mainName008 + "_molecule.json";
 		//              const fName1008 = "../testSpinFit_assigned/" + window.mainName008 + "_Set.spectra.json";

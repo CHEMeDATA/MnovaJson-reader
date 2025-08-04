@@ -225,7 +225,6 @@ function processSf(jsonDataInitial, type) {
     jsonDataList.forEach((jsonData, index) => {
       console.log(`moleculeS got json`);
       var dataOutput = [];
-
       if (type == 'couplingNetwork') {
         console.log(`moleculeS look for couplingNetwork`);
         if ('z_fromVarSet' in jsonData) {
@@ -476,7 +475,7 @@ function processSf(jsonDataInitial, type) {
       console.log(`moleculeK returning dataOutput`, dataOutput);
       filteredSpectraArray_FullArray.push(dataOutput);
     });
-    return { typeArray: true, data: filteredSpectraArray_FullArray };
+    return { typeArray: true, data: filteredSpectraArray_FullArray , type : type};
 }
 
 export async function processSfFile(jsonFilePath, type) {

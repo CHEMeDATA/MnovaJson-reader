@@ -46,13 +46,10 @@ export function jGraphNmredata(
   JmolAppletAr,
   dataviz,
 ) {
-  jGraph(fileNameSpectrum, fileNameData, JmolAppletAr, dataviz);
+  jGraph2(fileNameSpectrum, fileNameData, JmolAppletAr, dataviz);
 }
 
-export function jGraph(fileNameSpectrum, fileNameData, JmolAppletAr, dataviz = "my_dataviz") {
-  //
-  // set the dimensions and margins of the graph
-  //if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+export function jGraph2(fileNameSpectrum, fileNameData, JmolAppletAr, dataviz = "my_dataviz") {
 
   function initializeSettings(smallScreen, overrideSettings = {}) {
     // Default settings
@@ -85,8 +82,34 @@ export function jGraph(fileNameSpectrum, fileNameData, JmolAppletAr, dataviz = "
     return settings;
   }
 
+function loadSpectrumFromFile(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+
+    reader.onload = function (event) {
+      const text = event.target.result;
+      const lines = text.split('\n').filter((line) => line.trim() !== '');
+      const data = lines.map((line) => {
+        const [x, y] = line.split(',').map((v) => parseFloat(v));
+        return { chemShift: x, value: y };
+      });
+      resolve(data);
+    };
+
+    reader.onerror = function (error) {
+      reject('Error reading file: ' + error);
+    };
+
+    reader.readAsText(file);
+  });
+}
+
+
   async function loadSpectrum(fileName) {
     try {
+
+
+
       const spectrumData = await d3.csv(fileName, (d) => ({
         chemShift: +d.x,
         value: +d.y,
@@ -160,6 +183,7 @@ export function jGraph(fileNameSpectrum, fileNameData, JmolAppletAr, dataviz = "
             ')',
         );
 
+      //const spectrumData = await loadSpectrumFromFile(fileNameSpectrum);
       const spectrumData = await loadSpectrum(fileNameSpectrum);
 
       const marginPPM = 0.02;

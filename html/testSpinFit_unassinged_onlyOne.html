@@ -107,6 +107,12 @@
         <td id="mol000">
             <script>
                 window.mainName000 = "01_NOTassigned";// var makes the scop extend to following
+                window.mainName000 = "01_NOTassigned";// var makes the scop extend to following
+                window.mainName000 = "01_NOTassigned";// var makes the scop extend to following
+               // window.mainName000 = "02-AZ138";
+                 //               window.mainName000 = "07-Papaverine";// var makes the scop extend to following
+                                window.mainName000 = "08-paper22";// var makes the scop extend to following
+
                 window.JmolAppletA000 = jmolApplet(200, "load ../testSpinFit_unassigned/" + window.mainName000 + ".mol ;cartoon on;color cartoon structure;", "JmolAppletA000");
             </script>
         </td> 
@@ -132,14 +138,37 @@
         </td> 
         <td id="plJg000">
             <script type="module">
-                import { jGraph } from "../src/mnovaReader.js";
+             //   import { jGraph } from "../src/mnovaReader.js";
 
                 const fName2000 = "../testSpinFit_unassigned/" + window.mainName000 + "_molecule.json";
                 const fName1000 = "../testSpinFit_unassigned/" + window.mainName000 + "_Set.spectra.json"; 
                 const fName3000 = "../testSpinFit_unassigned/" + window.mainName000 + "_Set.spinFitResult.json";
 
-                const ajgraphZ000 = jGraph(fName1000, fName2000, window.JmolAppletA000, "plJg000", fName3000, window.parallelCoord000);
+          //      const ajgraphZ000 = jGraph(fName1000, fName2000, window.JmolAppletA000, "plJg000", fName3000, window.parallelCoord000);
+ import { processData } from "../src/mnovaReader.js";
+    import { makeGraphic } from "../src/nmrSpectrum.js";
 
+	// Main call
+	const {
+		jGraphObjDataList,
+		allObjectsExtractedMolecule,
+		spectrumDataAllChopped,
+		regionsData,
+	} = await processData(
+		fName1000,
+		fName2000,
+		fName3000
+	);
+		makeGraphic(
+			jGraphObjDataList,
+			allObjectsExtractedMolecule,
+			window.parallelCoord000,
+			spectrumDataAllChopped,
+			"plJg000",
+			regionsData,
+			window.JmolAppletA000
+		);
+		
             </script>
 
             <p class="note-text">Note: Brush the scales filter data and ALT-click to cancel.</p>

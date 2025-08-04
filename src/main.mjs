@@ -1,6 +1,7 @@
 import { processData } from "../src/mnovaReader.js";
 import { writeFile } from "fs/promises";
-import path from "path";
+
+
 
 async function saveStuff(
 	jGraphObjDataList,
@@ -102,7 +103,7 @@ var fName = "./data/santonin/santonin_spectrum.json";
 var fNameN1 = "./data/santonin/santonin_molecule.json";
 
 {
-     console.log("===============================================");
+	console.log("===============================================");
 	console.log("Processing molecule:", fNameN1);
 	const {
 		jGraphObjDataList,
@@ -124,7 +125,7 @@ var fNameN1 = "./data/santonin/santonin_molecule.json";
 var fNameN2 = "./data/santonin/santonin_moleculeWithAssignment.json"; // with partial assignment of J's
 //jGraph(fName, fNameN2);
 {
-    console.log("===============================================");
+	console.log("===============================================");
 	console.log("Processing molecule:", fNameN2);
 	const {
 		jGraphObjDataList,
@@ -167,7 +168,8 @@ var fNameN2 = "./data/santonin/santonin_moleculeWithAssignment.json"; // with pa
 
 		var fNameSpectra = "./testSpinFit_assigned/" + molec + "_Set.spectra.json";
 		var fNameMolecule = "./testSpinFit_assigned/" + molec + "_molecule.json";
-		var fNameParallelCoord = "./testSpinFit_assigned/" + molec + "_parallelCoord.json";
+		var fNameParallelCoord =
+			"./testSpinFit_assigned/" + molec + "_parallelCoord.json";
 		const {
 			jGraphObjDataList,
 			allObjectsExtractedMolecule,
@@ -182,11 +184,16 @@ var fNameN2 = "./data/santonin/santonin_moleculeWithAssignment.json"; // with pa
 			regionsData,
 			molec + "_"
 		);
-    }
-    for (const molec of molecules){
-        var fNameSpectra = "./testSpinFit_unassigned/" + molec + "_Set.spectra.json";
+		console.log("===== end Processing molecule:", molec);
+	}
+	for (const molec of molecules) {
+		console.log("===== start molecule:", molec);
+
+		var fNameSpectra =
+			"./testSpinFit_unassigned/" + molec + "_Set.spectra.json";
 		var fNameMolecule = "./testSpinFit_unassigned/" + molec + "_molecule.json";
-		var fNameParallelCoord = "./testSpinFit_unassigned/" + molec + "_parallelCoord.json";
+		var fNameParallelCoord =
+			"./testSpinFit_unassigned/" + molec + "_parallelCoord.json";
 		const {
 			jGraphObjDataList,
 			allObjectsExtractedMolecule,
@@ -201,5 +208,24 @@ var fNameN2 = "./data/santonin/santonin_moleculeWithAssignment.json"; // with pa
 			regionsData,
 			molec + "_2_"
 		);
+		console.log("===== start molecule:", molec);
 	}
 }
+
+import { NMRspectrumObject } from "../src/nmrSpectrumObject.js";
+
+console.log("===============================================");
+
+console.log("HERE :");
+const aNMRspectrumObject = new NMRspectrumObject(); // graph
+
+const isObject =
+	typeof aNMRspectrumObject === "object" && aNMRspectrumObject !== null;
+
+if (isObject && aNMRspectrumObject.constructor.name == "NMRspectrumObject") {
+	console.log("input is a NMRspectrumObject ");
+} else {
+	console.log("input is NOT a NMRspectrumObject ");
+}
+
+//const del = new NmrSpectrum([aNMRspectrumObject]); // this is a graphic

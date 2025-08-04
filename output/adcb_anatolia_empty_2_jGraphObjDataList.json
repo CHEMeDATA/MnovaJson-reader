@@ -44,49 +44,5 @@
       ],
       "listOfJs": []
     }
-  ],
-  [
-    {
-      "couplings": [],
-      "area": 980625903.3727046,
-      "category": "m",
-      "f1_shift": 7.523977451166836,
-      "maximum": 980625903.3727046,
-      "nuclides": 2,
-      "name": "1,4",
-      "mode": "Auto",
-      "is_reference": true,
-      "f1rangePPM": [
-        7.60473545917436,
-        7.468818922682442
-      ],
-      "f2rangePPM": [
-        null,
-        null
-      ],
-      "type": "Compound",
-      "uuid": "6db6f45e-b560-43db-b2f4-f50a2788ed89"
-    },
-    {
-      "couplings": [],
-      "area": 951269056.9264134,
-      "category": "m",
-      "f1_shift": 7.311769381375976,
-      "maximum": 951269056.9264134,
-      "nuclides": 2,
-      "name": "2,3",
-      "mode": "Auto",
-      "is_reference": false,
-      "f1rangePPM": [
-        7.374316658078302,
-        7.2368705617678195
-      ],
-      "f2rangePPM": [
-        null,
-        null
-      ],
-      "type": "Compound",
-      "uuid": "09738324-6356-4366-859b-dcc189ea2d7d"
-    }
   ]
 ]
