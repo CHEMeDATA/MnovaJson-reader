@@ -10,7 +10,7 @@
   }
 }
 
-function processMnovaJsonSpectrum(
+export function processMnovaJsonSpectrum(
   jsonDataInitial,
   type,
   fieldsToKeep,

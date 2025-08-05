@@ -1,4 +1,5 @@
 {
+  "$mnova_schema": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule",
   "assignments": [
     {
       "atom": {
@@ -71,6 +72,189 @@
       "quality": {
         "quality": 0.8081713877036019
       }
+    }
+  ],
+  "predictions": [
+    {
+      "nucleus": "1H",
+      "solvent": "Chloroform-d",
+      "spectrumFrequency": 400,
+      "prediction_data": [
+        {
+          "atom": {
+            "atomCode": "H;5"
+          },
+          "shift": {
+            "value": 8.518137905872452,
+            "error": 0.1
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 2.16,
+                "error": 0.48
+              },
+              "coupledAtom": {
+                "atomCode": "H;7"
+              }
+            },
+            {
+              "coupling": {
+                "value": 0.1,
+                "error": 0.1
+              },
+              "coupledAtom": {
+                "atomCode": "H;8"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;7"
+          },
+          "shift": {
+            "value": 8.280009603530278,
+            "error": 0.1
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 2.16,
+                "error": 0.48
+              },
+              "coupledAtom": {
+                "atomCode": "H;5"
+              }
+            },
+            {
+              "coupling": {
+                "value": 8.23,
+                "error": 0.31
+              },
+              "coupledAtom": {
+                "atomCode": "H;8"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;8"
+          },
+          "shift": {
+            "value": 8.02013309434014,
+            "error": 0.1
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 0.1,
+                "error": 0.1
+              },
+              "coupledAtom": {
+                "atomCode": "H;5"
+              }
+            },
+            {
+              "coupling": {
+                "value": 8.23,
+                "error": 0.31
+              },
+              "coupledAtom": {
+                "atomCode": "H;7"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;14"
+          },
+          "shift": {
+            "value": 3.9025190099808365,
+            "error": 0.1
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 5.45,
+                "error": 1.72
+              },
+              "coupledAtom": {
+                "atomCode": "H;14"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "parameters": {
+    "label": "Document 18",
+    "name": "VID: 12032872"
+  },
+  "bonds": [
+    {
+      "atom1": 3,
+      "atom2": 4,
+      "bondType": "double"
+    },
+    {
+      "atom1": 4,
+      "atom2": 5
+    },
+    {
+      "atom1": 4,
+      "atom2": 12
+    },
+    {
+      "atom1": 5,
+      "atom2": 6,
+      "bondType": "double"
+    },
+    {
+      "atom1": 6,
+      "atom2": 7
+    },
+    {
+      "atom1": 6,
+      "atom2": 9
+    },
+    {
+      "atom1": 7,
+      "atom2": 8,
+      "bondType": "double"
+    },
+    {
+      "atom1": 8,
+      "atom2": 3
+    },
+    {
+      "atom1": 2,
+      "atom2": 3
+    },
+    {
+      "atom1": 2,
+      "atom2": 13
+    },
+    {
+      "atom1": 13,
+      "atom2": 14
+    },
+    {
+      "atom1": 9,
+      "atom2": 11
+    },
+    {
+      "atom1": 9,
+      "atom2": 10,
+      "bondType": "double"
+    },
+    {
+      "atom1": 1,
+      "atom2": 2,
+      "bondType": "double"
     }
   ],
   "atoms": [
@@ -216,6 +400,5 @@
       "number": "14",
       "valence": 4
     }
-  ],
-  "$mnova_schema": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule"
+  ]
 }

@@ -1,4 +1,797 @@
 {
+  "$mnova_schema": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule",
+  "predictions": [
+    {
+      "nucleus": "1H",
+      "solvent": "Chloroform-d",
+      "spectrumFrequency": 500.13,
+      "prediction_data": [
+        {
+          "atom": {
+            "atomCode": "H;1a"
+          },
+          "shift": {
+            "value": 0.904967584228006,
+            "error": 0.10000000000000002
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 6.76,
+                "error": 1.72
+              },
+              "coupledAtom": {
+                "atomCode": "H;1b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 6.76,
+                "error": 1.72
+              },
+              "coupledAtom": {
+                "atomCode": "H;1c"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;2a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;2b"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;1b"
+          },
+          "shift": {
+            "value": 0.904967584228006,
+            "error": 0.10000000000000002
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 6.76,
+                "error": 1.72
+              },
+              "coupledAtom": {
+                "atomCode": "H;1a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 6.76,
+                "error": 1.72
+              },
+              "coupledAtom": {
+                "atomCode": "H;1c"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;2a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;2b"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;1c"
+          },
+          "shift": {
+            "value": 0.904967584228006,
+            "error": 0.10000000000000002
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 6.76,
+                "error": 1.72
+              },
+              "coupledAtom": {
+                "atomCode": "H;1a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 6.76,
+                "error": 1.72
+              },
+              "coupledAtom": {
+                "atomCode": "H;1b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;2a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;2b"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;2a"
+          },
+          "shift": {
+            "value": 1.5677022832337328,
+            "error": 0.19
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;1a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;1b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;1c"
+              }
+            },
+            {
+              "coupling": {
+                "value": 13.24,
+                "error": 1.67
+              },
+              "coupledAtom": {
+                "atomCode": "H;2b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;3a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;3b"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;2b"
+          },
+          "shift": {
+            "value": 1.5677022832337328,
+            "error": 0.19
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;1a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;1b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;1c"
+              }
+            },
+            {
+              "coupling": {
+                "value": 13.24,
+                "error": 1.67
+              },
+              "coupledAtom": {
+                "atomCode": "H;2a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;3a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;3b"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;3a"
+          },
+          "shift": {
+            "value": 3.3991125211097635,
+            "error": 0.25
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;2a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;2b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 11.1,
+                "error": 1.67
+              },
+              "coupledAtom": {
+                "atomCode": "H;3b"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;3b"
+          },
+          "shift": {
+            "value": 3.3991125211097635,
+            "error": 0.25
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;2a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;2b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 11.1,
+                "error": 1.67
+              },
+              "coupledAtom": {
+                "atomCode": "H;3a"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;5a"
+          },
+          "shift": {
+            "value": 3.3991125211097635,
+            "error": 0.25
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 11.1,
+                "error": 1.67
+              },
+              "coupledAtom": {
+                "atomCode": "H;5b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;6a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;6b"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;5b"
+          },
+          "shift": {
+            "value": 3.3992125211097637,
+            "error": 0.25
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 11.1,
+                "error": 1.67
+              },
+              "coupledAtom": {
+                "atomCode": "H;5a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;6a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;6b"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;6a"
+          },
+          "shift": {
+            "value": 1.5677022832337328,
+            "error": 0.19
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;5a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;5b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 13.24,
+                "error": 1.67
+              },
+              "coupledAtom": {
+                "atomCode": "H;6b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;7a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;7b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;7c"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;6b"
+          },
+          "shift": {
+            "value": 1.5678022832337328,
+            "error": 0.19
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;5a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 5.28,
+                "error": 3.46
+              },
+              "coupledAtom": {
+                "atomCode": "H;5b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 13.24,
+                "error": 1.67
+              },
+              "coupledAtom": {
+                "atomCode": "H;6a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;7a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;7b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;7c"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;7a"
+          },
+          "shift": {
+            "value": 0.904967584228006,
+            "error": 0.10000000000000002
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;6a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;6b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 6.76,
+                "error": 1.72
+              },
+              "coupledAtom": {
+                "atomCode": "H;7b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 6.76,
+                "error": 1.72
+              },
+              "coupledAtom": {
+                "atomCode": "H;7c"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;7b"
+          },
+          "shift": {
+            "value": 0.904967584228006,
+            "error": 0.10000000000000002
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;6a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;6b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 6.76,
+                "error": 1.72
+              },
+              "coupledAtom": {
+                "atomCode": "H;7a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 6.76,
+                "error": 1.72
+              },
+              "coupledAtom": {
+                "atomCode": "H;7c"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;7c"
+          },
+          "shift": {
+            "value": 0.904967584228006,
+            "error": 0.10000000000000002
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;6a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.98,
+                "error": 1.13
+              },
+              "coupledAtom": {
+                "atomCode": "H;6b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 6.76,
+                "error": 1.72
+              },
+              "coupledAtom": {
+                "atomCode": "H;7a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 6.76,
+                "error": 1.72
+              },
+              "coupledAtom": {
+                "atomCode": "H;7b"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "parameters": {
+    "label": "Compound{c78a75976b4d4b7b9b81162b484bcfc2}"
+  },
+  "bonds": [
+    {
+      "atom1": 1,
+      "atom2": 2
+    },
+    {
+      "atom1": 2,
+      "atom2": 3
+    },
+    {
+      "atom1": 3,
+      "atom2": 4
+    },
+    {
+      "atom1": 4,
+      "atom2": 5
+    },
+    {
+      "atom1": 5,
+      "atom2": 6
+    },
+    {
+      "atom1": 6,
+      "atom2": 7
+    },
+    {
+      "atom1": 1,
+      "atom2": 8
+    },
+    {
+      "atom1": 1,
+      "atom2": 9
+    },
+    {
+      "atom1": 1,
+      "atom2": 10
+    },
+    {
+      "atom1": 2,
+      "atom2": 11,
+      "bondStereo": "up"
+    },
+    {
+      "atom1": 2,
+      "atom2": 12
+    },
+    {
+      "atom1": 3,
+      "atom2": 13
+    },
+    {
+      "atom1": 3,
+      "atom2": 14,
+      "bondStereo": "up"
+    },
+    {
+      "atom1": 5,
+      "atom2": 15
+    },
+    {
+      "atom1": 5,
+      "atom2": 16,
+      "bondStereo": "up"
+    },
+    {
+      "atom1": 6,
+      "atom2": 17,
+      "bondStereo": "up"
+    },
+    {
+      "atom1": 6,
+      "atom2": 18
+    },
+    {
+      "atom1": 7,
+      "atom2": 19
+    },
+    {
+      "atom1": 7,
+      "atom2": 20
+    },
+    {
+      "atom1": 7,
+      "atom2": 21
+    }
+  ],
   "atoms": [
     {
       "coordinates": {
@@ -210,6 +1003,5 @@
       "number": "7c",
       "valence": 1
     }
-  ],
-  "$mnova_schema": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule"
+  ]
 }

@@ -10,9 +10,6 @@ import { getRegionsWithSignal } from './mnovaJsonReader.js'; // Adjust the path 
 import { filterOutPointsOutsideRegions } from './mnovaJsonReader.js'; // Adjust the path as necessary
 
 import { makeGraphic } from './nmrSpectrum.js';
-import { NmrSpectrum } from './nmrSpectrum.js';
-import { NmrAssignment } from './nmrAssignement.js';
-
 
 export function jGraphNmredata(
   fileNameSpectrum,
@@ -36,9 +33,9 @@ export async function processData(
 		const allSpectraObjectsExtracted = await processMnovaJsonFileSpectrum(
 			fileNameSpectrum,
 			"spectra",
-			["data", "raw_data", "multiplets"]
+			//["data", "raw_data", "multiplets"]
 			//['$mnova_schema', 'data', 'raw_data', 'multiplets', 'peaks', 'processing', 'parameters']
-			//['data', 'raw_data', 'multiplets', 'peaks', 'processing', 'parameters']
+			['data', 'raw_data', 'multiplets', 'peaks', 'processing', 'parameters']
 		);
 		if (typeof allSpectraObjectsExtracted === "undefined") {
 			console.error("allSpectraObjectsExtracted", allSpectraObjectsExtracted);
@@ -49,15 +46,8 @@ export async function processData(
 		const allObjectsExtractedMolecule = await processMnovaJsonFileMolecule(
 			fileNameData,
 			"molecule",
-			["assignments", "atoms", "$mnova_schema"]
-			/*[
-          '$mnova_schema',
-          'assignments',
-          'predictions',
-          'parameters',
-          'bonds',
-          'atoms',
-        ],*/
+			//["assignments", "atoms", "$mnova_schema"],
+			['$mnova_schema','assignments', 'predictions', 'parameters','bonds', 'atoms',],
 		);
 
 		// First the reference spectrum

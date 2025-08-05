@@ -1,4 +1,5 @@
 {
+  "$mnova_schema": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule",
   "assignments": [
     {
       "atom": {
@@ -311,6 +312,843 @@
           ]
         }
       ]
+    }
+  ],
+  "predictions": [
+    {
+      "nucleus": "1H",
+      "solvent": "Chloroform-d",
+      "spectrumFrequency": 499.842374123801,
+      "prediction_data": [
+        {
+          "atom": {
+            "atomCode": "H;16a"
+          },
+          "shift": {
+            "value": 1.2633583797621972,
+            "error": 0.10000000000000002
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;16b"
+              }
+            },
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;16c"
+              }
+            },
+            {
+              "coupling": {
+                "value": 6.800000190734863,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;8a"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;16b"
+          },
+          "shift": {
+            "value": 1.2633583797621972,
+            "error": 0.10000000000000002
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;16a"
+              }
+            },
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;16c"
+              }
+            },
+            {
+              "coupling": {
+                "value": 6.800000190734863,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;8a"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;16c"
+          },
+          "shift": {
+            "value": 1.2633583797621972,
+            "error": 0.10000000000000002
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;16a"
+              }
+            },
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;16b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 6.800000190734863,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;8a"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;17a"
+          },
+          "shift": {
+            "value": 2.1220571184234256,
+            "error": 0.10000000000000002
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;17b"
+              }
+            },
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;17c"
+              }
+            },
+            {
+              "coupling": {
+                "value": 1,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;2a"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;17b"
+          },
+          "shift": {
+            "value": 2.1220571184234256,
+            "error": 0.10000000000000002
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;17a"
+              }
+            },
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;17c"
+              }
+            },
+            {
+              "coupling": {
+                "value": 1,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;2a"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;17c"
+          },
+          "shift": {
+            "value": 2.1220571184234256,
+            "error": 0.10000000000000002
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;17a"
+              }
+            },
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;17b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 1,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;2a"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;15a"
+          },
+          "shift": {
+            "value": 1.3174373826014263,
+            "error": 0.10000000000000002
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;15b"
+              }
+            },
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;15c"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;15b"
+          },
+          "shift": {
+            "value": 1.3174373826014263,
+            "error": 0.10000000000000002
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;15a"
+              }
+            },
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;15c"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;15c"
+          },
+          "shift": {
+            "value": 1.3174373826014263,
+            "error": 0.10000000000000002
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;15a"
+              }
+            },
+            {
+              "coupling": {
+                "value": -12.4,
+                "error": 4.5
+              },
+              "coupledAtom": {
+                "atomCode": "H;15b"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;6a"
+          },
+          "shift": {
+            "value": 1.6881521582603454,
+            "error": 0.1
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": -12.399999618530273,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;6b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.099999904632568,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;5a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.099999904632568,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;5b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;7a"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;6b"
+          },
+          "shift": {
+            "value": 2.019152081012726,
+            "error": 0.1
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": -12.399999618530273,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;6a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.099999904632568,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;5a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.099999904632568,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;5b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;7a"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;13a"
+          },
+          "shift": {
+            "value": 6.248312709862705,
+            "error": 0.1
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 10.899999618530273,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;14a"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;5a"
+          },
+          "shift": {
+            "value": 1.6434437925312184,
+            "error": 0.33
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 7.099999904632568,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;6a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.099999904632568,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;6b"
+              }
+            },
+            {
+              "coupling": {
+                "value": -12.399999618530273,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;5b"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;5b"
+          },
+          "shift": {
+            "value": 1.9733666349139305,
+            "error": 0.33
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 7.099999904632568,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;6a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7.099999904632568,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;6b"
+              }
+            },
+            {
+              "coupling": {
+                "value": -12.399999618530273,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;5a"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;14a"
+          },
+          "shift": {
+            "value": 6.694713991599022,
+            "error": 0.1
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 10.899999618530273,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;13a"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;8a"
+          },
+          "shift": {
+            "value": 2.4311983748606054,
+            "error": 0.1
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 6.800000190734863,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;16a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 6.800000190734863,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;16b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 6.800000190734863,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;16c"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;7a"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;7a"
+          },
+          "shift": {
+            "value": 1.834342654511783,
+            "error": 0.1
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 7,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;6a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;6b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;8a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;2a"
+              }
+            }
+          ]
+        },
+        {
+          "atom": {
+            "atomCode": "H;2a"
+          },
+          "shift": {
+            "value": 4.801728816353488,
+            "error": 0.1
+          },
+          "J-couplings": [
+            {
+              "coupling": {
+                "value": 1,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;17a"
+              }
+            },
+            {
+              "coupling": {
+                "value": 1,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;17b"
+              }
+            },
+            {
+              "coupling": {
+                "value": 1,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;17c"
+              }
+            },
+            {
+              "coupling": {
+                "value": 7,
+                "error": 1
+              },
+              "coupledAtom": {
+                "atomCode": "H;7a"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "parameters": {
+    "label": "bmse001233",
+    "name": "10201"
+  },
+  "bonds": [
+    {
+      "atom1": 1,
+      "atom2": 19
+    },
+    {
+      "atom1": 1,
+      "atom2": 20
+    },
+    {
+      "atom1": 1,
+      "atom2": 21
+    },
+    {
+      "atom1": 2,
+      "atom2": 22
+    },
+    {
+      "atom1": 2,
+      "atom2": 23
+    },
+    {
+      "atom1": 2,
+      "atom2": 24
+    },
+    {
+      "atom1": 3,
+      "atom2": 25
+    },
+    {
+      "atom1": 3,
+      "atom2": 26
+    },
+    {
+      "atom1": 3,
+      "atom2": 27
+    },
+    {
+      "atom1": 4,
+      "atom2": 6
+    },
+    {
+      "atom1": 4,
+      "atom2": 28
+    },
+    {
+      "atom1": 4,
+      "atom2": 29
+    },
+    {
+      "atom1": 5,
+      "atom2": 11
+    },
+    {
+      "atom1": 5,
+      "atom2": 30
+    },
+    {
+      "atom1": 6,
+      "atom2": 31
+    },
+    {
+      "atom1": 6,
+      "atom2": 32
+    },
+    {
+      "atom1": 7,
+      "atom2": 5,
+      "bondType": "double"
+    },
+    {
+      "atom1": 7,
+      "atom2": 33
+    },
+    {
+      "atom1": 8,
+      "atom2": 1
+    },
+    {
+      "atom1": 8,
+      "atom2": 14
+    },
+    {
+      "atom1": 8,
+      "atom2": 34
+    },
+    {
+      "atom1": 9,
+      "atom2": 2
+    },
+    {
+      "atom1": 9,
+      "atom2": 11
+    },
+    {
+      "atom1": 10,
+      "atom2": 4
+    },
+    {
+      "atom1": 10,
+      "atom2": 8
+    },
+    {
+      "atom1": 10,
+      "atom2": 13
+    },
+    {
+      "atom1": 10,
+      "atom2": 35
+    },
+    {
+      "atom1": 12,
+      "atom2": 9,
+      "bondType": "double"
+    },
+    {
+      "atom1": 13,
+      "atom2": 12
+    },
+    {
+      "atom1": 13,
+      "atom2": 36
+    },
+    {
+      "atom1": 15,
+      "atom2": 3
+    },
+    {
+      "atom1": 15,
+      "atom2": 6
+    },
+    {
+      "atom1": 15,
+      "atom2": 7
+    },
+    {
+      "atom1": 15,
+      "atom2": 12
+    },
+    {
+      "atom1": 16,
+      "atom2": 11,
+      "bondType": "double"
+    },
+    {
+      "atom1": 17,
+      "atom2": 14,
+      "bondType": "double"
+    },
+    {
+      "atom1": 18,
+      "atom2": 13
+    },
+    {
+      "atom1": 18,
+      "atom2": 14
     }
   ],
   "atoms": [
@@ -674,6 +1512,5 @@
       "number": "2a",
       "valence": 1
     }
-  ],
-  "$mnova_schema": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule"
+  ]
 }
