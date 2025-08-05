@@ -3,6 +3,7 @@ import { readFile } from "fs/promises";
 
 ////////////////////////////////
 
+import { processSf } from "./mnovaJsonReader.js";
 import { processMnovaJsonSpectrum } from "./mnovaJsonReader.js";
 import { processMnovaJsonMolecule } from "./mnovaJsonReader.js";
 
@@ -27,7 +28,10 @@ async function processDataLOCAL(
 
 		const dataMolecule = await readFile(fileNameData, "utf-8");
 		const jsonMolecule = JSON.parse(dataMolecule);
-		const origin = {NMRjsonFileName : fileNameSpectrum, MoleculeJsonFileName : fileNameData};
+		const origin = {
+			NMRjsonFileName: fileNameSpectrum,
+			MoleculeJsonFileName: fileNameData,
+		};
 
 		const arrayOf_NMRspectrumObject = [];
 		for (let i = 0; i < 10000; i++) {
@@ -40,7 +44,11 @@ async function processDataLOCAL(
 					filterSpectra: "firstFirstLastOthers",
 					filterSpectraIndex: i,
 				},
-				{ jsonSpectrum: jsonSpectrum, jsonMolecule: jsonMolecule, origin: origin}
+				{
+					jsonSpectrum: jsonSpectrum,
+					jsonMolecule: jsonMolecule,
+					origin: origin,
+				}
 			);
 			if (
 				!lastObj ||
@@ -150,7 +158,14 @@ async function processDataLOCAL(
 
 		var jGraphObjDataList = [];
 		if (fileResulstSF !== "") {
-			const obj3 = await processSfFile(fileResulstSF, "variableSet");
+			//const obj3 = await processSfFile(fileResulstSF, "variableSet");
+			//const jsonDataInitial = await loadJson(fileResulstSF);
+
+			const tmp11 = await readFile(fileResulstSF, "utf-8");
+			const jsonDataInitial = JSON.parse(tmp11);
+
+			const obj3 = processSf(jsonDataInitial, "variableSet");
+
 			//	jGraphObjDataList.push(jGraphObj3);
 			if (obj3) {
 				if (obj3.data) {
@@ -159,7 +174,14 @@ async function processDataLOCAL(
 					}
 				}
 			}
-			const obj2 = await processSfFile(fileResulstSF, "couplingNetwork");
+			// const obj2 = await processSfFile(fileResulstSF, "couplingNetwork");
+			//const jsonDataInitial2 = await loadJson(fileResulstSF);
+
+			const tmp22 = await readFile(fileResulstSF, "utf-8");
+			const jsonDataInitial2 = JSON.parse(tmp22);
+
+			const obj2 = processSf(jsonDataInitial2, "couplingNetwork");
+
 			console.log("jGraphObjZ 2 ", obj2);
 			if (obj2) {
 				if (obj2.data) {
@@ -383,14 +405,14 @@ if (all) {
 
 		var fNameSpectra = "./testSpinFit_assigned/" + molec + "_Set.spectra.json";
 		var fNameMolecule = "./testSpinFit_assigned/" + molec + "_molecule.json";
-		var fNameParallelCoord =
-			"./testSpinFit_assigned/" + molec + "_parallelCoord.json";
+		var fNameSF = "./testSpinFit_assigned/" + molec + "_Set.spinFitResult.json";
+
 		const {
 			jGraphObjDataList,
 			allObjectsExtractedMolecule,
 			spectrumDataAllChopped,
 			regionsData,
-		} = await processDataLOCAL(fNameSpectra, fNameMolecule, "", molec);
+		} = await processDataLOCAL(fNameSpectra, fNameMolecule, fNameSF, molec);
 		saveStuff(
 			jGraphObjDataList,
 			allObjectsExtractedMolecule,

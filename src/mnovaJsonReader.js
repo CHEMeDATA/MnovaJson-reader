@@ -208,7 +208,7 @@ export async function processMnovaJsonFileMolecule(
 }
 
 
-function processSf(jsonDataInitial, type) {
+export function processSf(jsonDataInitial, type) {
   let filteredSpectraArray_FullArray = [];
 
     const jsonDataList = Array.isArray(jsonDataInitial)
