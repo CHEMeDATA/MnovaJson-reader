@@ -158,34 +158,25 @@ async function processDataLOCAL(
 
 		var jGraphObjDataList = [];
 		if (fileResulstSF !== "") {
-			//const obj3 = await processSfFile(fileResulstSF, "variableSet");
-			//const jsonDataInitial = await loadJson(fileResulstSF);
-
 			const tmp11 = await readFile(fileResulstSF, "utf-8");
 			const jsonDataInitial = JSON.parse(tmp11);
 
 			const obj3 = processSf(jsonDataInitial, "variableSet");
-
-			//	jGraphObjDataList.push(jGraphObj3);
 			if (obj3) {
 				if (obj3.data) {
 					if (obj3.data.length > 0) {
+						obj3.originScript = "variableSet using processSf";
 						jGraphObjDataList.push(obj3);
 					}
 				}
 			}
-			// const obj2 = await processSfFile(fileResulstSF, "couplingNetwork");
-			//const jsonDataInitial2 = await loadJson(fileResulstSF);
 
-			const tmp22 = await readFile(fileResulstSF, "utf-8");
-			const jsonDataInitial2 = JSON.parse(tmp22);
-
-			const obj2 = processSf(jsonDataInitial2, "couplingNetwork");
-
+			const obj2 = processSf(jsonDataInitial, "couplingNetwork");
 			console.log("jGraphObjZ 2 ", obj2);
 			if (obj2) {
 				if (obj2.data) {
 					if (obj2.data.length > 0) {
+						obj2.originScript = "couplingNetwork using processSf";
 						jGraphObjDataList.push(obj2);
 					}
 				}
@@ -200,7 +191,7 @@ async function processDataLOCAL(
 			console.log("jGraphObjZ 1 ", obj);
 			console.log("OKOKOOOKOKO1 ", fileResulstSF);
 			console.log("OKOKOOOKOKO1 jGraphObj", obj);
-
+			obj.originScript = "assignments using ingestMoleculeObject";
 			jGraphObjDataList.push(obj);
 		}
 
@@ -213,8 +204,8 @@ async function processDataLOCAL(
 			console.log("jGraphObjZ 1 ", obj);
 			console.log("OKOKOOOKOKO1 ", fileResulstSF);
 			console.log("OKOKOOOKOKO1 jGraphObj", obj);
-
-			//	jGraphObjDataList.push(jGraphObj);
+			obj.originScript = "assignments using ingestSpectrumRegions";
+			jGraphObjDataList.push(obj);
 		}
 
 		return {
@@ -429,14 +420,15 @@ if (all) {
 		var fNameSpectra =
 			"./testSpinFit_unassigned/" + molec + "_Set.spectra.json";
 		var fNameMolecule = "./testSpinFit_unassigned/" + molec + "_molecule.json";
-		var fNameParallelCoord =
-			"./testSpinFit_unassigned/" + molec + "_parallelCoord.json";
+		var fNameSF =
+			"./testSpinFit_unassigned/" + molec + "_Set.spinFitResult.json";
+
 		const {
 			jGraphObjDataList,
 			allObjectsExtractedMolecule,
 			spectrumDataAllChopped,
 			regionsData,
-		} = await processDataLOCAL(fNameSpectra, fNameMolecule, "", molec);
+		} = await processDataLOCAL(fNameSpectra, fNameMolecule, fNameSF, molec);
 		saveStuff(
 			jGraphObjDataList,
 			allObjectsExtractedMolecule,

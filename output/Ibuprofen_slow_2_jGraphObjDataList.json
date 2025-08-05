@@ -1,4 +1,3066 @@
 [
+  {
+    "typeArray": true,
+    "data": [
+      [
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 17.529646,
+          "labelsColumn": [
+            "11"
+          ],
+          "atomIndicesMol": [
+            11
+          ],
+          "listOfJs": [],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.18851,
+          "labelsColumn": [
+            "4,6"
+          ],
+          "atomIndicesMol": [
+            4,
+            6
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.199999,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 0.600759,
+              "atomIndexMol": [
+                7
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                6
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.88,
+              "atomIndexMol": [
+                1
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.096898,
+          "labelsColumn": [
+            "1,3"
+          ],
+          "atomIndicesMol": [
+            1,
+            3
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.199999,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                3
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 1.275847,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 7.88,
+              "atomIndexMol": [
+                6
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 3.624644,
+          "labelsColumn": [
+            "7"
+          ],
+          "atomIndicesMol": [
+            7
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.600759,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                9
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 2.40318,
+          "labelsColumn": [
+            "[12',12'']"
+          ],
+          "atomIndicesMol": [
+            12,
+            12
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.762364,
+              "atomIndexMol": [
+                13
+              ]
+            },
+            {
+              "coupling": 1.275847,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 12.712843,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 12.712843,
+              "atomIndexMol": [
+                12
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.804346,
+          "labelsColumn": [
+            "13"
+          ],
+          "atomIndicesMol": [
+            13
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.762364,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                14
+              ]
+            },
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                15
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.342952,
+          "labelsColumn": [
+            "9"
+          ],
+          "atomIndicesMol": [
+            9
+          ],
+          "listOfJs": [
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                7
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.854443,
+          "labelsColumn": [
+            "15"
+          ],
+          "atomIndicesMol": [
+            15
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.853184,
+          "labelsColumn": [
+            "14"
+          ],
+          "atomIndicesMol": [
+            14
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        }
+      ],
+      [
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 12.246475,
+          "labelsColumn": [
+            "11"
+          ],
+          "atomIndicesMol": [
+            11
+          ],
+          "listOfJs": [],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.188072,
+          "labelsColumn": [
+            "1,3"
+          ],
+          "atomIndicesMol": [
+            1,
+            3
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.199403,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 1.002015,
+              "atomIndexMol": [
+                3
+              ]
+            },
+            {
+              "coupling": 1.002015,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 1.276315,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 7.883854,
+              "atomIndexMol": [
+                6
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.097364,
+          "labelsColumn": [
+            "4,6"
+          ],
+          "atomIndicesMol": [
+            4,
+            6
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.199403,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 0.605296,
+              "atomIndexMol": [
+                7
+              ]
+            },
+            {
+              "coupling": 1.00051,
+              "atomIndexMol": [
+                6
+              ]
+            },
+            {
+              "coupling": 1.00051,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.883854,
+              "atomIndexMol": [
+                1
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 3.624644,
+          "labelsColumn": [
+            "7"
+          ],
+          "atomIndicesMol": [
+            7
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.605296,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.230005,
+              "atomIndexMol": [
+                9
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 2.403144,
+          "labelsColumn": [
+            "[12',12'']"
+          ],
+          "atomIndicesMol": [
+            12,
+            12
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.764807,
+              "atomIndexMol": [
+                13
+              ]
+            },
+            {
+              "coupling": 1.276315,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 12.51905,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 12.51905,
+              "atomIndexMol": [
+                12
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.804343,
+          "labelsColumn": [
+            "13"
+          ],
+          "atomIndicesMol": [
+            13
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.764807,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 6.920008,
+              "atomIndexMol": [
+                14
+              ]
+            },
+            {
+              "coupling": 6.920132,
+              "atomIndexMol": [
+                15
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.342948,
+          "labelsColumn": [
+            "9"
+          ],
+          "atomIndicesMol": [
+            9
+          ],
+          "listOfJs": [
+            {
+              "coupling": 7.230005,
+              "atomIndexMol": [
+                7
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.854349,
+          "labelsColumn": [
+            "15"
+          ],
+          "atomIndicesMol": [
+            15
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.920132,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.85329,
+          "labelsColumn": [
+            "14"
+          ],
+          "atomIndicesMol": [
+            14
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.920008,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        }
+      ],
+      [
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 16.010248,
+          "labelsColumn": [
+            "11"
+          ],
+          "atomIndicesMol": [
+            11
+          ],
+          "listOfJs": [],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.188066,
+          "labelsColumn": [
+            "4,6"
+          ],
+          "atomIndicesMol": [
+            4,
+            6
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.199999,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 0.600627,
+              "atomIndexMol": [
+                7
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                6
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.88,
+              "atomIndexMol": [
+                1
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.097343,
+          "labelsColumn": [
+            "1,3"
+          ],
+          "atomIndicesMol": [
+            1,
+            3
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.199999,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                3
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 1.275705,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 7.88,
+              "atomIndexMol": [
+                6
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 3.624644,
+          "labelsColumn": [
+            "7"
+          ],
+          "atomIndicesMol": [
+            7
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.600627,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                9
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 2.40318,
+          "labelsColumn": [
+            "[12',12'']"
+          ],
+          "atomIndicesMol": [
+            12,
+            12
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.762099,
+              "atomIndexMol": [
+                13
+              ]
+            },
+            {
+              "coupling": 1.275705,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 13.072121,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 13.072121,
+              "atomIndexMol": [
+                12
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.804346,
+          "labelsColumn": [
+            "13"
+          ],
+          "atomIndicesMol": [
+            13
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.762099,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 6.920002,
+              "atomIndexMol": [
+                14
+              ]
+            },
+            {
+              "coupling": 6.920002,
+              "atomIndexMol": [
+                15
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.342952,
+          "labelsColumn": [
+            "9"
+          ],
+          "atomIndicesMol": [
+            9
+          ],
+          "listOfJs": [
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                7
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.854445,
+          "labelsColumn": [
+            "14"
+          ],
+          "atomIndicesMol": [
+            14
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.920002,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.853186,
+          "labelsColumn": [
+            "15"
+          ],
+          "atomIndicesMol": [
+            15
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.920002,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        }
+      ],
+      [
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 10.920105,
+          "labelsColumn": [
+            "11"
+          ],
+          "atomIndicesMol": [
+            11
+          ],
+          "listOfJs": [],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.18806,
+          "labelsColumn": [
+            "4,6"
+          ],
+          "atomIndicesMol": [
+            4,
+            6
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.001397,
+              "atomIndexMol": [
+                7
+              ]
+            },
+            {
+              "coupling": 0.166267,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                6
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.905215,
+              "atomIndexMol": [
+                1
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.097348,
+          "labelsColumn": [
+            "1,3"
+          ],
+          "atomIndicesMol": [
+            1,
+            3
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.166267,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                3
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 1.173165,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 7.905215,
+              "atomIndexMol": [
+                6
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 3.624644,
+          "labelsColumn": [
+            "7"
+          ],
+          "atomIndicesMol": [
+            7
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.001397,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                9
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 2.403078,
+          "labelsColumn": [
+            "[12',12'']"
+          ],
+          "atomIndicesMol": [
+            12,
+            12
+          ],
+          "listOfJs": [
+            {
+              "coupling": -0.569999,
+              "atomIndexMol": [
+                13
+              ]
+            },
+            {
+              "coupling": 1.173165,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 12.656153,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 12.656153,
+              "atomIndexMol": [
+                12
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.804328,
+          "labelsColumn": [
+            "13"
+          ],
+          "atomIndicesMol": [
+            13
+          ],
+          "listOfJs": [
+            {
+              "coupling": -0.569999,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                14
+              ]
+            },
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                15
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.342952,
+          "labelsColumn": [
+            "9"
+          ],
+          "atomIndicesMol": [
+            9
+          ],
+          "listOfJs": [
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                7
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.854423,
+          "labelsColumn": [
+            "15"
+          ],
+          "atomIndicesMol": [
+            15
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.853203,
+          "labelsColumn": [
+            "14"
+          ],
+          "atomIndicesMol": [
+            14
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        }
+      ],
+      [
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 15.979911,
+          "labelsColumn": [
+            "11"
+          ],
+          "atomIndicesMol": [
+            11
+          ],
+          "listOfJs": [],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.188064,
+          "labelsColumn": [
+            "4,6"
+          ],
+          "atomIndicesMol": [
+            4,
+            6
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.199053,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 0.607685,
+              "atomIndexMol": [
+                7
+              ]
+            },
+            {
+              "coupling": 1.000848,
+              "atomIndexMol": [
+                6
+              ]
+            },
+            {
+              "coupling": 1.000848,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.883362,
+              "atomIndexMol": [
+                1
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.09735,
+          "labelsColumn": [
+            "1,3"
+          ],
+          "atomIndicesMol": [
+            1,
+            3
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.199053,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 1.000503,
+              "atomIndexMol": [
+                3
+              ]
+            },
+            {
+              "coupling": 1.000503,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 1.280035,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 7.883362,
+              "atomIndexMol": [
+                6
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 3.624662,
+          "labelsColumn": [
+            "7"
+          ],
+          "atomIndicesMol": [
+            7
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.607685,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                9
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 2.403193,
+          "labelsColumn": [
+            "[12',12'']"
+          ],
+          "atomIndicesMol": [
+            12,
+            12
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.768764,
+              "atomIndexMol": [
+                13
+              ]
+            },
+            {
+              "coupling": 1.280035,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 13.962277,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 13.962277,
+              "atomIndexMol": [
+                12
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.804346,
+          "labelsColumn": [
+            "13"
+          ],
+          "atomIndicesMol": [
+            13
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.768764,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 6.920001,
+              "atomIndexMol": [
+                15
+              ]
+            },
+            {
+              "coupling": 6.920222,
+              "atomIndexMol": [
+                14
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.34295,
+          "labelsColumn": [
+            "9"
+          ],
+          "atomIndicesMol": [
+            9
+          ],
+          "listOfJs": [
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                7
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.854482,
+          "labelsColumn": [
+            "14"
+          ],
+          "atomIndicesMol": [
+            14
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.920222,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.853146,
+          "labelsColumn": [
+            "15"
+          ],
+          "atomIndicesMol": [
+            15
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.920001,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        }
+      ],
+      [
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 17.521916,
+          "labelsColumn": [
+            "11"
+          ],
+          "atomIndicesMol": [
+            11
+          ],
+          "listOfJs": [],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.188062,
+          "labelsColumn": [
+            "1,3"
+          ],
+          "atomIndicesMol": [
+            1,
+            3
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.117664,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 1.110163,
+              "atomIndexMol": [
+                3
+              ]
+            },
+            {
+              "coupling": 1.110163,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 1.282191,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 7.882338,
+              "atomIndexMol": [
+                6
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.097376,
+          "labelsColumn": [
+            "4,6"
+          ],
+          "atomIndicesMol": [
+            4,
+            6
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.117664,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 0.600698,
+              "atomIndexMol": [
+                7
+              ]
+            },
+            {
+              "coupling": 1.539714,
+              "atomIndexMol": [
+                6
+              ]
+            },
+            {
+              "coupling": 1.539714,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.882338,
+              "atomIndexMol": [
+                1
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 3.624644,
+          "labelsColumn": [
+            "7"
+          ],
+          "atomIndicesMol": [
+            7
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.600698,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                9
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 2.403209,
+          "labelsColumn": [
+            "[12',12'']"
+          ],
+          "atomIndicesMol": [
+            12,
+            12
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.7622,
+              "atomIndexMol": [
+                13
+              ]
+            },
+            {
+              "coupling": 1.282191,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 13.260943,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 13.260943,
+              "atomIndexMol": [
+                12
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.804345,
+          "labelsColumn": [
+            "13"
+          ],
+          "atomIndicesMol": [
+            13
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.7622,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                14
+              ]
+            },
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                15
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.342952,
+          "labelsColumn": [
+            "9"
+          ],
+          "atomIndicesMol": [
+            9
+          ],
+          "listOfJs": [
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                7
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.854443,
+          "labelsColumn": [
+            "15"
+          ],
+          "atomIndicesMol": [
+            15
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.853184,
+          "labelsColumn": [
+            "14"
+          ],
+          "atomIndicesMol": [
+            14
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        }
+      ],
+      [
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 15.713019,
+          "labelsColumn": [
+            "11"
+          ],
+          "atomIndicesMol": [
+            11
+          ],
+          "listOfJs": [],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.18851,
+          "labelsColumn": [
+            "4,6"
+          ],
+          "atomIndicesMol": [
+            4,
+            6
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.199999,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 0.60078,
+              "atomIndexMol": [
+                7
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                6
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.88,
+              "atomIndexMol": [
+                1
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.096898,
+          "labelsColumn": [
+            "1,3"
+          ],
+          "atomIndicesMol": [
+            1,
+            3
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.199999,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                3
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 1.275452,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 7.88,
+              "atomIndexMol": [
+                6
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 3.624644,
+          "labelsColumn": [
+            "7"
+          ],
+          "atomIndicesMol": [
+            7
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.60078,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                9
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 2.40318,
+          "labelsColumn": [
+            "[12',12'']"
+          ],
+          "atomIndicesMol": [
+            12,
+            12
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.762011,
+              "atomIndexMol": [
+                13
+              ]
+            },
+            {
+              "coupling": 1.275452,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 12.792194,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 12.792194,
+              "atomIndexMol": [
+                12
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.804345,
+          "labelsColumn": [
+            "13"
+          ],
+          "atomIndicesMol": [
+            13
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.762011,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                14
+              ]
+            },
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                15
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.342952,
+          "labelsColumn": [
+            "9"
+          ],
+          "atomIndicesMol": [
+            9
+          ],
+          "listOfJs": [
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                7
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.854443,
+          "labelsColumn": [
+            "14"
+          ],
+          "atomIndicesMol": [
+            14
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.853185,
+          "labelsColumn": [
+            "15"
+          ],
+          "atomIndicesMol": [
+            15
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        }
+      ],
+      [
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 10.455406,
+          "labelsColumn": [
+            "11"
+          ],
+          "atomIndicesMol": [
+            11
+          ],
+          "listOfJs": [],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.188053,
+          "labelsColumn": [
+            "4,6"
+          ],
+          "atomIndicesMol": [
+            4,
+            6
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.024086,
+              "atomIndexMol": [
+                7
+              ]
+            },
+            {
+              "coupling": 0.079896,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 1.000038,
+              "atomIndexMol": [
+                6
+              ]
+            },
+            {
+              "coupling": 1.000038,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.900508,
+              "atomIndexMol": [
+                1
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.097364,
+          "labelsColumn": [
+            "1,3"
+          ],
+          "atomIndicesMol": [
+            1,
+            3
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.079896,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 0.731953,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 1.000173,
+              "atomIndexMol": [
+                3
+              ]
+            },
+            {
+              "coupling": 1.000173,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 7.900508,
+              "atomIndexMol": [
+                6
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 3.624644,
+          "labelsColumn": [
+            "7"
+          ],
+          "atomIndicesMol": [
+            7
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.024086,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                9
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 2.409161,
+          "labelsColumn": [
+            "[12',12'']"
+          ],
+          "atomIndicesMol": [
+            12,
+            12
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.731953,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 6.159676,
+              "atomIndexMol": [
+                13
+              ]
+            },
+            {
+              "coupling": 12.997904,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 12.997904,
+              "atomIndexMol": [
+                12
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.804322,
+          "labelsColumn": [
+            "13"
+          ],
+          "atomIndicesMol": [
+            13
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.159676,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                14
+              ]
+            },
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                15
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.342952,
+          "labelsColumn": [
+            "9"
+          ],
+          "atomIndicesMol": [
+            9
+          ],
+          "listOfJs": [
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                7
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.854423,
+          "labelsColumn": [
+            "15"
+          ],
+          "atomIndicesMol": [
+            15
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.853203,
+          "labelsColumn": [
+            "14"
+          ],
+          "atomIndicesMol": [
+            14
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        }
+      ],
+      [
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.188487,
+          "labelsColumn": [
+            "4,6"
+          ],
+          "atomIndicesMol": [
+            4,
+            6
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.199906,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 0.601026,
+              "atomIndexMol": [
+                7
+              ]
+            },
+            {
+              "coupling": 1.0006,
+              "atomIndexMol": [
+                6
+              ]
+            },
+            {
+              "coupling": 1.0006,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.880543,
+              "atomIndexMol": [
+                1
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.10335,
+          "labelsColumn": [
+            "11"
+          ],
+          "atomIndicesMol": [
+            11
+          ],
+          "listOfJs": [],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.097048,
+          "labelsColumn": [
+            "1,3"
+          ],
+          "atomIndicesMol": [
+            1,
+            3
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.199906,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 1.277527,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 1.704211,
+              "atomIndexMol": [
+                3
+              ]
+            },
+            {
+              "coupling": 1.704211,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 7.880543,
+              "atomIndexMol": [
+                6
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 3.624641,
+          "labelsColumn": [
+            "7"
+          ],
+          "atomIndicesMol": [
+            7
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.601026,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.230011,
+              "atomIndexMol": [
+                9
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 2.403181,
+          "labelsColumn": [
+            "[12',12'']"
+          ],
+          "atomIndicesMol": [
+            12,
+            12
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.765571,
+              "atomIndexMol": [
+                13
+              ]
+            },
+            {
+              "coupling": 1.277527,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 13.57975,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 13.57975,
+              "atomIndexMol": [
+                12
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.804346,
+          "labelsColumn": [
+            "13"
+          ],
+          "atomIndicesMol": [
+            13
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.765571,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 6.920113,
+              "atomIndexMol": [
+                14
+              ]
+            },
+            {
+              "coupling": 6.920152,
+              "atomIndexMol": [
+                15
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.342947,
+          "labelsColumn": [
+            "9"
+          ],
+          "atomIndicesMol": [
+            9
+          ],
+          "listOfJs": [
+            {
+              "coupling": 7.230011,
+              "atomIndexMol": [
+                7
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.85449,
+          "labelsColumn": [
+            "14"
+          ],
+          "atomIndicesMol": [
+            14
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.920113,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.853101,
+          "labelsColumn": [
+            "15"
+          ],
+          "atomIndicesMol": [
+            15
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.920152,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        }
+      ],
+      [
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 10.889713,
+          "labelsColumn": [
+            "11"
+          ],
+          "atomIndicesMol": [
+            11
+          ],
+          "listOfJs": [],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.188512,
+          "labelsColumn": [
+            "4,6"
+          ],
+          "atomIndicesMol": [
+            4,
+            6
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.001397,
+              "atomIndexMol": [
+                7
+              ]
+            },
+            {
+              "coupling": 0.176199,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 1.022512,
+              "atomIndexMol": [
+                6
+              ]
+            },
+            {
+              "coupling": 1.022512,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.922216,
+              "atomIndexMol": [
+                1
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.096898,
+          "labelsColumn": [
+            "1,3"
+          ],
+          "atomIndicesMol": [
+            1,
+            3
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.176199,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                3
+              ]
+            },
+            {
+              "coupling": 1,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 1.173165,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 7.922216,
+              "atomIndexMol": [
+                6
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 3.624644,
+          "labelsColumn": [
+            "7"
+          ],
+          "atomIndicesMol": [
+            7
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.001397,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                9
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 2.403078,
+          "labelsColumn": [
+            "[12',12'']"
+          ],
+          "atomIndicesMol": [
+            12,
+            12
+          ],
+          "listOfJs": [
+            {
+              "coupling": -0.569999,
+              "atomIndexMol": [
+                13
+              ]
+            },
+            {
+              "coupling": 1.173165,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 13.391426,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 13.391426,
+              "atomIndexMol": [
+                12
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.804328,
+          "labelsColumn": [
+            "13"
+          ],
+          "atomIndicesMol": [
+            13
+          ],
+          "listOfJs": [
+            {
+              "coupling": -0.569999,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                14
+              ]
+            },
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                15
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.342952,
+          "labelsColumn": [
+            "9"
+          ],
+          "atomIndicesMol": [
+            9
+          ],
+          "listOfJs": [
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                7
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.854423,
+          "labelsColumn": [
+            "15"
+          ],
+          "atomIndicesMol": [
+            15
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.853203,
+          "labelsColumn": [
+            "14"
+          ],
+          "atomIndicesMol": [
+            14
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        }
+      ],
+      [
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 12.246492,
+          "labelsColumn": [
+            "11"
+          ],
+          "atomIndicesMol": [
+            11
+          ],
+          "listOfJs": [],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.18851,
+          "labelsColumn": [
+            "4,6"
+          ],
+          "atomIndicesMol": [
+            4,
+            6
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.19936,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 0.601939,
+              "atomIndexMol": [
+                7
+              ]
+            },
+            {
+              "coupling": 1.000632,
+              "atomIndexMol": [
+                6
+              ]
+            },
+            {
+              "coupling": 1.000632,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.880032,
+              "atomIndexMol": [
+                1
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.096898,
+          "labelsColumn": [
+            "1,3"
+          ],
+          "atomIndicesMol": [
+            1,
+            3
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.19936,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 1.000003,
+              "atomIndexMol": [
+                3
+              ]
+            },
+            {
+              "coupling": 1.000003,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 1.276987,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 7.880032,
+              "atomIndexMol": [
+                6
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 3.624643,
+          "labelsColumn": [
+            "7"
+          ],
+          "atomIndicesMol": [
+            7
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.601939,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.230036,
+              "atomIndexMol": [
+                9
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 2.403115,
+          "labelsColumn": [
+            "[12',12'']"
+          ],
+          "atomIndicesMol": [
+            12,
+            12
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.765611,
+              "atomIndexMol": [
+                13
+              ]
+            },
+            {
+              "coupling": 1.276987,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 13.591746,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 13.591746,
+              "atomIndexMol": [
+                12
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.804347,
+          "labelsColumn": [
+            "13"
+          ],
+          "atomIndicesMol": [
+            13
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.765611,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 6.920033,
+              "atomIndexMol": [
+                14
+              ]
+            },
+            {
+              "coupling": 6.920051,
+              "atomIndexMol": [
+                15
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.342951,
+          "labelsColumn": [
+            "9"
+          ],
+          "atomIndicesMol": [
+            9
+          ],
+          "listOfJs": [
+            {
+              "coupling": 7.230036,
+              "atomIndexMol": [
+                7
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.854453,
+          "labelsColumn": [
+            "14"
+          ],
+          "atomIndicesMol": [
+            14
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.920033,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.853176,
+          "labelsColumn": [
+            "15"
+          ],
+          "atomIndicesMol": [
+            15
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.920051,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        }
+      ],
+      [
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 9.215229,
+          "labelsColumn": [
+            "11"
+          ],
+          "atomIndicesMol": [
+            11
+          ],
+          "listOfJs": [],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.188509,
+          "labelsColumn": [
+            "4,6"
+          ],
+          "atomIndicesMol": [
+            4,
+            6
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.024086,
+              "atomIndexMol": [
+                7
+              ]
+            },
+            {
+              "coupling": 0.17185,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 1.000111,
+              "atomIndexMol": [
+                6
+              ]
+            },
+            {
+              "coupling": 1.000111,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.88021,
+              "atomIndexMol": [
+                1
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 7.0969,
+          "labelsColumn": [
+            "1,3"
+          ],
+          "atomIndicesMol": [
+            1,
+            3
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.17185,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 0.731941,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 1.000239,
+              "atomIndexMol": [
+                3
+              ]
+            },
+            {
+              "coupling": 1.000239,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 7.88021,
+              "atomIndexMol": [
+                6
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 3.624644,
+          "labelsColumn": [
+            "7"
+          ],
+          "atomIndicesMol": [
+            7
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.024086,
+              "atomIndexMol": [
+                4
+              ]
+            },
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                9
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 2.409161,
+          "labelsColumn": [
+            "[12',12'']"
+          ],
+          "atomIndicesMol": [
+            12,
+            12
+          ],
+          "listOfJs": [
+            {
+              "coupling": 0.731941,
+              "atomIndexMol": [
+                1
+              ]
+            },
+            {
+              "coupling": 6.159676,
+              "atomIndexMol": [
+                13
+              ]
+            },
+            {
+              "coupling": 12.283131,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 12.283131,
+              "atomIndexMol": [
+                12
+              ]
+            }
+          ],
+          "satisfactory": false
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.804322,
+          "labelsColumn": [
+            "13"
+          ],
+          "atomIndicesMol": [
+            13
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.159676,
+              "atomIndexMol": [
+                12
+              ]
+            },
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                14
+              ]
+            },
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                15
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 1.342952,
+          "labelsColumn": [
+            "9"
+          ],
+          "atomIndicesMol": [
+            9
+          ],
+          "listOfJs": [
+            {
+              "coupling": 7.23,
+              "atomIndexMol": [
+                7
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.854423,
+          "labelsColumn": [
+            "15"
+          ],
+          "atomIndicesMol": [
+            15
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        },
+        {
+          "assignedMultipletMnovaHash": "",
+          "chemShift": 0.853203,
+          "labelsColumn": [
+            "14"
+          ],
+          "atomIndicesMol": [
+            14
+          ],
+          "listOfJs": [
+            {
+              "coupling": 6.92,
+              "atomIndexMol": [
+                13
+              ]
+            }
+          ],
+          "satisfactory": true
+        }
+      ]
+    ],
+    "type": "variableSet",
+    "originScript": "variableSet using processSf"
+  },
+  {
+    "typeArray": true,
+    "data": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "type": "couplingNetwork",
+    "originScript": "couplingNetwork using processSf"
+  },
   [
     {
       "assignedMultipletMnovaHash": "{cec24b62-7faa-4953-806a-0b44cfb3a8cb}",
@@ -174,6 +3236,192 @@
           "atomIndexMol": []
         }
       ]
+    }
+  ],
+  [
+    {
+      "couplings": [],
+      "area": 8803.598384939993,
+      "category": "s",
+      "f1_shift": 12.24635758262252,
+      "maximum": 8803.598384939993,
+      "nuclides": 1,
+      "name": "11",
+      "mode": "Auto",
+      "is_reference": true,
+      "f1rangePPM": [
+        12.259163960849312,
+        12.233551204395729
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "cec24b62-7faa-4953-806a-0b44cfb3a8cb"
+    },
+    {
+      "couplings": [],
+      "area": 19051.17024356201,
+      "category": "m",
+      "f1_shift": 7.188717388044099,
+      "maximum": 19051.17024356201,
+      "nuclides": 2,
+      "name": "4,6",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        7.20808983762984,
+        7.169088332158055
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "a54193c5-8973-4e3d-8363-64e3b43622ea"
+    },
+    {
+      "couplings": [],
+      "area": 18505.83725413755,
+      "category": "m",
+      "f1_shift": 7.097038551812408,
+      "maximum": 18505.83725413755,
+      "nuclides": 2,
+      "name": "1,3",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        7.116514101890655,
+        7.077441789724528
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "91616050-e7ca-454f-8e39-308a98e28f47"
+    },
+    {
+      "couplings": [
+        7.14404296875,
+        7.14404296875,
+        7.18310546875
+      ],
+      "area": 9339.217905323932,
+      "category": "q",
+      "f1_shift": 3.624674346211851,
+      "maximum": 9339.217905323932,
+      "nuclides": 1,
+      "name": "7",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        3.6552667234491834,
+        3.594016932913511
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "58079df5-889b-46d1-b618-8f48932119ac"
+    },
+    {
+      "couplings": [
+        7.1707763671875
+      ],
+      "area": 17819.293801780033,
+      "category": "d",
+      "f1_shift": 2.4092511515957327,
+      "maximum": 17819.293801780033,
+      "nuclides": 2,
+      "name": "12",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        2.4280355599863066,
+        2.390466743205159
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "0c29179e-9e84-4e62-a390-6a72fde75078"
+    },
+    {
+      "couplings": [
+        6.757080078125,
+        6.757080078125,
+        6.780029296875,
+        6.780029296875,
+        13.529052734375
+      ],
+      "area": 9609.865956478729,
+      "category": "dp",
+      "f1_shift": 1.804371086123595,
+      "maximum": 9609.865956478729,
+      "nuclides": 1,
+      "name": "13",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        1.8509189292114505,
+        1.757773776905976
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "75d4d25a-73d4-46d8-beb3-b0a3495bb285"
+    },
+    {
+      "couplings": [
+        7.13690185546875
+      ],
+      "area": 26554.47722673925,
+      "category": "d",
+      "f1_shift": 1.3429723241822422,
+      "maximum": 26554.47722673925,
+      "nuclides": 3,
+      "name": "9",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        1.3617284636404086,
+        1.3242161847240759
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "cd2577b1-77ee-4a71-9ddf-c7387b13e4b3"
+    },
+    {
+      "couplings": [
+        6.659027099609375
+      ],
+      "area": 53671.93681987842,
+      "category": "d",
+      "f1_shift": 0.8538624659603616,
+      "maximum": 53671.93681987842,
+      "nuclides": 6,
+      "name": "14,15",
+      "mode": "Auto",
+      "is_reference": false,
+      "f1rangePPM": [
+        0.8722202601783222,
+        0.8355046717424011
+      ],
+      "f2rangePPM": [
+        null,
+        null
+      ],
+      "type": "Compound",
+      "uuid": "8ced2f03-0d9f-48d7-bcb1-6c2b95eeeb06"
     }
   ]
 ]

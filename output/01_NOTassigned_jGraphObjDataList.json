@@ -1427,7 +1427,8 @@
         }
       ]
     ],
-    "type": "variableSet"
+    "type": "variableSet",
+    "originScript": "variableSet using processSf"
   },
   {
     "typeArray": true,
@@ -1449,6 +1450,7 @@
       [],
       []
     ],
-    "type": "couplingNetwork"
+    "type": "couplingNetwork",
+    "originScript": "couplingNetwork using processSf"
   }
 ]
