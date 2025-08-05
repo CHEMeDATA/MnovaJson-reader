@@ -1,13 +1,6 @@
- async function loadJson(filePath) {
-  if (typeof window !== 'undefined') {
+async function loadJson(filePath) {
     // Running in browser
     return await d3.json(filePath);
-  } else {
-    // Dynamically import readFile only in Node.js
-    const { readFile } = await import('fs/promises');
-    const data = await readFile(filePath, 'utf-8');
-    return JSON.parse(data);
-  }
 }
 
 export function processMnovaJsonSpectrum(

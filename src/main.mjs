@@ -3,105 +3,123 @@ import { readFile } from "fs/promises";
 
 ////////////////////////////////
 
-import { processMnovaJsonSpectrum } from './mnovaJsonReader.js';
-import { processMnovaJsonMolecule } from './mnovaJsonReader.js';
+import { processMnovaJsonSpectrum } from "./mnovaJsonReader.js";
+import { processMnovaJsonMolecule } from "./mnovaJsonReader.js";
 
-import { extractSpectrumData } from './mnovaJsonReader.js';
-import { getRegionsWithSignal } from './mnovaJsonReader.js';
-import { filterOutPointsOutsideRegions } from './mnovaJsonReader.js';
-import { ingestMoleculeObject } from './mnovaJsonReader.js';
-import { ingestSpectrumRegions } from './mnovaJsonReader.js';
-
+import { extractSpectrumData } from "./mnovaJsonReader.js";
+import { getRegionsWithSignal } from "./mnovaJsonReader.js";
+import { filterOutPointsOutsideRegions } from "./mnovaJsonReader.js";
+import { ingestMoleculeObject } from "./mnovaJsonReader.js";
+import { ingestSpectrumRegions } from "./mnovaJsonReader.js";
 
 import { NMRspectrumObject } from "../src/nmrSpectrumObject.js";
 const all = true;
 
- async function processDataLOCAL(
-  fileNameSpectrum,
-  fileNameData,
-  fileResulstSF
+async function processDataLOCAL(
+	fileNameSpectrum,
+	fileNameData,
+	fileResulstSF,
+	molecForFileName
 ) {
-  try {
-	/*const allSpectraObjectsExtracted = await processMnovaJsonFileSpectrum(
-			fileNameSpectrum,
-			"spectra",
-			//["data", "raw_data", "multiplets"]
-			//['$mnova_schema', 'data', 'raw_data', 'multiplets', 'peaks', 'processing', 'parameters']
-			['data', 'raw_data', 'multiplets', 'peaks', 'processing', 'parameters']
-		);*/
+	try {
+		const dataSpectrum = await readFile(fileNameSpectrum, "utf-8");
+		const jsonSpectrum = JSON.parse(dataSpectrum);
 
+		const dataMolecule = await readFile(fileNameData, "utf-8");
+		const jsonMolecule = JSON.parse(dataMolecule);
+		const origin = {NMRjsonFileName : fileNameSpectrum, MoleculeJsonFileName : fileNameData};
 
+		const arrayOf_NMRspectrumObject = [];
+		for (let i = 0; i < 10000; i++) {
+			const lastObj = new NMRspectrumObject(
+				{
+					editor: "djeanner",
+					version: "1",
+					source: "MnovaJson",
+					id: "none",
+					filterSpectra: "firstFirstLastOthers",
+					filterSpectraIndex: i,
+				},
+				{ jsonSpectrum: jsonSpectrum, jsonMolecule: jsonMolecule, origin: origin}
+			);
+			if (
+				!lastObj ||
+				!lastObj.data ||
+				!lastObj.data.values ||
+				lastObj.data.values.length === 0
+			) {
+				break;
+			}
 
-  const fieldsToKeep = ['data', 'raw_data', 'multiplets', 'peaks', 'processing', 'parameters', '$mnova_schema'];
-  fieldsToKeep.push();
-
-  // Load the JSON data — assuming loadJson is an async function you have
-  //const jsonDataInitial = await loadJson(fileNameSpectrum);
-  const data = await readFile(fileNameSpectrum, 'utf-8');
-   const jsonDataInitial = JSON.parse(data);
-  // Call processMnovaJsonSpectrum directly with loaded data
-  const allSpectraObjectsExtracted = processMnovaJsonSpectrum(
-    jsonDataInitial,
-    "spectra",
-    fieldsToKeep
-  );
-
-		if (typeof allSpectraObjectsExtracted === "undefined") {
-			console.error("allSpectraObjectsExtracted", allSpectraObjectsExtracted);
-			console.error("fileNameSpectrum", fileNameSpectrum);
+			arrayOf_NMRspectrumObject.push(lastObj);
 		}
-		//console.log("allObjectsExtracted", allSpectraObjectsExtracted);
 
-			//["assignments", "atoms", "$mnova_schema"],
-  const fieldsToKeepMolecule = ['$mnova_schema','assignments', 'predictions', 'parameters','bonds', 'atoms',];
+		await writeFile(
+			"./output/" + molecForFileName + "_all_NMRspectrumObject.json",
+			JSON.stringify(arrayOf_NMRspectrumObject, null, 2),
+			"utf8"
+		);
 
-		
+		const fieldsToKeepMolecule = [
+			"$mnova_schema",
+			"assignments",
+			"predictions",
+			"parameters",
+			"bonds",
+			"atoms",
+		];
 
-  //const jsonData = await loadJson(fileNameData);
-  const dataM = await readFile(fileNameData, 'utf-8');
-    const jsonData = JSON.parse(dataM);
-	const allObjectsExtractedMolecule = processMnovaJsonMolecule(jsonData, "molecule",fieldsToKeepMolecule);
+		const allObjectsExtractedMolecule = processMnovaJsonMolecule(
+			jsonMolecule,
+			"molecule",
+			fieldsToKeepMolecule
+		);
 
-
-if (typeof allObjectsExtractedMolecule === "undefined") {
+		if (typeof allObjectsExtractedMolecule === "undefined") {
 			console.error("allObjectsExtractedMolecule", allObjectsExtractedMolecule);
 			console.error("fileNameData", fileNameData);
 		}
 
-		//console.log("allObjectsExtractedMolecule", allObjectsExtractedMolecule);
+		const fieldsToKeepSpectrum = [
+			"data",
+			"raw_data",
+			"multiplets",
+			"peaks",
+			"processing",
+			"parameters",
+			"$mnova_schema",
+		];
 
-for (var i = 0; i < allSpectraObjectsExtracted.length; i++) {
-			console.log(">>>>>>>>>   spectrum set ", i + 1, ":", allSpectraObjectsExtracted[i].length, "spectra.");
-		}
-
-
-const storeAll = true;
-var spectrumDataAll = [];
-if (storeAll) {
-	for (var i = 0; i < allSpectraObjectsExtracted.length; i++) {
-		for (var i2 = 0; i2 < allSpectraObjectsExtracted[i].length; i2++) {
-			spectrumDataAll.push(
-				extractSpectrumData(allSpectraObjectsExtracted[i][i2], "data")
-			);
-		}
-	}
-} else {
-	// First the reference spectrum
-	const spectrumData = extractSpectrumData(
-		allSpectraObjectsExtracted[0][0],
-		"data"
-	);
-	// Add from all other spectra only the last one
-	spectrumDataAll.push(spectrumData);
-	for (var i = 0; i < allSpectraObjectsExtracted.length; i++) {
-		const lastItem = allSpectraObjectsExtracted[i].length - 1;
-		spectrumDataAll.push(
-			extractSpectrumData(allSpectraObjectsExtracted[i][lastItem], "data")
+		const allSpectraObjectsExtracted = processMnovaJsonSpectrum(
+			jsonSpectrum,
+			"spectra",
+			fieldsToKeepSpectrum
 		);
-	}
-}
-
-
+		const storeAll = false;
+		var spectrumDataAll = [];
+		if (storeAll) {
+			for (var i = 0; i < allSpectraObjectsExtracted.length; i++) {
+				for (var i2 = 0; i2 < allSpectraObjectsExtracted[i].length; i2++) {
+					spectrumDataAll.push(
+						extractSpectrumData(allSpectraObjectsExtracted[i][i2], "data")
+					);
+				}
+			}
+		} else {
+			// First the reference spectrum
+			const spectrumData = extractSpectrumData(
+				allSpectraObjectsExtracted[0][0],
+				"data"
+			);
+			// Add from all other spectra only the last one
+			spectrumDataAll.push(spectrumData);
+			for (var i = 0; i < allSpectraObjectsExtracted.length; i++) {
+				const lastItem = allSpectraObjectsExtracted[i].length - 1;
+				spectrumDataAll.push(
+					extractSpectrumData(allSpectraObjectsExtracted[i][lastItem], "data")
+				);
+			}
+		}
 
 		if (false) {
 			// demo creation spectrum
@@ -112,17 +130,6 @@ if (storeAll) {
 				{ chemShift: 7.29, value: 80000 },
 			]);
 		}
-
-// end of series of mnova blocks....
-  //const spec00 = new NMRspectrumObject({editor: "Damien",version: "1",source: "MnovaJson",id: "none"}, spectrumDataAll[0]);
-const arrayOf_NMRspectrumObject = [];
-for (let i = 0; i < spectrumDataAll.length; i++) {
-	arrayOf_NMRspectrumObject[i] = new NMRspectrumObject(
-		{ editor: "Damien", version: "1", source: "MnovaJson", id: "none" },
-		spectrumDataAll[i]
-	);
-}
-
 
 		const marginPPM = 0.02;
 		const minSpaceBetweenRegions = 0.05;
@@ -144,7 +151,7 @@ for (let i = 0; i < spectrumDataAll.length; i++) {
 		var jGraphObjDataList = [];
 		if (fileResulstSF !== "") {
 			const obj3 = await processSfFile(fileResulstSF, "variableSet");
-		//	jGraphObjDataList.push(jGraphObj3);
+			//	jGraphObjDataList.push(jGraphObj3);
 			if (obj3) {
 				if (obj3.data) {
 					if (obj3.data.length > 0) {
@@ -163,9 +170,6 @@ for (let i = 0; i < spectrumDataAll.length; i++) {
 			}
 		}
 
- 
-
-
 		if ("assignments" in allObjectsExtractedMolecule) {
 			const obj = ingestMoleculeObject(
 				allObjectsExtractedMolecule,
@@ -178,8 +182,8 @@ for (let i = 0; i < spectrumDataAll.length; i++) {
 			jGraphObjDataList.push(obj);
 		}
 
-    // this is not done or finished....
-    if ("assignments" in allObjectsExtractedMolecule) {
+		// this is not done or finished....
+		if ("assignments" in allObjectsExtractedMolecule) {
 			const obj = ingestSpectrumRegions(
 				allObjectsExtractedMolecule,
 				allSpectraObjectsExtracted[0][0].multiplets
@@ -188,55 +192,26 @@ for (let i = 0; i < spectrumDataAll.length; i++) {
 			console.log("OKOKOOOKOKO1 ", fileResulstSF);
 			console.log("OKOKOOOKOKO1 jGraphObj", obj);
 
-		//	jGraphObjDataList.push(jGraphObj);
+			//	jGraphObjDataList.push(jGraphObj);
 		}
-	
- return {
-    jGraphObjDataList,
-    allObjectsExtractedMolecule,
-    spectrumDataAllChopped,
-    regionsData
-  
-  };
+
+		return {
+			jGraphObjDataList,
+			allObjectsExtractedMolecule,
+			spectrumDataAllChopped,
+			regionsData,
+		};
 	} catch (error) {
-    console.error('Error processing or visualizing the data ', error);
-  }
-
+		console.error("Error processing or visualizing the data ", error);
+	}
 }
-
 
 {
-
-const mainName = "santonin";
-var fileNameSpectrum = "./data/santonin/santonin_spectrum.json";
-var fileNameData = "./data/santonin/santonin_molecule.json";
-var fileResulstSF = "";
-processDataLOCAL(fileNameSpectrum, fileNameData, fileResulstSF);
-
-const param = {
-  editor: "Damien",
-  version: "1",
-  source: "MnovaJson",
-  id: "none"
-};
-
-const payload = {
-  peaks: [1, 2, 3]
-};
-var baseName = "demoFirst"
-try {
-  const spec = new NMRspectrumObject(param, payload);
-  // here test schema
- /* await writeFile(
-		"./output/" + baseName + ".json",
-		JSON.stringify(jGraphObjDataList, null, 2),
-		"utf8"
-	);
-	*/
-  console.log("OK", spec);
-} catch (e) {
-  console.error(e.message);
-}
+	const mainName = "santonin";
+	var fileNameSpectrum = "./data/santonin/santonin_spectrum.json";
+	var fileNameData = "./data/santonin/santonin_molecule.json";
+	var fileResulstSF = "";
+	processDataLOCAL(fileNameSpectrum, fileNameData, fileResulstSF);
 }
 ////////////////////////////////
 
@@ -335,11 +310,10 @@ async function saveStuff(
 */
 }
 
-const mainName = "santonin";
-var fName = "./data/santonin/santonin_spectrum.json";
-var fNameN1 = "./data/santonin/santonin_molecule.json";
-
-if(all) {
+if (all) {
+	const mainName = "santonin";
+	var fName = "./data/santonin/santonin_spectrum.json";
+	var fNameN1 = "./data/santonin/santonin_molecule.json";
 	console.log("===============================================");
 	console.log("Processing molecule:", fNameN1);
 	const {
@@ -347,7 +321,7 @@ if(all) {
 		allObjectsExtractedMolecule,
 		spectrumDataAllChopped,
 		regionsData,
-	} = await processDataLOCAL(fName, fNameN1, "");
+	} = await processDataLOCAL(fName, fNameN1, "", mainName);
 
 	saveStuff(
 		jGraphObjDataList,
@@ -361,7 +335,11 @@ if(all) {
 
 var fNameN2 = "./data/santonin/santonin_moleculeWithAssignment.json"; // with partial assignment of J's
 //jGraph(fName, fNameN2);
-if(all) {
+if (all) {
+	const mainName = "santoninWithAssignement";
+	var fName = "./data/santonin/santonin_spectrum.json";
+	var fNameN2 = "./data/santonin/santonin_moleculeWithAssignment.json"; // with partial assignment of J's
+
 	console.log("===============================================");
 	console.log("Processing molecule:", fNameN2);
 	const {
@@ -369,7 +347,7 @@ if(all) {
 		allObjectsExtractedMolecule,
 		spectrumDataAllChopped,
 		regionsData,
-	} = await processDataLOCAL(fName, fNameN2, "");
+	} = await processDataLOCAL(fName, fNameN2, "", mainName);
 	saveStuff(
 		jGraphObjDataList,
 		allObjectsExtractedMolecule,
@@ -382,7 +360,7 @@ if(all) {
 
 // one from series
 
-if(all) {
+if (all) {
 	const molecules = [
 		"07-Papaverine", // OK
 		//"07-Papaverine_H",   // not working
@@ -412,7 +390,7 @@ if(all) {
 			allObjectsExtractedMolecule,
 			spectrumDataAllChopped,
 			regionsData,
-		} = await processDataLOCAL(fNameSpectra, fNameMolecule, "");
+		} = await processDataLOCAL(fNameSpectra, fNameMolecule, "", molec);
 		saveStuff(
 			jGraphObjDataList,
 			allObjectsExtractedMolecule,
@@ -436,7 +414,7 @@ if(all) {
 			allObjectsExtractedMolecule,
 			spectrumDataAllChopped,
 			regionsData,
-		} = await processDataLOCAL(fNameSpectra, fNameMolecule, "");
+		} = await processDataLOCAL(fNameSpectra, fNameMolecule, "", molec);
 		saveStuff(
 			jGraphObjDataList,
 			allObjectsExtractedMolecule,
@@ -448,5 +426,3 @@ if(all) {
 		console.log("===== start molecule:", molec);
 	}
 }
-
-
