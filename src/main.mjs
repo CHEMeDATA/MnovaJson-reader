@@ -1,4 +1,3 @@
-import { processData } from "../src/mnovaReader.js";
 import { writeFile } from "fs/promises";
 import { readFile } from "fs/promises";
 
@@ -212,7 +211,7 @@ const mainName = "santonin";
 var fileNameSpectrum = "./data/santonin/santonin_spectrum.json";
 var fileNameData = "./data/santonin/santonin_molecule.json";
 var fileResulstSF = "";
-processData(fileNameSpectrum, fileNameData, fileResulstSF);
+processDataLOCAL(fileNameSpectrum, fileNameData, fileResulstSF);
 
 const param = {
   editor: "Damien",
@@ -348,7 +347,7 @@ if(all) {
 		allObjectsExtractedMolecule,
 		spectrumDataAllChopped,
 		regionsData,
-	} = await processData(fName, fNameN1, "");
+	} = await processDataLOCAL(fName, fNameN1, "");
 
 	saveStuff(
 		jGraphObjDataList,
@@ -370,7 +369,7 @@ if(all) {
 		allObjectsExtractedMolecule,
 		spectrumDataAllChopped,
 		regionsData,
-	} = await processData(fName, fNameN2, "");
+	} = await processDataLOCAL(fName, fNameN2, "");
 	saveStuff(
 		jGraphObjDataList,
 		allObjectsExtractedMolecule,
@@ -413,7 +412,7 @@ if(all) {
 			allObjectsExtractedMolecule,
 			spectrumDataAllChopped,
 			regionsData,
-		} = await processData(fNameSpectra, fNameMolecule, "");
+		} = await processDataLOCAL(fNameSpectra, fNameMolecule, "");
 		saveStuff(
 			jGraphObjDataList,
 			allObjectsExtractedMolecule,
@@ -437,7 +436,7 @@ if(all) {
 			allObjectsExtractedMolecule,
 			spectrumDataAllChopped,
 			regionsData,
-		} = await processData(fNameSpectra, fNameMolecule, "");
+		} = await processDataLOCAL(fNameSpectra, fNameMolecule, "");
 		saveStuff(
 			jGraphObjDataList,
 			allObjectsExtractedMolecule,
