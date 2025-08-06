@@ -1,0 +1,17 @@
+{
+  "name": "spectrum",
+  "values": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "nested": {
+    "notes": [
+      "a",
+      "b",
+      "c"
+    ]
+  }
+}

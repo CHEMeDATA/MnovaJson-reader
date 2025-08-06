@@ -15,9 +15,138 @@ export class NMRspectrumObject {
 		if (param.demo) {
 			this.#loadDemoData(param.demo);
 		} else {
-			this.#validateParam(param);
+			this.#validateParam(param.creatorParam);
 			this.#loadImportedData(param, input);
 		}
+	}
+
+	encodeArrayFieldWithRequestArrayEncoding(obj = this.data, encodeVersion = 1) {
+		if (encodeVersion === 0) return obj;
+		if (obj && typeof obj === "object" && obj.requestArrayEncoding) {
+			// For every key, check if value is an array to encode
+			for (const key in obj) {
+				if (Array.isArray(obj[key])) {
+					if (encodeVersion === 1) {
+						obj[key] = this.#binaryEncodeArrayV1(
+							obj[key],
+							obj.requestArrayEncoding
+						);
+					}
+				}
+			}
+		}
+
+		// Recurse on nested objects anyway
+		for (const key in obj) {
+			if (typeof obj[key] === "object" && obj[key] !== null) {
+				this.encodeArrayFieldWithRequestArrayEncoding(obj[key]);
+			}
+		}
+
+		return obj;
+	}
+
+	// If changes the #binaryEncodeArrayV1 write a decodeArrayV1 for the new version and keep all decdeArray for compatibility
+	#binaryEncodeArrayV1(array, encoding) {
+		let typedArray;
+		switch (encoding) {
+			case "float64-hex":
+				typedArray = new Float64Array(array);
+				break;
+			case "float32-hex":
+				typedArray = new Float32Array(array);
+				break;
+			case "int32-hex":
+				typedArray = new Int32Array(array);
+				break;
+			case "int16-hex":
+				typedArray = new Int16Array(array);
+				break;
+			case "uint8-hex":
+				typedArray = new Uint8Array(array);
+				break;
+			default:
+				throw new Error("Unsupported encoding: " + encoding);
+		}
+
+		const byteArray = new Uint8Array(typedArray.buffer);
+		const hex = [...byteArray]
+			.map((b) => b.toString(16).padStart(2, "0"))
+			.join("");
+
+		return {
+			compressionVersion: 1, // version 1
+			encoding,
+			length: array.length,
+			data: hex,
+		};
+
+		// possible version 2 will need a decoder ...
+		/*
+		const byteArray = new Uint8Array(typedArray.buffer);
+
+		// ✅ Compress the binary using deflate
+		const compressed = pako.deflate(byteArray);
+
+		// Encode to base64 (safer than hex, and smaller)
+		const base64 = Buffer.from(compressed).toString("base64");
+		return {
+			compressionVersion: 2,
+			encoding,
+			length: array.length,
+			data: base64,
+			compression: "deflate", // new field check is here...
+		};
+		*/
+	}
+
+	decodeEncodedArrays(obj = this.data) {
+		if (Array.isArray(obj)) {
+			return obj.map(decodeEncodedArrays);
+		} else if (obj && typeof obj === "object") {
+			const keys = Object.keys(obj);
+			if (
+				keys.includes("encoding") &&
+				keys.includes("data") &&
+				keys.includes("length") &&
+				keys.includes("compressionVersion")
+			) {
+				if (obj.compressionVersion === 1) {
+					return this.#decodeArrayV1(obj.data, obj.encoding, obj.length);
+				}
+			}
+			for (const key in obj) {
+				obj[key] = this.decodeEncodedArrays(obj[key]);
+			}
+		}
+		return obj;
+	}
+
+	#decodeArrayV1(hexStr, encoding, length) {
+		const bytes = new Uint8Array(
+			hexStr.match(/.{1,2}/g).map((b) => parseInt(b, 16))
+		);
+		let typedArray;
+		switch (encoding) {
+			case "float64-hex":
+				typedArray = new Float64Array(bytes.buffer);
+				break;
+			case "float32-hex":
+				typedArray = new Float32Array(bytes.buffer);
+				break;
+			case "int32-hex":
+				typedArray = new Int32Array(bytes.buffer);
+				break;
+			case "int16-hex":
+				typedArray = new Int16Array(bytes.buffer);
+				break;
+			case "uint8-hex":
+				typedArray = new Uint8Array(bytes.buffer);
+				break;
+			default:
+				throw new Error("Unsupported encoding: " + encoding);
+		}
+		return Array.from(typedArray.slice(0, length));
 	}
 
 	#validateParam(param) {
@@ -64,7 +193,9 @@ export class NMRspectrumObject {
 	}
 
 	#loadImportedData(param, input) {
-		const importFunctionName = this.#buildImportFunctionName(param);
+		const importFunctionName = this.#buildImportFunctionName(
+			param.creatorParam
+		);
 
 		if (typeof this[importFunctionName] !== "function") {
 			throw new Error(
@@ -201,12 +332,18 @@ export class NMRspectrumObject {
 				},
 				{ min: Infinity, max: -Infinity }
 			);
+			// get spectrum
 			const values = input.map((d) => d.value);
+
+			// create final data object
 			this.data = {
 				values: values,
 				firstPoint: extremas_chemshift.max,
 				lastPoint: extremas_chemshift.min,
+				requestArrayEncoding: "float64-hex", // flag to binary encode values
 			};
+			this.conversionParameters = param;
+			// Specify here the version number of the specific object (needed to allow version update)
 			this.versionData = 1;
 		}
 	}
