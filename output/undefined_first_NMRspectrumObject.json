@@ -13,7 +13,7 @@
     "filterSpectraIndex": 0
   },
   "origin": {
-    "timeStampConversion": "2025-08-06T13:47:09.342Z",
+    "timeStampConversion": "no timestamp in test files",
     "nmrJsonFileName": "./data/santonin/santonin_spectrum.json",
     "nmrJsonFileName_sha256Hex": "6b49c81ca72401f10206087335127ec51fe65afd18c3feb147d75c0149eafef3"
   },

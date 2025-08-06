@@ -13,7 +13,7 @@
     "filterSpectraIndex": 0
   },
   "origin": {
-    "timeStampConversion": "2025-08-06T13:47:49.704Z",
+    "timeStampConversion": "no timestamp in test files",
     "nmrJsonFileName": "./testSpinFit_assigned/Vaniline_assigned_Set.spectra.json",
     "nmrJsonFileName_sha256Hex": "f6f4c2f689c9091e2aa1708b71846debb8cb28b3d290d14a49822218fa3c0ad1"
   },

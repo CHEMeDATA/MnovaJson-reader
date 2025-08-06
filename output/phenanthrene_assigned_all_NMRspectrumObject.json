@@ -14,7 +14,7 @@
       "filterSpectraIndex": 0
     },
     "origin": {
-      "timeStampConversion": "2025-08-06T13:47:15.120Z",
+      "timeStampConversion": "no timestamp in test files",
       "nmrJsonFileName": "./testSpinFit_assigned/phenanthrene_assigned_Set.spectra.json",
       "nmrJsonFileName_sha256Hex": "cb44084b5cea85f640f6e066f623af92f8213b06208e39e9676766bad5164bb2"
     },
@@ -56,7 +56,7 @@
       "filterSpectraIndex": 1
     },
     "origin": {
-      "timeStampConversion": "2025-08-06T13:47:15.120Z",
+      "timeStampConversion": "no timestamp in test files",
       "nmrJsonFileName": "./testSpinFit_assigned/phenanthrene_assigned_Set.spectra.json",
       "nmrJsonFileName_sha256Hex": "cb44084b5cea85f640f6e066f623af92f8213b06208e39e9676766bad5164bb2"
     },
@@ -98,7 +98,7 @@
       "filterSpectraIndex": 2
     },
     "origin": {
-      "timeStampConversion": "2025-08-06T13:47:15.120Z",
+      "timeStampConversion": "no timestamp in test files",
       "nmrJsonFileName": "./testSpinFit_assigned/phenanthrene_assigned_Set.spectra.json",
       "nmrJsonFileName_sha256Hex": "cb44084b5cea85f640f6e066f623af92f8213b06208e39e9676766bad5164bb2"
     },
@@ -140,7 +140,7 @@
       "filterSpectraIndex": 3
     },
     "origin": {
-      "timeStampConversion": "2025-08-06T13:47:15.120Z",
+      "timeStampConversion": "no timestamp in test files",
       "nmrJsonFileName": "./testSpinFit_assigned/phenanthrene_assigned_Set.spectra.json",
       "nmrJsonFileName_sha256Hex": "cb44084b5cea85f640f6e066f623af92f8213b06208e39e9676766bad5164bb2"
     },
@@ -182,7 +182,7 @@
       "filterSpectraIndex": 4
     },
     "origin": {
-      "timeStampConversion": "2025-08-06T13:47:15.120Z",
+      "timeStampConversion": "no timestamp in test files",
       "nmrJsonFileName": "./testSpinFit_assigned/phenanthrene_assigned_Set.spectra.json",
       "nmrJsonFileName_sha256Hex": "cb44084b5cea85f640f6e066f623af92f8213b06208e39e9676766bad5164bb2"
     },
@@ -224,7 +224,7 @@
       "filterSpectraIndex": 5
     },
     "origin": {
-      "timeStampConversion": "2025-08-06T13:47:15.120Z",
+      "timeStampConversion": "no timestamp in test files",
       "nmrJsonFileName": "./testSpinFit_assigned/phenanthrene_assigned_Set.spectra.json",
       "nmrJsonFileName_sha256Hex": "cb44084b5cea85f640f6e066f623af92f8213b06208e39e9676766bad5164bb2"
     },
@@ -266,7 +266,7 @@
       "filterSpectraIndex": 6
     },
     "origin": {
-      "timeStampConversion": "2025-08-06T13:47:15.120Z",
+      "timeStampConversion": "no timestamp in test files",
       "nmrJsonFileName": "./testSpinFit_assigned/phenanthrene_assigned_Set.spectra.json",
       "nmrJsonFileName_sha256Hex": "cb44084b5cea85f640f6e066f623af92f8213b06208e39e9676766bad5164bb2"
     },

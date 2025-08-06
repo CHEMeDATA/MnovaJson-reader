@@ -30,93 +30,126 @@ async function processDataLOCAL(
 	molecForFileName
 ) {
 	try {
-		const timestamp = new Date().toISOString();
-
+		//const timestamp = new Date().toISOString();
+		const timestamp = "no timestamp in test files";
 		{
-		const dataSpectrum = await readFile(fileNameSpectrum, "utf-8");
-		const nmrJsonFileName_sha256Hex = crypto
-			.createHash("sha256")
-			.update(dataSpectrum, "utf8")
-			.digest("hex");
-		const jsonSpectrum = JSON.parse(dataSpectrum);
+			const dataSpectrum = await readFile(fileNameSpectrum, "utf-8");
+			const nmrJsonFileName_sha256Hex = crypto
+				.createHash("sha256")
+				.update(dataSpectrum, "utf8")
+				.digest("hex");
+			const jsonSpectrum = JSON.parse(dataSpectrum);
 
-
-		const originNMR = {
-			timeStampConversion: timestamp,
-			nmrJsonFileName: fileNameSpectrum,
-			nmrJsonFileName_sha256Hex: nmrJsonFileName_sha256Hex,
-		};
-
-		// create NMRspectrumObject objects
-		const arrayOf_NMRspectrumObject = [];
-		for (let i = 0; i < 100000; i++) {
-			const param = {
-				creatorParam: {
-					editor: "djeanner",
-					version: "1",
-					source: "MnovaJson",
-					id: "none",
-				},
-				filterSpectra: "firstFirstLastOthers",
-				filterSpectraIndex: i,
+			const originNMR = {
+				timeStampConversion: timestamp,
+				nmrJsonFileName: fileNameSpectrum,
+				nmrJsonFileName_sha256Hex: nmrJsonFileName_sha256Hex,
 			};
-			const lastObj = new NMRspectrumObject(param, {
-				jsonSpectrum: jsonSpectrum,
-				jsonMolecule: {},
-				origin: originNMR,
-			});
-			if (
-				!lastObj ||
-				!lastObj.data ||
-				!lastObj.data.values ||
-				lastObj.data.values.length === 0
-			) {
-				break;
-			}
-			//lastObj.encodeArrayFieldWithRequestArrayEncoding(lastObj, 0);
-			lastObj.encodeArrayFieldWithRequestArrayEncoding(lastObj, 1); // default
-			// lastObj.decodeEncodedArrays();
 
-			arrayOf_NMRspectrumObject.push(lastObj);
+			// create NMRspectrumObject objects
+			const arrayOf_NMRspectrumObject = [];
+			for (let i = 0; i < 100000; i++) {
+				const param = {
+					creatorParam: {
+						editor: "djeanner",
+						version: "1",
+						source: "MnovaJson",
+						id: "none",
+					},
+					filterSpectra: "firstFirstLastOthers",
+					filterSpectraIndex: i,
+				};
+				const lastObj = new NMRspectrumObject(param, {
+					jsonSpectrum: jsonSpectrum,
+					jsonMolecule: {},
+					origin: originNMR,
+				});
+				if (
+					!lastObj ||
+					!lastObj.data ||
+					!lastObj.data.values ||
+					lastObj.data.values.length === 0
+				) {
+					break;
+				}
+				//lastObj.encodeArrayFieldWithRequestArrayEncoding(lastObj, 0);
+				lastObj.encodeArrayFieldWithRequestArrayEncoding(lastObj, 1); // default
+				// lastObj.decodeEncodedArrays();
+
+				arrayOf_NMRspectrumObject.push(lastObj);
+			}
+
+			// save arrays of objects
+			await saveNMRspectrumObjectToFile(
+				`./output/${molecForFileName}_all_NMRspectrumObject.json`,
+				arrayOf_NMRspectrumObject
+			);
+
+			// save first object
+			await saveNMRspectrumObjectToFile(
+				`./output/${molecForFileName}_first_NMRspectrumObject.json`,
+				arrayOf_NMRspectrumObject[0]
+			);
 		}
 
-		// save arrays of objects
-		await saveNMRspectrumObjectToFile(
-			`./output/${molecForFileName}_all_NMRspectrumObject.json`,
-			arrayOf_NMRspectrumObject
-		);
-
-		// save first object
-		await saveNMRspectrumObjectToFile(
-			`./output/${molecForFileName}_first_NMRspectrumObject.json`,
-			arrayOf_NMRspectrumObject[0]
-		);
-	}
-
-	
-	const dataSpectrum = await readFile(fileNameSpectrum, "utf-8");
-		const nmrJsonFileName_sha256Hex = crypto
+		const dataSpectrum = await readFile(fileNameSpectrum, "utf-8");
+		const nmrJsonFile_sha256Hex = crypto
 			.createHash("sha256")
 			.update(dataSpectrum, "utf8")
 			.digest("hex");
 		const jsonSpectrum = JSON.parse(dataSpectrum);
 
 		const dataMolecule = await readFile(fileNameData, "utf-8");
-		const moleculeJsonFileName_sha256Hex = crypto
+		const moleculeJsonFile_sha256Hex = crypto
 			.createHash("sha256")
 			.update(dataMolecule, "utf8")
 			.digest("hex");
 		const jsonMolecule = JSON.parse(dataMolecule);
 
+		var jsonDataInitial = {};
+		var parallelDataFileName_sha256Hex = "";
+		if (fileResulstSF !== "") {
+			const tmp11 = await readFile(fileResulstSF, "utf-8");
+			jsonDataInitial = JSON.parse(tmp11);
+			parallelDataFileName_sha256Hex = crypto
+				.createHash("sha256")
+				.update(tmp11, "utf8")
+				.digest("hex");
+		}
+
 		// prepare origin
 
-		const originMolecule_NMR = {
+		const originParalelCoordNMRspectra = {
 			timeStampConversion: timestamp,
 			nmrJsonFileName: fileNameSpectrum,
-			nmrJsonFileName_sha256Hex: nmrJsonFileName_sha256Hex,
+			nmrJsonFile_sha256Hex: nmrJsonFile_sha256Hex,
 			moleculeJsonFileName: fileNameData,
-			moleculeJsonFileName_sha256Hex: moleculeJsonFileName_sha256Hex,
+			moleculeJsonFile_sha256Hex: moleculeJsonFile_sha256Hex,
+			parallelDataJsonFileName: fileResulstSF,
+			parallelDataJsonFile_sha256Hex: parallelDataFileName_sha256Hex,
 		};
+
+		const param = {
+			creatorParam: {
+				editor: "djeanner",
+				version: "1",
+				source: "MnovaJson",
+				id: "none",
+			},
+		};
+
+		const paralelCoordNMRspectra = new ParalelCoordNMRspectra(param, {
+			jsonSpectrum: jsonSpectrum,
+			jsonMolecule: jsonMolecule,
+			jsonDataInitial: jsonDataInitial,
+			origin: originParalelCoordNMRspectra,
+		});
+
+		// save arrays of objects
+		await saveNMRspectrumObjectToFile(
+			`./output/${molecForFileName}_ParalelCoordNMRspectra.json`,
+			paralelCoordNMRspectra
+		);
 
 		const fieldsToKeepMolecule = [
 			"$mnova_schema",
@@ -207,6 +240,7 @@ async function processDataLOCAL(
 		console.log("TTPo spectrumDataAllChopped", spectrumDataAllChopped);
 
 		var jGraphObjDataList = [];
+
 		if (fileResulstSF !== "") {
 			const tmp11 = await readFile(fileResulstSF, "utf-8");
 			const jsonDataInitial = JSON.parse(tmp11);
@@ -257,28 +291,6 @@ async function processDataLOCAL(
 			obj.originScript = "assignments using ingestSpectrumRegions";
 			jGraphObjDataList.push(obj);
 		}
-
-		const param = {
-			creatorParam: {
-				editor: "djeanner",
-				version: "1",
-				source: "MnovaJson",
-				id: "none",
-			},
-		};
-		const paralelCoordNMRspectra = new ParalelCoordNMRspectra(param, {
-			jGraphObjDataList: jGraphObjDataList,
-			allObjectsExtractedMolecule: allObjectsExtractedMolecule,
-			spectrumDataAllChopped: spectrumDataAllChopped,
-			regionsData: regionsData,
-			origin: originMolecule_NMR,
-		});
-
-		// save arrays of objects
-		await saveNMRspectrumObjectToFile(
-			`./output/${molecForFileName}_ParalelCoordNMRspectra.json`,
-			paralelCoordNMRspectra
-		);
 
 		return {
 			jGraphObjDataList,

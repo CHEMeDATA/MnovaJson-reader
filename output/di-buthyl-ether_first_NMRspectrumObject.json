@@ -13,7 +13,7 @@
     "filterSpectraIndex": 0
   },
   "origin": {
-    "timeStampConversion": "2025-08-06T13:47:42.000Z",
+    "timeStampConversion": "no timestamp in test files",
     "nmrJsonFileName": "./testSpinFit_assigned/di-buthyl-ether_Set.spectra.json",
     "nmrJsonFileName_sha256Hex": "38a634043948d2a71e65e33165f9137f3e30172ad416c244bde1c5ae1101f212"
   },

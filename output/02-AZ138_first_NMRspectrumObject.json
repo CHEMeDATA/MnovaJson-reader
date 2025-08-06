@@ -13,7 +13,7 @@
     "filterSpectraIndex": 0
   },
   "origin": {
-    "timeStampConversion": "2025-08-06T13:47:33.840Z",
+    "timeStampConversion": "no timestamp in test files",
     "nmrJsonFileName": "./testSpinFit_assigned/02-AZ138_Set.spectra.json",
     "nmrJsonFileName_sha256Hex": "2fef281477033731bb15bf4ec023fad2bb5b76299060ad23896666a3671d2bbd"
   },

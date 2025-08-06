@@ -13,7 +13,7 @@
     "filterSpectraIndex": 0
   },
   "origin": {
-    "timeStampConversion": "2025-08-06T13:47:44.286Z",
+    "timeStampConversion": "no timestamp in test files",
     "nmrJsonFileName": "./testSpinFit_assigned/Ibuprofen_slow_Set.spectra.json",
     "nmrJsonFileName_sha256Hex": "6f70c69346a060d61738313160fca2ba42340b98308335696d86baf28a814f73"
   },

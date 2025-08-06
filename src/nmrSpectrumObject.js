@@ -6,9 +6,10 @@ import { getRegionsWithSignal } from "./mnovaJsonReader.js";
 import { filterOutPointsOutsideRegions } from "./mnovaJsonReader.js";
 import { ingestMoleculeObject } from "./mnovaJsonReader.js";
 import { ingestSpectrumRegions } from "./mnovaJsonReader.js";
+import { processSf } from "./mnovaJsonReader.js";
 
-class  ObjectBase {
-constructor(param, input, name) {
+class ObjectBase {
+	constructor(param, input, name) {
 		this.verbose = 0;
 		this.name = name;
 		if (param.demo) {
@@ -198,20 +199,19 @@ constructor(param, input, name) {
 		this[importFunctionName](param, input);
 		if (this.verbose > 1) console.log(this.name + ".data:", this.data);
 	}
-
 }
 export class NMRspectrumObject extends ObjectBase {
 	constructor(param, input) {
 		super(param, input, "NMRspectrumObject");
-		 // optionally override again
+		// optionally override again
 		this.verbose = 0;
 	}
-	
+
 	_handleLoadDemoData(numberOfSpectra) {
-		this.#loadDemoData(numberOfSpectra);
+		this._loadDemoData(numberOfSpectra);
 	}
 
-	#loadDemoData(numberOfSpectra) {
+	_loadDemoData(numberOfSpectra) {
 		const values = Array.from({ length: 16000 }, (_, i) => {
 			return (i + Math.random() * 2000.0 - 1000.0) / 1000.0;
 		});
@@ -359,7 +359,6 @@ export class NMRspectrumObject extends ObjectBase {
 				lastPoint: extremas_chemshift.min,
 				requestArrayEncoding: "float64-hex", // flag to binary encode values
 			};
-			
 		}
 		if (this.name == "ParalelCoordNMRspectra") {
 			// Specify here the version number of the specific object (needed to allow version update)
@@ -369,14 +368,159 @@ export class NMRspectrumObject extends ObjectBase {
 				this.data = {};
 				return;
 			}*/
-			
+
 			// create final data object
+
+			const jsonSpectrum = dataInput.jsonSpectrum;
+			const jsonMolecule = dataInput.jsonMolecule;
+			const jsonDataInitial = dataInput.jsonDataInitial;
+
+			const fieldsToKeepMolecule = [
+				"$mnova_schema",
+				"assignments",
+				"predictions",
+				"parameters",
+				"bonds",
+				"atoms",
+			];
+
+			const allObjectsExtractedMolecule = processMnovaJsonMolecule(
+				jsonMolecule,
+				"molecule",
+				fieldsToKeepMolecule
+			);
+
+			if (typeof allObjectsExtractedMolecule === "undefined") {
+				console.error(
+					"allObjectsExtractedMolecule",
+					allObjectsExtractedMolecule
+				);
+				console.error("fileNameData", fileNameData);
+			}
+
+			const fieldsToKeepSpectrum = [
+				"data",
+				"raw_data",
+				"multiplets",
+				"peaks",
+				"processing",
+				"parameters",
+				"$mnova_schema",
+			];
+
+			const allSpectraObjectsExtracted = processMnovaJsonSpectrum(
+				jsonSpectrum,
+				"spectra",
+				fieldsToKeepSpectrum
+			);
+			const storeAll = false;
+			var spectrumDataAll = [];
+			if (storeAll) {
+				for (var i = 0; i < allSpectraObjectsExtracted.length; i++) {
+					for (var i2 = 0; i2 < allSpectraObjectsExtracted[i].length; i2++) {
+						spectrumDataAll.push(
+							extractSpectrumData(allSpectraObjectsExtracted[i][i2], "data")
+						);
+					}
+				}
+			} else {
+				// First the reference spectrum
+				const spectrumData = extractSpectrumData(
+					allSpectraObjectsExtracted[0][0],
+					"data"
+				);
+				// Add from all other spectra only the last one
+				spectrumDataAll.push(spectrumData);
+				for (var i = 0; i < allSpectraObjectsExtracted.length; i++) {
+					const lastItem = allSpectraObjectsExtracted[i].length - 1;
+					spectrumDataAll.push(
+						extractSpectrumData(allSpectraObjectsExtracted[i][lastItem], "data")
+					);
+				}
+			}
+
+			if (false) {
+				// demo creation spectrum
+				spectrumDataAll.push([
+					{ chemShift: 7.305, value: 10000 },
+					{ chemShift: 7.3, value: 3000000 },
+					{ chemShift: 7.295, value: 10000 },
+					{ chemShift: 7.29, value: 80000 },
+				]);
+			}
+
+			const marginPPM = 0.02;
+			const minSpaceBetweenRegions = 0.05;
+			const regionsData = getRegionsWithSignal(
+				spectrumDataAll[0],
+				minSpaceBetweenRegions,
+				marginPPM
+			);
+
+			console.log("TTPo spectrumDataAll", spectrumDataAll);
+			console.log("TTPo regionsData", regionsData);
+			const spectrumDataAllChopped = filterOutPointsOutsideRegions(
+				spectrumDataAll,
+				regionsData
+			);
+			//const spectrumDataAllChopped = (spectrumDataAll);
+			console.log("TTPo spectrumDataAllChopped", spectrumDataAllChopped);
+
+			var jGraphObjDataList = [];
+
+			//if (fileResulstSF !== "") {
+			//	const tmp11 = await readFile(fileResulstSF, "utf-8");
+			//	const jsonDataInitial = JSON.parse(tmp11);
+			if (jsonDataInitial && Object.keys(jsonDataInitial).length > 0) {
+				const obj3 = processSf(jsonDataInitial, "variableSet");
+				if (obj3) {
+					if (obj3.data) {
+						if (obj3.data.length > 0) {
+							obj3.originScript = "variableSet using processSf";
+							jGraphObjDataList.push(obj3);
+						}
+					}
+				}
+
+				const obj2 = processSf(jsonDataInitial, "couplingNetwork");
+				console.log("jGraphObjZ 2 ", obj2);
+				if (obj2) {
+					if (obj2.data) {
+						if (obj2.data.length > 0) {
+							obj2.originScript = "couplingNetwork using processSf";
+							jGraphObjDataList.push(obj2);
+						}
+					}
+				}
+			}
+
+			if ("assignments" in allObjectsExtractedMolecule) {
+				const obj = ingestMoleculeObject(
+					allObjectsExtractedMolecule,
+					allSpectraObjectsExtracted[0][0].multiplets
+				);
+
+				obj.originScript = "assignments using ingestMoleculeObject";
+				jGraphObjDataList.push(obj);
+			}
+
+			// this is not done or finished....
+			if ("assignments" in allObjectsExtractedMolecule) {
+				const obj = ingestSpectrumRegions(
+					allObjectsExtractedMolecule,
+					allSpectraObjectsExtracted[0][0].multiplets
+				);
+
+				obj.originScript = "assignments using ingestSpectrumRegions";
+				jGraphObjDataList.push(obj);
+			}
+
 			this.data = {
-				jGraphObjDataList: dataInput.jGraphObjDataList,
-				allObjectsExtractedMolecule: dataInput.allObjectsExtractedMolecule,
-				spectrumDataAllChopped: dataInput.spectrumDataAllChopped,
-				regionsData: dataInput.regionsData,
-				
+				jGraphObjDataList: jGraphObjDataList,
+				allObjectsExtractedMolecule: allObjectsExtractedMolecule,
+				spectrumDataAllChopped: spectrumDataAllChopped,
+				regionsData: regionsData,
+
 				//requestArrayEncoding: "float64-hex", // flag to binary encode values
 			};
 		}
@@ -386,15 +530,15 @@ export class NMRspectrumObject extends ObjectBase {
 export class ParalelCoordNMRspectra extends ObjectBase {
 	constructor(param, input) {
 		super(param, input, "ParalelCoordNMRspectra");
-		 // optionally override again
+		// optionally override again
 		this.verbose = 0;
 	}
-	
+
 	_handleLoadDemoData(numberOfSpectra) {
-		this.#loadDemoData(numberOfSpectra);
+		this._loadDemoData(numberOfSpectra);
 	}
 
-	#loadDemoData(numberOfSpectra) {
+	_loadDemoData(numberOfSpectra) {
 		const values = Array.from({ length: 16000 }, (_, i) => {
 			return (i + Math.random() * 2000.0 - 1000.0) / 1000.0;
 		});
@@ -542,7 +686,6 @@ export class ParalelCoordNMRspectra extends ObjectBase {
 				lastPoint: extremas_chemshift.min,
 				requestArrayEncoding: "float64-hex", // flag to binary encode values
 			};
-			
 		}
 		if (this.name == "ParalelCoordNMRspectra") {
 			// Specify here the version number of the specific object (needed to allow version update)
@@ -552,14 +695,159 @@ export class ParalelCoordNMRspectra extends ObjectBase {
 				this.data = {};
 				return;
 			}*/
-			
+
 			// create final data object
+
+			const jsonSpectrum = dataInput.jsonSpectrum;
+			const jsonMolecule = dataInput.jsonMolecule;
+			const jsonDataInitial = dataInput.jsonDataInitial;
+
+			const fieldsToKeepMolecule = [
+				"$mnova_schema",
+				"assignments",
+				"predictions",
+				"parameters",
+				"bonds",
+				"atoms",
+			];
+
+			const allObjectsExtractedMolecule = processMnovaJsonMolecule(
+				jsonMolecule,
+				"molecule",
+				fieldsToKeepMolecule
+			);
+
+			if (typeof allObjectsExtractedMolecule === "undefined") {
+				console.error(
+					"allObjectsExtractedMolecule",
+					allObjectsExtractedMolecule
+				);
+				console.error("fileNameData", fileNameData);
+			}
+
+			const fieldsToKeepSpectrum = [
+				"data",
+				"raw_data",
+				"multiplets",
+				"peaks",
+				"processing",
+				"parameters",
+				"$mnova_schema",
+			];
+
+			const allSpectraObjectsExtracted = processMnovaJsonSpectrum(
+				jsonSpectrum,
+				"spectra",
+				fieldsToKeepSpectrum
+			);
+			const storeAll = false;
+			var spectrumDataAll = [];
+			if (storeAll) {
+				for (var i = 0; i < allSpectraObjectsExtracted.length; i++) {
+					for (var i2 = 0; i2 < allSpectraObjectsExtracted[i].length; i2++) {
+						spectrumDataAll.push(
+							extractSpectrumData(allSpectraObjectsExtracted[i][i2], "data")
+						);
+					}
+				}
+			} else {
+				// First the reference spectrum
+				const spectrumData = extractSpectrumData(
+					allSpectraObjectsExtracted[0][0],
+					"data"
+				);
+				// Add from all other spectra only the last one
+				spectrumDataAll.push(spectrumData);
+				for (var i = 0; i < allSpectraObjectsExtracted.length; i++) {
+					const lastItem = allSpectraObjectsExtracted[i].length - 1;
+					spectrumDataAll.push(
+						extractSpectrumData(allSpectraObjectsExtracted[i][lastItem], "data")
+					);
+				}
+			}
+
+			if (false) {
+				// demo creation spectrum
+				spectrumDataAll.push([
+					{ chemShift: 7.305, value: 10000 },
+					{ chemShift: 7.3, value: 3000000 },
+					{ chemShift: 7.295, value: 10000 },
+					{ chemShift: 7.29, value: 80000 },
+				]);
+			}
+
+			const marginPPM = 0.02;
+			const minSpaceBetweenRegions = 0.05;
+			const regionsData = getRegionsWithSignal(
+				spectrumDataAll[0],
+				minSpaceBetweenRegions,
+				marginPPM
+			);
+
+			console.log("TTPo spectrumDataAll", spectrumDataAll);
+			console.log("TTPo regionsData", regionsData);
+			const spectrumDataAllChopped = filterOutPointsOutsideRegions(
+				spectrumDataAll,
+				regionsData
+			);
+			//const spectrumDataAllChopped = (spectrumDataAll);
+			console.log("TTPo spectrumDataAllChopped", spectrumDataAllChopped);
+
+			var jGraphObjDataList = [];
+
+			//if (fileResulstSF !== "") {
+			//	const tmp11 = await readFile(fileResulstSF, "utf-8");
+			//	const jsonDataInitial = JSON.parse(tmp11);
+			if (jsonDataInitial && Object.keys(jsonDataInitial).length > 0) {
+				const obj3 = processSf(jsonDataInitial, "variableSet");
+				if (obj3) {
+					if (obj3.data) {
+						if (obj3.data.length > 0) {
+							obj3.originScript = "variableSet using processSf";
+							jGraphObjDataList.push(obj3);
+						}
+					}
+				}
+
+				const obj2 = processSf(jsonDataInitial, "couplingNetwork");
+				console.log("jGraphObjZ 2 ", obj2);
+				if (obj2) {
+					if (obj2.data) {
+						if (obj2.data.length > 0) {
+							obj2.originScript = "couplingNetwork using processSf";
+							jGraphObjDataList.push(obj2);
+						}
+					}
+				}
+			}
+
+			if ("assignments" in allObjectsExtractedMolecule) {
+				const obj = ingestMoleculeObject(
+					allObjectsExtractedMolecule,
+					allSpectraObjectsExtracted[0][0].multiplets
+				);
+
+				obj.originScript = "assignments using ingestMoleculeObject";
+				jGraphObjDataList.push(obj);
+			}
+
+			// this is not done or finished....
+			if ("assignments" in allObjectsExtractedMolecule) {
+				const obj = ingestSpectrumRegions(
+					allObjectsExtractedMolecule,
+					allSpectraObjectsExtracted[0][0].multiplets
+				);
+
+				obj.originScript = "assignments using ingestSpectrumRegions";
+				jGraphObjDataList.push(obj);
+			}
+
 			this.data = {
-				jGraphObjDataList: dataInput.jGraphObjDataList,
-				allObjectsExtractedMolecule: dataInput.allObjectsExtractedMolecule,
-				spectrumDataAllChopped: dataInput.spectrumDataAllChopped,
-				regionsData: dataInput.regionsData,
-				
+				jGraphObjDataList: jGraphObjDataList,
+				allObjectsExtractedMolecule: allObjectsExtractedMolecule,
+				spectrumDataAllChopped: spectrumDataAllChopped,
+				regionsData: regionsData,
+
 				//requestArrayEncoding: "float64-hex", // flag to binary encode values
 			};
 		}
