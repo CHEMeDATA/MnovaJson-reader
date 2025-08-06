@@ -7,19 +7,17 @@ import { filterOutPointsOutsideRegions } from "./mnovaJsonReader.js";
 import { ingestMoleculeObject } from "./mnovaJsonReader.js";
 import { ingestSpectrumRegions } from "./mnovaJsonReader.js";
 
-export class NMRspectrumObject {
-	constructor(param, input) {
-		this.verbose = 2;
-		this.name = "NMRspectrumObject";
-
+class  ObjectBase {
+constructor(param, input, name) {
+		this.verbose = 0;
+		this.name = name;
 		if (param.demo) {
-			this.#loadDemoData(param.demo);
+			this._handleLoadDemoData(param.demo);
 		} else {
-			this.#validateParam(param.creatorParam);
-			this.#loadImportedData(param, input);
+			this._validateParam(param.creatorParam);
+			this._loadImportedData(param, input);
 		}
 	}
-
 	encodeArrayFieldWithRequestArrayEncoding(obj = this.data, encodeVersion = 1) {
 		if (encodeVersion === 0) return obj;
 		if (obj && typeof obj === "object" && obj.requestArrayEncoding) {
@@ -27,7 +25,7 @@ export class NMRspectrumObject {
 			for (const key in obj) {
 				if (Array.isArray(obj[key])) {
 					if (encodeVersion === 1) {
-						obj[key] = this.#binaryEncodeArrayV1(
+						obj[key] = this._binaryEncodeArrayV1(
 							obj[key],
 							obj.requestArrayEncoding
 						);
@@ -46,8 +44,8 @@ export class NMRspectrumObject {
 		return obj;
 	}
 
-	// If changes the #binaryEncodeArrayV1 write a decodeArrayV1 for the new version and keep all decdeArray for compatibility
-	#binaryEncodeArrayV1(array, encoding) {
+	// If changes the binaryEncodeArrayV1 write a decodeArrayV1 for the new version and keep all decdeArray for compatibility
+	_binaryEncodeArrayV1(array, encoding) {
 		let typedArray;
 		switch (encoding) {
 			case "float64-hex":
@@ -112,7 +110,7 @@ export class NMRspectrumObject {
 				keys.includes("compressionVersion")
 			) {
 				if (obj.compressionVersion === 1) {
-					return this.#decodeArrayV1(obj.data, obj.encoding, obj.length);
+					return this.decodeArrayV1(obj.data, obj.encoding, obj.length);
 				}
 			}
 			for (const key in obj) {
@@ -122,7 +120,7 @@ export class NMRspectrumObject {
 		return obj;
 	}
 
-	#decodeArrayV1(hexStr, encoding, length) {
+	_decodeArrayV1(hexStr, encoding, length) {
 		const bytes = new Uint8Array(
 			hexStr.match(/.{1,2}/g).map((b) => parseInt(b, 16))
 		);
@@ -149,7 +147,7 @@ export class NMRspectrumObject {
 		return Array.from(typedArray.slice(0, length));
 	}
 
-	#validateParam(param) {
+	_validateParam(param) {
 		if (!param || typeof param !== "object") {
 			throw new Error("param must be an object");
 		}
@@ -167,18 +165,11 @@ export class NMRspectrumObject {
 		}
 	}
 
-	#loadDemoData(numberOfSpectra) {
-		const values = Array.from({ length: 16000 }, (_, i) => {
-			return (i + Math.random() * 2000.0 - 1000.0) / 1000.0;
-		});
-		this.data = {
-			values: values,
-			firstPoint: 11.0,
-			lastPoint: -1.0,
-		};
+	_handleLoadDemoData(numberOfSpectra) {
+		throw new Error("_handleLoadDemoData() must be implemented by subclass");
 	}
 
-	#buildImportFunctionName(param) {
+	_buildImportFunctionName(param) {
 		return (
 			"import" +
 			"_Editor" +
@@ -192,8 +183,8 @@ export class NMRspectrumObject {
 		);
 	}
 
-	#loadImportedData(param, input) {
-		const importFunctionName = this.#buildImportFunctionName(
+	_loadImportedData(param, input) {
+		const importFunctionName = this._buildImportFunctionName(
 			param.creatorParam
 		);
 
@@ -208,6 +199,29 @@ export class NMRspectrumObject {
 		if (this.verbose > 1) console.log(this.name + ".data:", this.data);
 	}
 
+}
+export class NMRspectrumObject extends ObjectBase {
+	constructor(param, input) {
+		super(param, input, "NMRspectrumObject");
+		 // optionally override again
+		this.verbose = 0;
+	}
+	
+	_handleLoadDemoData(numberOfSpectra) {
+		this.#loadDemoData(numberOfSpectra);
+	}
+
+	#loadDemoData(numberOfSpectra) {
+		const values = Array.from({ length: 16000 }, (_, i) => {
+			return (i + Math.random() * 2000.0 - 1000.0) / 1000.0;
+		});
+		this.data = {
+			values: values,
+			firstPoint: 11.0,
+			lastPoint: -1.0,
+		};
+	}
+
 	// Example import method // Should not minimized
 	import_Editordjeanner_Version1_SourceMnovaJson_IDnone(param, dataInput) {
 		if (!dataInput.origin) {
@@ -216,8 +230,11 @@ export class NMRspectrumObject {
 			// process.exit(1);
 		}
 		this.origin = dataInput.origin;
+		this.conversionParameters = param;
 
 		if (this.name == "NMRspectrumObject") {
+			// Specify here the version number of the specific object (needed to allow version update)
+			this.versionData = 1;
 			if (!dataInput.jsonSpectrum) {
 				console.error("No jsonSpectrum in dataInput", dataInput);
 				this.data = {};
@@ -342,9 +359,209 @@ export class NMRspectrumObject {
 				lastPoint: extremas_chemshift.min,
 				requestArrayEncoding: "float64-hex", // flag to binary encode values
 			};
-			this.conversionParameters = param;
+			
+		}
+		if (this.name == "ParalelCoordNMRspectra") {
 			// Specify here the version number of the specific object (needed to allow version update)
 			this.versionData = 1;
+			/*if (!dataInput.jsonSpectrum) {
+				console.error("No jsonSpectrum in dataInput", dataInput);
+				this.data = {};
+				return;
+			}*/
+			
+			// create final data object
+			this.data = {
+				jGraphObjDataList: dataInput.jGraphObjDataList,
+				allObjectsExtractedMolecule: dataInput.allObjectsExtractedMolecule,
+				spectrumDataAllChopped: dataInput.spectrumDataAllChopped,
+				regionsData: dataInput.regionsData,
+				
+				//requestArrayEncoding: "float64-hex", // flag to binary encode values
+			};
+		}
+	}
+}
+
+export class ParalelCoordNMRspectra extends ObjectBase {
+	constructor(param, input) {
+		super(param, input, "ParalelCoordNMRspectra");
+		 // optionally override again
+		this.verbose = 0;
+	}
+	
+	_handleLoadDemoData(numberOfSpectra) {
+		this.#loadDemoData(numberOfSpectra);
+	}
+
+	#loadDemoData(numberOfSpectra) {
+		const values = Array.from({ length: 16000 }, (_, i) => {
+			return (i + Math.random() * 2000.0 - 1000.0) / 1000.0;
+		});
+		this.data = {
+			values: values,
+			firstPoint: 11.0,
+			lastPoint: -1.0,
+		};
+	}
+
+	// Example import method // Should not minimized
+	import_Editordjeanner_Version1_SourceMnovaJson_IDnone(param, dataInput) {
+		if (!dataInput.origin) {
+			console.error("No origin data in dataInput", dataInput);
+			this.data = {};
+			// process.exit(1);
+		}
+		this.origin = dataInput.origin;
+		this.conversionParameters = param;
+
+		if (this.name == "NMRspectrumObject") {
+			// Specify here the version number of the specific object (needed to allow version update)
+			this.versionData = 1;
+			if (!dataInput.jsonSpectrum) {
+				console.error("No jsonSpectrum in dataInput", dataInput);
+				this.data = {};
+				return;
+			}
+			const jsonSpectrum = dataInput.jsonSpectrum;
+			const fieldsToKeepSpectrum = [
+				"data",
+				"raw_data",
+				"multiplets",
+				"peaks",
+				"processing",
+				"parameters",
+				"$mnova_schema",
+			];
+
+			const allSpectraObjectsExtracted = processMnovaJsonSpectrum(
+				jsonSpectrum,
+				"spectra",
+				fieldsToKeepSpectrum
+			);
+
+			if (typeof allSpectraObjectsExtracted === "undefined") {
+				console.error("allSpectraObjectsExtracted", allSpectraObjectsExtracted);
+				console.error("fileNameSpectrum", fileNameSpectrum);
+			}
+
+			if (this.verbose > 1) {
+				var total = 0;
+				for (var i = 0; i < allSpectraObjectsExtracted.length; i++) {
+					total += allSpectraObjectsExtracted[i].length;
+					if (this.verbose > 1)
+						console.log(
+							">>>>>>>>> ",
+							" spectrum set ",
+							i + 1,
+							":",
+							allSpectraObjectsExtracted[i].length,
+							"spectra."
+						);
+				}
+				if (this.verbose > 1)
+					console.log(
+						">>>>>>>>>>>>>>>>>>>>>>>>>> ",
+						" total :",
+						total,
+						"spectra."
+					);
+			}
+
+			var input = extractSpectrumData(allSpectraObjectsExtracted[0][0], "data");
+			if (param) {
+				if (param.filterSpectra) {
+					if (param.filterSpectra == "onlyFirst") {
+						input = extractSpectrumData(
+							allSpectraObjectsExtracted[0][0],
+							"data"
+						);
+					}
+					if (param.filterSpectra == "firstFirstLastOthers") {
+						var index = 0;
+						if (param.filterSpectraIndex) {
+							index = param.filterSpectraIndex;
+						}
+						if (index == 0) {
+							// first of first spectrum (experimental spectrum)
+							input = extractSpectrumData(
+								allSpectraObjectsExtracted[0][0],
+								"data"
+							);
+						} else {
+							// last (simulation) of other (non first)
+
+							const redindex = index - 1;
+							if (this.verbose > 1) console.log(" redindex :", redindex);
+							if (redindex >= allSpectraObjectsExtracted.length) {
+								this.data = {};
+								return; // normal when not knowning until where go.
+							}
+							const lastItem = allSpectraObjectsExtracted[redindex].length - 1;
+							input = extractSpectrumData(
+								allSpectraObjectsExtracted[redindex][lastItem],
+								"data"
+							);
+						}
+					}
+					if (param.filterSpectra == "any") {
+						var index = 0;
+						var index2 = 0;
+						if (param.filterSpectraIndex) {
+							index = param.filterSpectraIndex;
+						}
+						if (param.filterSpectraIndex2) {
+							index2 = param.filterSpectraIndex2;
+						}
+						input = extractSpectrumData(
+							allSpectraObjectsExtracted[index][index2],
+							"data"
+						);
+					}
+				}
+			}
+			// get min and max of chemShift (the scale)
+			const extremas_chemshift = input.reduce(
+				(acc, item) => {
+					const value = item["chemShift"];
+					if (typeof value === "number" && !isNaN(value)) {
+						if (value < acc.min) acc.min = value;
+						if (value > acc.max) acc.max = value;
+					}
+					return acc;
+				},
+				{ min: Infinity, max: -Infinity }
+			);
+			// get spectrum
+			const values = input.map((d) => d.value);
+
+			// create final data object
+			this.data = {
+				values: values,
+				firstPoint: extremas_chemshift.max,
+				lastPoint: extremas_chemshift.min,
+				requestArrayEncoding: "float64-hex", // flag to binary encode values
+			};
+			
+		}
+		if (this.name == "ParalelCoordNMRspectra") {
+			// Specify here the version number of the specific object (needed to allow version update)
+			this.versionData = 1;
+			/*if (!dataInput.jsonSpectrum) {
+				console.error("No jsonSpectrum in dataInput", dataInput);
+				this.data = {};
+				return;
+			}*/
+			
+			// create final data object
+			this.data = {
+				jGraphObjDataList: dataInput.jGraphObjDataList,
+				allObjectsExtractedMolecule: dataInput.allObjectsExtractedMolecule,
+				spectrumDataAllChopped: dataInput.spectrumDataAllChopped,
+				regionsData: dataInput.regionsData,
+				
+				//requestArrayEncoding: "float64-hex", // flag to binary encode values
+			};
 		}
 	}
 }

@@ -14,6 +14,7 @@ import { ingestMoleculeObject } from "./mnovaJsonReader.js";
 import { ingestSpectrumRegions } from "./mnovaJsonReader.js";
 
 import { NMRspectrumObject } from "../src/nmrSpectrumObject.js";
+import { ParalelCoordNMRspectra } from "../src/nmrSpectrumObject.js";
 
 async function saveNMRspectrumObjectToFile(filePath, spectrumObject) {
 	const jsonString = JSON.stringify(spectrumObject, null, 2);
@@ -29,6 +30,9 @@ async function processDataLOCAL(
 	molecForFileName
 ) {
 	try {
+		const timestamp = new Date().toISOString();
+
+		{
 		const dataSpectrum = await readFile(fileNameSpectrum, "utf-8");
 		const nmrJsonFileName_sha256Hex = crypto
 			.createHash("sha256")
@@ -36,13 +40,12 @@ async function processDataLOCAL(
 			.digest("hex");
 		const jsonSpectrum = JSON.parse(dataSpectrum);
 
-const originNMR = {
+
+		const originNMR = {
 			timeStampConversion: timestamp,
 			nmrJsonFileName: fileNameSpectrum,
 			nmrJsonFileName_sha256Hex: nmrJsonFileName_sha256Hex,
 		};
-
-		
 
 		// create NMRspectrumObject objects
 		const arrayOf_NMRspectrumObject = [];
@@ -59,7 +62,7 @@ const originNMR = {
 			};
 			const lastObj = new NMRspectrumObject(param, {
 				jsonSpectrum: jsonSpectrum,
-				jsonMolecule: jsonMolecule,
+				jsonMolecule: {},
 				origin: originNMR,
 			});
 			if (
@@ -88,8 +91,17 @@ const originNMR = {
 			`./output/${molecForFileName}_first_NMRspectrumObject.json`,
 			arrayOf_NMRspectrumObject[0]
 		);
+	}
 
-const dataMolecule = await readFile(fileNameData, "utf-8");
+	
+	const dataSpectrum = await readFile(fileNameSpectrum, "utf-8");
+		const nmrJsonFileName_sha256Hex = crypto
+			.createHash("sha256")
+			.update(dataSpectrum, "utf8")
+			.digest("hex");
+		const jsonSpectrum = JSON.parse(dataSpectrum);
+
+		const dataMolecule = await readFile(fileNameData, "utf-8");
 		const moleculeJsonFileName_sha256Hex = crypto
 			.createHash("sha256")
 			.update(dataMolecule, "utf8")
@@ -97,13 +109,7 @@ const dataMolecule = await readFile(fileNameData, "utf-8");
 		const jsonMolecule = JSON.parse(dataMolecule);
 
 		// prepare origin
-		const timestamp = new Date().toISOString();
-		const originMolecule = {
-			timeStampConversion: timestamp,
-			moleculeJsonFileName: fileNameData,
-			moleculeJsonFileName_sha256Hex: moleculeJsonFileName_sha256Hex,
-		};
-		
+
 		const originMolecule_NMR = {
 			timeStampConversion: timestamp,
 			nmrJsonFileName: fileNameSpectrum,
@@ -251,7 +257,6 @@ const dataMolecule = await readFile(fileNameData, "utf-8");
 			obj.originScript = "assignments using ingestSpectrumRegions";
 			jGraphObjDataList.push(obj);
 		}
-		
 
 		const param = {
 			creatorParam: {
@@ -260,18 +265,19 @@ const dataMolecule = await readFile(fileNameData, "utf-8");
 				source: "MnovaJson",
 				id: "none",
 			},
-			anyParammmmDELhere: "valueanyParammmmDELhere",
 		};
-		const objtmp = new ParalelCoordNMRspectra(param, {
-			jsonSpectrum: jsonSpectrum,
-			jsonMolecule: jsonMolecule,
+		const paralelCoordNMRspectra = new ParalelCoordNMRspectra(param, {
+			jGraphObjDataList: jGraphObjDataList,
+			allObjectsExtractedMolecule: allObjectsExtractedMolecule,
+			spectrumDataAllChopped: spectrumDataAllChopped,
+			regionsData: regionsData,
 			origin: originMolecule_NMR,
 		});
 
 		// save arrays of objects
 		await saveNMRspectrumObjectToFile(
 			`./output/${molecForFileName}_ParalelCoordNMRspectra.json`,
-			objtmp
+			paralelCoordNMRspectra
 		);
 
 		return {
@@ -493,7 +499,12 @@ if (all) {
 			allObjectsExtractedMolecule,
 			spectrumDataAllChopped,
 			regionsData,
-		} = await processDataLOCAL(fNameSpectra, fNameMolecule, fNameSF, molec);
+		} = await processDataLOCAL(
+			fNameSpectra,
+			fNameMolecule,
+			fNameSF,
+			molec + "_2"
+		);
 		saveStuff(
 			jGraphObjDataList,
 			allObjectsExtractedMolecule,
