@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-<script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 
 <body>
@@ -20,18 +20,117 @@
       isableInitialConsole: true
     }
 
-    Jmol.getApplet("JmolAppletAz", Cholest);
+    Jmol.getApplet("JmolAppletAr", Cholest);
   </script>
   <p id="textMainPage" style="height:20px">J-graph output</p>
   <div id="my_dataviz"></div>
   <script type="module">
- 
- import { jGraph2 } from "../src/index.js"; 
-      var fName1 = "../data/androsten/Androsten_spectrum.csv";
-      var fName2 = "../data/androsten/androTwoMissingAssignments.csv"
-      console.log("JmolAppletAz", JmolAppletAz)
-      var ajgraph = jGraph2(fName1, fName2, JmolAppletAz)
-  
+
+    import { NmrSpectrum } from '../external/nmrSpectrum.js';
+    import { NmrAssignment } from '../src/nmrAssignement.js';
+    import { getRegionsWithSignal } from '../src/utils.js'; // Adjust the path as necessary
+    import { initializeSettings } from "../external/nmrSpectrum.js";
+    import { createSVG } from "../external/nmrSpectrum.js";
+
+    var fileNameSpectrum = "../data/androsten/Androsten_spectrum.csv";
+    var fileNameData = "../data/androsten/androTwoMissingAssignments.csv"
+
+    const smallScreen =
+      /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+      );
+
+    const settings = initializeSettings(smallScreen, {});
+
+    var svg = createSVG("my_dataviz", settings);
+
+
+    async function loadSpectrum(fileName) {
+      try {
+
+        const spectrumData = await d3.csv(fileName, (d) => ({
+          chemShift: +d.x,
+          value: +d.y,
+        }));
+        return spectrumData;
+      } catch (error) {
+        console.error(
+          'Error loading or processing data from :' + fileName,
+          error,
+        );
+      }
+    }
+
+
+    //const spectrumData = await loadSpectrumFromFile(fileNameSpectrum);
+    const spectrumData = await loadSpectrum(fileNameSpectrum);
+
+    const marginPPM = 0.02;
+    const minSpaceBetweenRegions = 0.05;
+    const regionsData = getRegionsWithSignal(
+      spectrumData,
+      minSpaceBetweenRegions,
+      marginPPM,
+    );
+
+    var spectrum = new NmrSpectrum(
+      spectrumData,
+      svg,
+      settings,
+      smallScreen, // default true
+      regionsData, // default {}
+    );
+
+    const settings_with_spectrum_settings = spectrum.getSettings();
+
+
+    async function readDataFile(fileNameData) {
+      try {
+        // Ensure d3.csv properly loads the data
+        const jGraphData = await d3.csv(fileNameData);
+        console.log('Loaded data from ' + fileNameData);
+        if (!Array.isArray(jGraphData)) {
+          throw new Error('Data loaded ' + fileNameData + ' is not an array.');
+        } else {
+          return jGraphData;
+        }
+      } catch (error) {
+        console.error(
+          'Error processing or visualizing the data for ' + fileNameData + ':',
+          error,
+        );
+      }
+    }
+
+    const jGraphData = await readDataFile(fileNameData);
+
+    var nmrAssignment = new NmrAssignment(
+      jGraphData,
+      svg,
+      smallScreen,
+      settings_with_spectrum_settings,
+      JmolAppletAr,
+    );
+
+    // Register each class as a receiver for every other class based on data type compatibility
+    const classes = [spectrum, nmrAssignment];
+    classes.forEach((sender) => {
+      classes.forEach((receiver) => {
+        if (sender !== receiver) {
+          sender.getExportTypes().forEach((sendType) => {
+            if (receiver.getImportTypes().includes(sendType)) {
+              sender.registerReceiver(receiver, sendType);
+            }
+          });
+        }
+      });
+    });
+
+    spectrum.triggerSendAxis();
+
+    nmrAssignment.build();
+
+
   </script>
 
   <h2>J Graph</h2>
@@ -52,8 +151,8 @@
   <h4>Version 0.9</h4>
   <p>This page is a demo. The visualisation uses the <a href="https://d3js.org">D3 library</a> and a crude javascript
     code controls the user interactions. The input data of this demo were produced using a simple data generator written
-    in C++). The possibility to read the <a
-      href="../data/androsten/Androsten_forMult_analysis1.sdf">NMReDATA file</a> directly and determining the line paths
+    in C++). The possibility to read the <a href="../data/androsten/Androsten_forMult_analysis1.sdf">NMReDATA file</a>
+    directly and determining the line paths
     in the javascript code is necessary before it can be applied to other cases easily.</p>
   <p>A visualization of the chemical structure highlighting the selected protons would be very useful and should be easy
     to implement.</p>
