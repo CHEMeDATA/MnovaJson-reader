@@ -7,7 +7,6 @@ import { filterOutPointsOutsideRegions } from "./mnovaJsonReader.js";
 import { ingestMoleculeObject } from "./mnovaJsonReader.js";
 import { ingestSpectrumRegions } from "./mnovaJsonReader.js";
 import { processSf } from "./mnovaJsonReader.js";
-
 class ObjectBase {
 	constructor(param, input, name) {
 		this.verbose = 0;
@@ -222,7 +221,7 @@ export class NMRspectrumObject extends ObjectBase {
 		};
 	}
 
-	// Example import method // Should not minimized
+	// Example import method // Should not minimize
 	import_Editordjeanner_Version1_SourceMnovaJson_IDnone(param, dataInput) {
 		if (!dataInput.origin) {
 			console.error("No origin data in dataInput", dataInput);
@@ -360,7 +359,7 @@ export class NMRspectrumObject extends ObjectBase {
 				requestArrayEncoding: "float64-hex", // flag to binary encode values
 			};
 		}
-		if (this.name == "ParalelCoordNMRspectra") {
+		if (this.name == "JgraphObject") {
 			// Specify here the version number of the specific object (needed to allow version update)
 			this.versionData = 1;
 			/*if (!dataInput.jsonSpectrum) {
@@ -526,10 +525,9 @@ export class NMRspectrumObject extends ObjectBase {
 		}
 	}
 }
-
-export class ParalelCoordNMRspectra extends ObjectBase {
+export class JgraphObject extends ObjectBase {
 	constructor(param, input) {
-		super(param, input, "ParalelCoordNMRspectra");
+		super(param, input, "JgraphObject");
 		// optionally override again
 		this.verbose = 0;
 	}
@@ -539,17 +537,9 @@ export class ParalelCoordNMRspectra extends ObjectBase {
 	}
 
 	_loadDemoData(numberOfSpectra) {
-		const values = Array.from({ length: 16000 }, (_, i) => {
-			return (i + Math.random() * 2000.0 - 1000.0) / 1000.0;
-		});
-		this.data = {
-			values: values,
-			firstPoint: 11.0,
-			lastPoint: -1.0,
-		};
 	}
 
-	// Example import method // Should not minimized
+	// Example import method // Should not minimize
 	import_Editordjeanner_Version1_SourceMnovaJson_IDnone(param, dataInput) {
 		if (!dataInput.origin) {
 			console.error("No origin data in dataInput", dataInput);
@@ -687,7 +677,7 @@ export class ParalelCoordNMRspectra extends ObjectBase {
 				requestArrayEncoding: "float64-hex", // flag to binary encode values
 			};
 		}
-		if (this.name == "ParalelCoordNMRspectra") {
+		if (this.name == "JgraphObject") {
 			// Specify here the version number of the specific object (needed to allow version update)
 			this.versionData = 1;
 			/*if (!dataInput.jsonSpectrum) {

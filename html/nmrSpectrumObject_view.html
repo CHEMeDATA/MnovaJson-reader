@@ -18,7 +18,7 @@
     }
   </style>
 
-  <div id="my_dataviz"></div>
+  <div id="my_dataviz" style="width: 100%; height: auto;">
   <script type="module">
 
 
@@ -26,19 +26,7 @@
     import { makeGraphic } from "../src/nmrSpectrum.js";
     import { NMRspectrumObject } from "../src/NMRspectrumObject.js";
 
-    const aNMRspectrumObject = [new NMRspectrumObject({demo : 1}), new NMRspectrumObject({demo : 1})]; 
-
-    /*	makeGraphic(
-        [],
-        [],
-        {},
-        aNMRspectrumObject,
-        "my_dataviz",
-        {},
-        ""
-      );
-  
-  */
+    const nMRspectraObjects = [new NMRspectrumObject({demo : 1}), new NMRspectrumObject({demo : 1})]; 
 
     import { initializeSettings } from "../src/nmrSpectrum.js";
     import { NmrSpectrum } from "../src/nmrSpectrum.js";
@@ -47,7 +35,7 @@
     const settings = initializeSettings({});
     var svg = createSVG("my_dataviz", settings);
     var spectrum = new NmrSpectrum(
-      aNMRspectrumObject,
+      nMRspectraObjects,
       svg,
       settings,
       settings.smallScreen

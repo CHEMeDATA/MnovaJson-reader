@@ -76,111 +76,198 @@
         }
     </script>
     <style>
-    /* Style for the table */
-    table {
-      border-collapse: collapse;
-      width: 50%;
-      margin: 20px 0;
-    }
+        /* Style for the table */
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px 0;
+        }
 
-    /* Style for table headers and cells */
-    th, td {
-      border: 1px solid #ddd;  /* Single line border */
-      padding: 8px;
-      text-align: left;
-    }
+        /* Style for table headers and cells */
+        th,
+        td {
+            border: 1px solid #ddd;
+            /* Single line border */
+            padding: 8px;
+            text-align: left;
+        }
 
-    /* Style for the table border */
-    table, th, td {
-      border: 1px solid #333; /* Modern thin border */
-    }
-  </style>
+        /* Style for the table border */
+        table,
+        th,
+        td {
+            border: 1px solid #333;
+            /* Modern thin border */
+        }
+    </style>
 </head>
+
 <body>
-<table id="sortableTable" >
-    <tr>
-    <th onclick="sortTable(0)">Structure</th>
-    <th onclick="sortTable(1)">Parallel coordinates / spectra & J-graph</th>
-    </tr>
+    <table id="sortableTable">
+        <tr>
+            <th onclick="sortTable(0)">Structure</th>
+            <th onclick="sortTable(1)">Parallel coordinates / spectra & J-graph</th>
+        </tr>
 
-    <tr>
-        <td id="mol000">
-            <script>
-                window.mainName000 = "01_NOTassigned";// var makes the scop extend to following
-                window.mainName000 = "01_NOTassigned";// var makes the scop extend to following
-                window.mainName000 = "01_NOTassigned";// var makes the scop extend to following
-               // window.mainName000 = "02-AZ138";
-                 //               window.mainName000 = "07-Papaverine";// var makes the scop extend to following
-                                window.mainName000 = "08-paper22";// var makes the scop extend to following
+        <tr>
+            <td id="mol000">
+                <script>
+                    window.mainName000 = "01_NOTassigned";// var makes the scop extend to following
+                    window.mainName000 = "01_NOTassigned";// var makes the scop extend to following
+                    window.mainName000 = "01_NOTassigned";// var makes the scop extend to following
+                    // window.mainName000 = "02-AZ138";
+                    //               window.mainName000 = "07-Papaverine";// var makes the scop extend to following
+                    window.mainName000 = "08-paper22";// var makes the scop extend to following
 
-                window.JmolAppletA000 = jmolApplet(200, "load ../testSpinFit_unassigned/" + window.mainName000 + ".mol ;cartoon on;color cartoon structure;", "JmolAppletA000");
-            </script>
-        </td> 
-        <td id="parallel000" class="plot-container"></div>
-            <script type="module">
-                import { ParallelCoordChem } from "../testSpinFit_unassigned/srcJgraph/ParallelCoordChem.js"; 
-                window.parallelCoord000 = new ParallelCoordChem(`#parallel000`, { 
-                    jsonPath: "../testSpinFit_unassigned/processed_data.json" , 
-                    width: 3000, 
-                    colorMap: "Cool", 
-                    filterKeepKey: "MnovaDocumentShortName", 
-                    filterKeepValue: window.mainName000,
-                });
-            </script>
-        </td> 
-    </tr>
-    <tr>
-        <td id="title000">
-            <script>
-                document.getElementById("title000").textContent = window.mainName000;
-                document.getElementById("title000").style.fontSize = "14px";
-            </script>
-        </td> 
-        <td id="plJg000">
-            <script type="module">
-             //   import { jGraph } from "../src/mnovaReader.js";
+                    window.JmolAppletA000 = jmolApplet(200, "load ../testSpinFit_unassigned/" + window.mainName000 + ".mol ;cartoon on;color cartoon structure;", "JmolAppletA000");
+                </script>
+            </td>
+            <td id="parallel000" class="plot-container">
+                </div>
+                <script type="module">
+                    import { ParallelCoordChem } from "../testSpinFit_unassigned/srcJgraph/ParallelCoordChem.js";
+                    window.parallelCoord000 = new ParallelCoordChem(`#parallel000`, {
+                        jsonPath: "../testSpinFit_unassigned/processed_data.json",
+                        width: 3000,
+                        colorMap: "Cool",
+                        filterKeepKey: "MnovaDocumentShortName",
+                        filterKeepValue: window.mainName000,
+                    });
+                </script>
+            </td>
+        </tr>
+        <tr>
+            <td id="title000">
+                <script>
+                    document.getElementById("title000").textContent = window.mainName000;
+                    document.getElementById("title000").style.fontSize = "14px";
+                </script>
+            </td>
+            <td id="plJg000">
+                <script type="module">
+                    //   import { jGraph } from "../src/mnovaReader.js";
 
-                const fName2000 = "../testSpinFit_unassigned/" + window.mainName000 + "_molecule.json";
-                const fName1000 = "../testSpinFit_unassigned/" + window.mainName000 + "_Set.spectra.json"; 
-                const fName3000 = "../testSpinFit_unassigned/" + window.mainName000 + "_Set.spinFitResult.json";
+                    const fName2000 = "../testSpinFit_unassigned/" + window.mainName000 + "_molecule.json";
+                    const fName1000 = "../testSpinFit_unassigned/" + window.mainName000 + "_Set.spectra.json";
+                    const fName3000 = "../testSpinFit_unassigned/" + window.mainName000 + "_Set.spinFitResult.json";
 
-          //      const ajgraphZ000 = jGraph(fName1000, fName2000, window.JmolAppletA000, "plJg000", fName3000, window.parallelCoord000);
- import { processData } from "../src/mnovaReader.js";
-    import { makeGraphic } from "../src/nmrSpectrum.js";
+                    //      const ajgraphZ000 = jGraph(fName1000, fName2000, window.JmolAppletA000, "plJg000", fName3000, window.parallelCoord000);
+                    import { processData } from "../src/mnovaReader.js";
+                    // import { makeGraphic } from "../src/nmrSpectrum.js";
+                    import { initializeSettings } from "../src/nmrSpectrum.js";
+                    import { createSVG } from "../src/nmrSpectrum.js";
+                    import { NmrSpectrum } from "../src/nmrSpectrum.js";
 
-	// Main call
-	const {
-		jGraphObjDataList,
-		allObjectsExtractedMolecule,
-		spectrumDataAllChopped,
-		regionsData,
-	} = await processData(
-		fName1000,
-		fName2000,
-		fName3000
-	);
-		makeGraphic(
-			jGraphObjDataList,
-			allObjectsExtractedMolecule,
-			window.parallelCoord000,
-			spectrumDataAllChopped,
-			"plJg000",
-			regionsData,
-			window.JmolAppletA000
-		);
-		
-            </script>
+                    import { NmrAssignment } from "../src/nmrAssignement.js";
 
-            <p class="note-text">Note: Brush the scales filter data and ALT-click to cancel.</p>
-        </td>
-    </tr>
+                    import { JgraphObject } from "../src/nmrSpectrumObject.js";
+
+                    const response = await fetch(fName1000);
+                    const dataSpectrum = await response.text();
+                    const jsonSpectrum = JSON.parse(dataSpectrum);
+
+                    const response2 = await fetch(fName2000);
+                    const jsonMolecule2 = await response2.text();
+                    const jsonMolecule = JSON.parse(jsonMolecule2);
+
+                    const response3 = await fetch(fName3000);
+                    const jsonDataInitial2 = await response3.text();
+                    const jsonDataInitial = JSON.parse(jsonDataInitial2);
+                    const origin = {
+                        timeStampConversion: "no timestamp for tests",
+                        nmrJsonFileName: fName1000,
+                        //nmrJsonFile_sha256Hex: nmrJsonFile_sha256Hex,
+                        moleculeJsonFileName: fName2000,
+                        //	moleculeJsonFile_sha256Hex: moleculeJsonFile_sha256Hex,
+                        parallelDataJsonFileName: fName3000,
+                        //	parallelDataJsonFile_sha256Hex: parallelDataFileName_sha256Hex,
+                    };
+                    const param = {
+                        creatorParam: {
+                            editor: "djeanner",
+                            version: "1",
+                            source: "MnovaJson",
+                            id: "none",
+                        },
+                    };
+
+                    const jGraph = new JgraphObject(param, {
+                        jsonSpectrum: jsonSpectrum,
+                        jsonMolecule: jsonMolecule,
+                        jsonDataInitial: jsonDataInitial,
+                        origin: origin,
+                    });
+
+                    const settings = initializeSettings({});
+                    var svg = createSVG("plJg000", settings);
+                    var spectrum = new NmrSpectrum(
+                        jGraph.data.spectrumDataAllChopped,
+                        svg,
+                        settings,
+                        settings.smallScreen, // default true
+                        //{totalCoveredPPM: 7.0,regions: [{ start: 8.0, end: 1.0 }]},
+                        jGraph.data.regionsData // default {}
+                    );
+
+                    const settings_with_spectrum_settings = spectrum.getSettings();
+
+                    var nmrAssignmentList = [];
+                    var first = true;
+                    for (const jGraphObj2 of jGraph.data.jGraphObjDataList) {
+
+                        const condition1 = (jGraphObj2 && typeof jGraphObj2 === "object" && jGraphObj2.type === "couplingNetwork");
+                        const condition2 = (jGraphObj2 && typeof jGraphObj2 === "object" && jGraphObj2.type === "variableSet");
+                        const condition3 = Array.isArray(jGraphObj2) && first; if (condition3) { first = false; } // first array only
+                        if (condition1 || condition2 || condition3) {
+                            nmrAssignmentList.push(
+                                new NmrAssignment(
+                                    jGraphObj2,
+                                    svg,
+                                    settings_with_spectrum_settings.smallScreen,
+                                    settings_with_spectrum_settings,
+                                    window.JmolAppletA000,
+                                    nmrAssignmentList.length
+                                )
+                            );
+                        }
+                    }
+
+                    const classes = [...nmrAssignmentList, spectrum];
+                    if (window.parallelCoord000 && Object.entries(window.parallelCoord000).length !== 0) {
+                        classes.push(window.parallelCoord000);
+                    }
+                    // Register each class as a receiver for every other class based on data type compatibility
+
+
+                    classes.forEach((sender) => {
+                        classes.forEach((receiver) => {
+                            if (sender !== receiver) {
+                                sender.getExportTypes().forEach((sendType) => {
+                                    if (receiver.getImportTypes().includes(sendType)) {
+                                        sender.registerReceiver(receiver, sendType);
+                                    }
+                                });
+                            }
+                        });
+                    });
+                    spectrum.triggerSendAxis();
+                    nmrAssignmentList.forEach((nmrAssignment) => {
+                        nmrAssignment.build();
+                    });
+
+
+                </script>
+
+                <p class="note-text">Note: Brush the scales filter data and ALT-click to cancel.</p>
+            </td>
+        </tr>
         <td> </td>
-        <td> </td> 
-    <tr>
-    </tr>
+        <td> </td>
+        <tr>
+        </tr>
 
-</table>
-     <script>
+    </table>
+    <script>
         function sortTable(n) {
             var table, rows, switching, i, x, y, shouldSwitch;
             var dir = "asc", switchcount = 0;

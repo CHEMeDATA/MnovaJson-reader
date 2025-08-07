@@ -14,7 +14,7 @@ import { ingestMoleculeObject } from "./mnovaJsonReader.js";
 import { ingestSpectrumRegions } from "./mnovaJsonReader.js";
 
 import { NMRspectrumObject } from "../src/nmrSpectrumObject.js";
-import { ParalelCoordNMRspectra } from "../src/nmrSpectrumObject.js";
+import { JgraphObject } from "../src/nmrSpectrumObject.js";
 
 async function saveNMRspectrumObjectToFile(filePath, spectrumObject) {
 	const jsonString = JSON.stringify(spectrumObject, null, 2);
@@ -119,7 +119,7 @@ async function processDataLOCAL(
 
 		// prepare origin
 
-		const originParalelCoordNMRspectra = {
+		const originJgraphObject = {
 			timeStampConversion: timestamp,
 			nmrJsonFileName: fileNameSpectrum,
 			nmrJsonFile_sha256Hex: nmrJsonFile_sha256Hex,
@@ -138,16 +138,16 @@ async function processDataLOCAL(
 			},
 		};
 
-		const paralelCoordNMRspectra = new ParalelCoordNMRspectra(param, {
+		const paralelCoordNMRspectra = new JgraphObject(param, {
 			jsonSpectrum: jsonSpectrum,
 			jsonMolecule: jsonMolecule,
 			jsonDataInitial: jsonDataInitial,
-			origin: originParalelCoordNMRspectra,
+			origin: originJgraphObject,
 		});
 
 		// save arrays of objects
 		await saveNMRspectrumObjectToFile(
-			`./output/${molecForFileName}_ParalelCoordNMRspectra.json`,
+			`./output/${molecForFileName}_JgraphObject.json`,
 			paralelCoordNMRspectra
 		);
 

@@ -1,35 +1,34 @@
 import { GraphBase } from "./graphBase.js";
 import { NmrAssignment } from "./nmrAssignement.js";
 
-
 async function loadSpectrum(fileName) {
-  try {
-    const spectrumData = await d3.csv(fileName, (d) => ({
-      chemShift: +d.x,
-      value: +d.y,
-    }));
-    return spectrumData;
-  } catch (error) {
-    console.error('Error loading or processing data from :' + fileName, error);
-  }
+	try {
+		const spectrumData = await d3.csv(fileName, (d) => ({
+			chemShift: +d.x,
+			value: +d.y,
+		}));
+		return spectrumData;
+	} catch (error) {
+		console.error("Error loading or processing data from :" + fileName, error);
+	}
 }
 
 async function readDataFile(fileNameData) {
-  try {
-    // Ensure d3.csv properly loads the data
-    const jGraphData = await d3.csv(fileNameData);
-    console.log('Loaded data from ' + fileNameData);
-    if (!Array.isArray(jGraphData)) {
-      throw new Error('Data loaded ' + fileNameData + ' is not an array.');
-    } else {
-      return jGraphData;
-    }
-  } catch (error) {
-    console.error(
-      'Error processing or visualizing the data for ' + fileNameData + ':',
-      error,
-    );
-  }
+	try {
+		// Ensure d3.csv properly loads the data
+		const jGraphData = await d3.csv(fileNameData);
+		console.log("Loaded data from " + fileNameData);
+		if (!Array.isArray(jGraphData)) {
+			throw new Error("Data loaded " + fileNameData + " is not an array.");
+		} else {
+			return jGraphData;
+		}
+	} catch (error) {
+		console.error(
+			"Error processing or visualizing the data for " + fileNameData + ":",
+			error
+		);
+	}
 }
 
 export async function makeGraphic(
@@ -140,6 +139,20 @@ export function createSVG(dataviz, settings) {
 		d3
 			.select("#" + dataviz)
 			.append("svg")
+			// 1. Set viewBox first — defines internal coordinate system
+			.attr(
+				"viewBox",
+				`0 0 ${
+					settings.spectrum.widthOfThePlot +
+					settings.spectrum.margin.left +
+					settings.spectrum.margin.right
+				} ${
+					settings.spectrum.height +
+					settings.spectrum.margin.top +
+					settings.spectrum.margin.bottom
+				}`
+			)
+			.style("display", "block")
 			.attr(
 				"width",
 				settings.spectrum.widthOfThePlot +
@@ -152,8 +165,13 @@ export function createSVG(dataviz, settings) {
 					settings.spectrum.margin.top +
 					settings.spectrum.margin.bottom
 			)
-			//           .style('border', '1px solid black') // Add a black border around the SVG
-			// .style('background-color', 'lightblue') // Set the background color
+			/*
+			.attr("preserveAspectRatio", "xMinYMid meet") // adjust how viewBox scales
+			.style("width", "100%")
+			.style("height", "auto")
+			*/
+			//.style("border", "1px solid black") // Add a black border around the SVG
+			//.style("background-color", "lightblue") // Set the background color
 			.append("g")
 			.attr(
 				"transform",

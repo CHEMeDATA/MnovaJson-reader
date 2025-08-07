@@ -43,24 +43,114 @@
 
     // import { jGraph } from "../src/mnovaReader.js";
     //    var ajgraph = jGraph(fName1, fNameN, JmolAppletAz, "my_dataviz")
+    /*
+        const {
+          jGraphObjDataList,
+          allObjectsExtractedMolecule,
+          spectrumDataAllChopped,
+          regionsData,
+        } = await processData(fName1, fNameN, "");
+    */
 
-    const {
-      jGraphObjDataList,
-      allObjectsExtractedMolecule,
-      spectrumDataAllChopped,
-      regionsData,
-    } = await processData(fName1, fNameN, "");
 
-    makeGraphic(
-      jGraphObjDataList,
-      allObjectsExtractedMolecule,
-      {},
-      spectrumDataAllChopped,
-      "my_dataviz",
-      regionsData,
-      JmolAppletAz
+    //      const ajgraphZ000 = jGraph(fName1000, fName2000, window.JmolAppletA000, "plJg000", fName3000, window.parallelCoord000);
+    // import { makeGraphic } from "../src/nmrSpectrum.js";
+    import { initializeSettings } from "../src/nmrSpectrum.js";
+    import { createSVG } from "../src/nmrSpectrum.js";
+    import { NmrSpectrum } from "../src/nmrSpectrum.js";
+
+    import { NmrAssignment } from "../src/nmrAssignement.js";
+
+    import { JgraphObject } from "../src/nmrSpectrumObject.js";
+
+    const response = await fetch(fName1);
+    const dataSpectrum = await response.text();
+    const jsonSpectrum = JSON.parse(dataSpectrum);
+    /*
+    const nmrJsonFileName_sha256Hex = crypto
+            .createHash("sha256")
+            .update(dataSpectrum, "utf8")
+            .digest("hex");
+    */
+    const response2 = await fetch(fNameN);
+    const jsonMolecule2 = await response2.text();
+    const jsonMolecule = JSON.parse(jsonMolecule2);
+
+    const origin = {
+      timeStampConversion: "no timestamp for tests",
+      nmrJsonFileName: fName1,
+      //nmrJsonFile_sha256Hex: nmrJsonFile_sha256Hex,
+      moleculeJsonFileName: fNameN,
+      //	moleculeJsonFile_sha256Hex: moleculeJsonFile_sha256Hex,
+    };
+
+    const param = {
+      creatorParam: {
+        editor: "djeanner",
+        version: "1",
+        source: "MnovaJson",
+        id: "none",
+      },
+    };
+
+    const jGraph = new JgraphObject(param, {
+      jsonSpectrum: jsonSpectrum,
+      jsonMolecule: jsonMolecule,
+      jsonDataInitial: {},
+      origin: origin,
+    });
+
+
+    const settings = initializeSettings({});
+    var svg = createSVG("my_dataviz", settings);
+    var spectrum = new NmrSpectrum(
+      jGraph.data.spectrumDataAllChopped,
+      svg,
+      settings,
+      settings.smallScreen, // default true
+      //{totalCoveredPPM: 7.0,regions: [{ start: 8.0, end: 1.0 }]},
+      jGraph.data.regionsData // default {}
     );
 
+    const settings_with_spectrum_settings = spectrum.getSettings();
+
+    var nmrAssignmentList = [];
+    var first = true;
+    for (const jGraphObj of jGraph.data.jGraphObjDataList) {
+      const condition = Array.isArray(jGraphObj) && first; if (condition) { first = false; } // first array only
+      if (condition) {
+        nmrAssignmentList.push(
+          new NmrAssignment(
+            jGraphObj,
+            svg,
+            settings_with_spectrum_settings.smallScreen,
+            settings_with_spectrum_settings,
+            JmolAppletAz,
+            nmrAssignmentList.length
+          )
+        );
+      }
+    }
+
+    const classes = [...nmrAssignmentList, spectrum];
+
+    // Register each class as a receiver for every other class based on data type compatibility
+
+    classes.forEach((sender) => {
+      classes.forEach((receiver) => {
+        if (sender !== receiver) {
+          sender.getExportTypes().forEach((sendType) => {
+            if (receiver.getImportTypes().includes(sendType)) {
+              sender.registerReceiver(receiver, sendType);
+            }
+          });
+        }
+      });
+    });
+    spectrum.triggerSendAxis();
+    nmrAssignmentList.forEach((nmrAssignment) => {
+      nmrAssignment.build();
+    });
 
   </script>
   Brush horizontally to zoom and double-click to restore the full spectrum.
