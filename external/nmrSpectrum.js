@@ -1,101 +1,4 @@
 import { GraphBase } from "./graphBase.js";
-import { NmrAssignment } from "./nmrAssignement.js";
-
-async function loadSpectrum(fileName) {
-	try {
-		const spectrumData = await d3.csv(fileName, (d) => ({
-			chemShift: +d.x,
-			value: +d.y,
-		}));
-		return spectrumData;
-	} catch (error) {
-		console.error("Error loading or processing data from :" + fileName, error);
-	}
-}
-
-async function readDataFile(fileNameData) {
-	try {
-		// Ensure d3.csv properly loads the data
-		const jGraphData = await d3.csv(fileNameData);
-		console.log("Loaded data from " + fileNameData);
-		if (!Array.isArray(jGraphData)) {
-			throw new Error("Data loaded " + fileNameData + " is not an array.");
-		} else {
-			return jGraphData;
-		}
-	} catch (error) {
-		console.error(
-			"Error processing or visualizing the data for " + fileNameData + ":",
-			error
-		);
-	}
-}
-
-export async function makeGraphic(
-	jGraphObjDataList,
-	allObjectsExtractedMolecule,
-	parallelCoord,
-	spectrumDataAllChopped,
-	dataviz,
-	regionsData,
-	JmolAppletAr
-) {
-	const settings = initializeSettings({});
-	var svg = createSVG(dataviz, settings);
-	var spectrum = new NmrSpectrum(
-		spectrumDataAllChopped,
-		svg,
-		settings,
-		settings.smallScreen, // default true
-		//{totalCoveredPPM: 7.0,regions: [{ start: 8.0, end: 1.0 }]},
-		regionsData // default {}
-	);
-
-	const settings_with_spectrum_settings = spectrum.getSettings();
-
-	var nmrAssignmentList = [];
-
-	for (const jGraphObj2 of jGraphObjDataList) {
-		console.log("OKOKOOOKOKO2 jGraphObj2", jGraphObj2);
-
-		nmrAssignmentList.push(
-			new NmrAssignment(
-				jGraphObj2,
-				svg,
-				settings_with_spectrum_settings.smallScreen,
-				settings_with_spectrum_settings,
-				JmolAppletAr,
-				nmrAssignmentList.length
-			)
-		);
-	}
-
-	// Register each class as a receiver for every other class based on data type compatibility
-	const classes = [...nmrAssignmentList, spectrum];
-	if (parallelCoord && Object.entries(parallelCoord).length !== 0) {
-		classes.push(parallelCoord);
-		console.log("AOKOKOO parallelCoord", parallelCoord);
-	} else {
-		console.log(" NO AOKOKOO parallelCoord", parallelCoord);
-	}
-	classes.forEach((sender) => {
-		classes.forEach((receiver) => {
-			if (sender !== receiver) {
-				sender.getExportTypes().forEach((sendType) => {
-					if (receiver.getImportTypes().includes(sendType)) {
-						sender.registerReceiver(receiver, sendType);
-					}
-				});
-			}
-		});
-	});
-
-	spectrum.triggerSendAxis();
-
-	nmrAssignmentList.forEach((nmrAssignment) => {
-		nmrAssignment.build();
-	});
-}
 
 export function initializeSettings(overrideSettings = {}) {
 	// Default settings
@@ -183,6 +86,7 @@ export function createSVG(dataviz, settings) {
 			)
 	);
 }
+
 export class NmrSpectrum extends GraphBase {
 	constructor(
 		chemShiftsInput,

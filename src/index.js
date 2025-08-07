@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 
 //import * as d3 from "d3"; //
-import { NmrSpectrum } from './nmrSpectrum.js';
+import { NmrSpectrum } from '../external/nmrSpectrum.js';
 import { NmrAssignment } from './nmrAssignement.js';
 import { getRegionsWithSignal } from './utils.js'; // Adjust the path as necessary
 

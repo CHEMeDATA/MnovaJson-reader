@@ -145,22 +145,18 @@
             </td>
             <td id="plJg000">
                 <script type="module">
-                    //   import { jGraph } from "../src/mnovaReader.js";
 
                     const fName2000 = "../testSpinFit_unassigned/" + window.mainName000 + "_molecule.json";
                     const fName1000 = "../testSpinFit_unassigned/" + window.mainName000 + "_Set.spectra.json";
                     const fName3000 = "../testSpinFit_unassigned/" + window.mainName000 + "_Set.spinFitResult.json";
 
-                    //      const ajgraphZ000 = jGraph(fName1000, fName2000, window.JmolAppletA000, "plJg000", fName3000, window.parallelCoord000);
-                    import { processData } from "../src/mnovaReader.js";
-                    // import { makeGraphic } from "../src/nmrSpectrum.js";
-                    import { initializeSettings } from "../src/nmrSpectrum.js";
-                    import { createSVG } from "../src/nmrSpectrum.js";
-                    import { NmrSpectrum } from "../src/nmrSpectrum.js";
+                    import { initializeSettings } from "../external/nmrSpectrum.js";
+                    import { createSVG } from "../external/nmrSpectrum.js";
+                    import { NmrSpectrum } from "../external/nmrSpectrum.js";
 
                     import { NmrAssignment } from "../src/nmrAssignement.js";
 
-                    import { JgraphObject } from "../src/nmrSpectrumObject.js";
+                    import { JgraphObject } from "../external/jGraphObject.js";
 
                     const response = await fetch(fName1000);
                     const dataSpectrum = await response.text();

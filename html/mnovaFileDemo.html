@@ -34,34 +34,17 @@
   <div id="my_dataviz"></div>
   <script type="module">
 
-    import { processData } from "../src/mnovaReader.js";
-    import { makeGraphic } from "../src/nmrSpectrum.js";
-
     var fName1 = "../data/santonin/santonin_spectrum.json";
     var fNameN = "../data/santonin/santonin_molecule.json"
     fNameN = "../data/santonin/santonin_moleculeWithAssignment.json"; // with partial assignment of J's
 
-    // import { jGraph } from "../src/mnovaReader.js";
-    //    var ajgraph = jGraph(fName1, fNameN, JmolAppletAz, "my_dataviz")
-    /*
-        const {
-          jGraphObjDataList,
-          allObjectsExtractedMolecule,
-          spectrumDataAllChopped,
-          regionsData,
-        } = await processData(fName1, fNameN, "");
-    */
-
-
-    //      const ajgraphZ000 = jGraph(fName1000, fName2000, window.JmolAppletA000, "plJg000", fName3000, window.parallelCoord000);
-    // import { makeGraphic } from "../src/nmrSpectrum.js";
-    import { initializeSettings } from "../src/nmrSpectrum.js";
-    import { createSVG } from "../src/nmrSpectrum.js";
-    import { NmrSpectrum } from "../src/nmrSpectrum.js";
+    import { initializeSettings } from "../external/nmrSpectrum.js";
+    import { createSVG } from "../external/nmrSpectrum.js";
+    import { NmrSpectrum } from "../external/nmrSpectrum.js";
 
     import { NmrAssignment } from "../src/nmrAssignement.js";
 
-    import { JgraphObject } from "../src/nmrSpectrumObject.js";
+    import { JgraphObject } from "../external/jGraphObject.js";
 
     const response = await fetch(fName1);
     const dataSpectrum = await response.text();

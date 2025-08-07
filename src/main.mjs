@@ -13,8 +13,8 @@ import { filterOutPointsOutsideRegions } from "./mnovaJsonReader.js";
 import { ingestMoleculeObject } from "./mnovaJsonReader.js";
 import { ingestSpectrumRegions } from "./mnovaJsonReader.js";
 
-import { NMRspectrumObject } from "../src/nmrSpectrumObject.js";
-import { JgraphObject } from "../src/nmrSpectrumObject.js";
+import { NMRspectrumObject } from "../external/nmrSpectrumObject.js";
+import { JgraphObject } from "../external/jGraphObject.js";
 
 async function saveNMRspectrumObjectToFile(filePath, spectrumObject) {
 	const jsonString = JSON.stringify(spectrumObject, null, 2);

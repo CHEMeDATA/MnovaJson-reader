@@ -49,39 +49,107 @@
 	<div id="my_dataviz"></div>
 
 	<script type="module">
-		import { jGraph } from "../src/mnovaReader.js";
 		var fName1 = "../testSpinFit_assigned/" + molec + "_Set.spectra.json";
 		var fNameN = "../testSpinFit_assigned/" + molec + "_molecule.json"
 		var fName3008 = "../testSpinFit_assigned/" + molec + "_Set.spinFitResult.json"
-		//var ajgraph = jGraph(fName1, fNameN, JmolAppletAz, "my_dataviz")
-		//var ajgraph = jGraph(fName1, fNameN, JmolAppletAz, "my_dataviz", fName3008)
+		
+                    import { initializeSettings } from "../external/nmrSpectrum.js";
+                    import { createSVG } from "../external/nmrSpectrum.js";
+                    import { NmrSpectrum } from "../external/nmrSpectrum.js";
 
-		import { processData } from "../src/mnovaReader.js";
-		import { makeGraphic } from "../src/nmrSpectrum.js";
+                    import { NmrAssignment } from "../src/nmrAssignement.js";
+                    import { JgraphObject } from "../external/jGraphObject.js";
 
-		// Main call
-		const {
-			jGraphObjDataList,
-			allObjectsExtractedMolecule,
-			spectrumDataAllChopped,
-			regionsData,
-		} = await processData(fName1, fNameN, fName3008);
-		makeGraphic(
-			jGraphObjDataList,
-			allObjectsExtractedMolecule,
-			{},
-			spectrumDataAllChopped,
-			"my_dataviz",
-			regionsData,
-			JmolAppletAz
-		);
+                    const response = await fetch(fName1);
+                    const dataSpectrum = await response.text();
+                    const jsonSpectrum = JSON.parse(dataSpectrum);
+
+                    const response2 = await fetch(fNameN);
+                    const jsonMolecule2 = await response2.text();
+                    const jsonMolecule = JSON.parse(jsonMolecule2);
+
+                    const response3 = await fetch(fName3008);
+                    const jsonDataInitial2 = await response3.text();
+                    const jsonDataInitial = JSON.parse(jsonDataInitial2);
+                    const origin = {
+                        timeStampConversion: "no timestamp for tests",
+                        nmrJsonFileName: fName1,
+                        //nmrJsonFile_sha256Hex: nmrJsonFile_sha256Hex,
+                        moleculeJsonFileName: fNameN,
+                        //	moleculeJsonFile_sha256Hex: moleculeJsonFile_sha256Hex,
+                        parallelDataJsonFileName: fName3008,
+                        //	parallelDataJsonFile_sha256Hex: parallelDataFileName_sha256Hex,
+                    };
+                    const param = {
+                        creatorParam: {
+                            editor: "djeanner",
+                            version: "1",
+                            source: "MnovaJson",
+                            id: "none",
+                        },
+                    };
+
+                    const jGraph = new JgraphObject(param, {
+                        jsonSpectrum: jsonSpectrum,
+                        jsonMolecule: jsonMolecule,
+                        jsonDataInitial: jsonDataInitial,
+                        origin: origin,
+                    });
+
+                    const settings = initializeSettings({});
+                    var svg = createSVG("my_dataviz", settings);
+                    var spectrum = new NmrSpectrum(
+                        jGraph.data.spectrumDataAllChopped,
+                        svg,
+                        settings,
+                        settings.smallScreen, // default true
+                        //{totalCoveredPPM: 7.0,regions: [{ start: 8.0, end: 1.0 }]},
+                        jGraph.data.regionsData // default {}
+                    );
+
+                    const settings_with_spectrum_settings = spectrum.getSettings();
+
+                    var nmrAssignmentList = [];
+                    var first = true;
+                    for (const jGraphObj2 of jGraph.data.jGraphObjDataList) {
+
+                        const condition1 = (jGraphObj2 && typeof jGraphObj2 === "object" && jGraphObj2.type === "couplingNetwork");
+                        const condition2 = (jGraphObj2 && typeof jGraphObj2 === "object" && jGraphObj2.type === "variableSet");
+                        const condition3 = Array.isArray(jGraphObj2) && first; if (condition3) { first = false; } // first array only
+                        if (condition1 || condition2 || condition3) {
+                            nmrAssignmentList.push(
+                                new NmrAssignment(
+                                    jGraphObj2,
+                                    svg,
+                                    settings_with_spectrum_settings.smallScreen,
+                                    settings_with_spectrum_settings,
+                                    JmolAppletAz,
+                                    nmrAssignmentList.length
+                                )
+                            );
+                        }
+                    }
+
+                    const classes = [...nmrAssignmentList, spectrum];
+                  
+                    // Register each class as a receiver for every other class based on data type compatibility
 
 
-		// const fName2008 = "../testSpinFit_assigned/" + window.mainName008 + "_molecule.json";
-		//              const fName1008 = "../testSpinFit_assigned/" + window.mainName008 + "_Set.spectra.json";
-		//             const fName3008 = "../testSpinFit_assigned/" + window.mainName008 + "_Set.spinFitResult.json";
-
-		//             const ajgraphZ008 = jGraph(fName1008, fName2008, window.JmolAppletA008, "plJg008", fName3008, window.parallelCoord008);
+                    classes.forEach((sender) => {
+                        classes.forEach((receiver) => {
+                            if (sender !== receiver) {
+                                sender.getExportTypes().forEach((sendType) => {
+                                    if (receiver.getImportTypes().includes(sendType)) {
+                                        sender.registerReceiver(receiver, sendType);
+                                    }
+                                });
+                            }
+                        });
+                    });
+                    spectrum.triggerSendAxis();
+                    nmrAssignmentList.forEach((nmrAssignment) => {
+                        nmrAssignment.build();
+                    });
 
 
 	</script>

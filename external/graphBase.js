@@ -1,4 +1,6 @@
-export class GraphBase {
+// Comment /un comment last line for mode/Browser usage 
+ 
+ class GraphBase {
   constructor(name, options = {}) {
     // Initialize core properties
     this.name = name;
@@ -223,3 +225,6 @@ if (typeof module !== 'undefined' && module.exports) {
     module.exports = { GraphBase };
 } 
 
+// ES Module export (for browser)
+// UNCOMMENT FOR NODE
+export { GraphBase };
