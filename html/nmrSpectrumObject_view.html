@@ -23,8 +23,31 @@
 
     import { NMRspectrumObject } from "../external/NMRspectrumObject.js";
 
-    const nMRspectraObjects = [new NMRspectrumObject({demo : 1}), new NMRspectrumObject({demo : 1})]; 
-
+   const nMRspectraObjects = [
+   new NMRspectrumObject({demo : {arrayLorentzian : {
+			centers: [7.27, 5.0, 0.0],
+			widthsInHz: [0.7, 0.7, 0.7],
+			amplitudes: [1, 10, 1],
+		}}}), 
+    new NMRspectrumObject({demo : {
+    spectralData:{firstPoint:9}, 
+    arrayLorentzian:{centers:[3.8]}}
+    })
+    ]; 
+/* default value
+spectralData = {
+			pointNumber: 32768,
+			larmor: 500,
+			firstPoint: 11,
+			lastPoint: -1.0,
+			noiseLevel: 10,
+		},
+		arrayLorentzian = {
+			centers: [7.27],
+			widthsInHz: [0.7],
+			amplitudes: [1],
+		}
+  };*/
     import { initializeSettings } from "../external/nmrSpectrum.js";
     import { NmrSpectrum } from "../external/nmrSpectrum.js";
     import { createSVG } from "../external/nmrSpectrum.js";
