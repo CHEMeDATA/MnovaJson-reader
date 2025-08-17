@@ -44,8 +44,8 @@ export class NMRspectrumObject extends ObjectBase {
 		}
 		function lorentzian(arrayLorentzian, larmor, x, i) {
 			const id_centers = i < arrayLorentzian.centers.length ? i : arrayLorentzian.centers.length - 1; // should be useless (should not loop beyond i)
-			const id_amplitudes = i < arrayLorentzian.amplitudes.length ? i : arrayLorentzian.amplitudes.length -1; // may be exploited to avoid repeating if constant
 			const id_widthsInHz = i < arrayLorentzian.widthsInHz.length ? i : arrayLorentzian.widthsInHz.length - 1; // will often be exploited to avoid repeating if constant
+			const id_amplitudes = i < arrayLorentzian.amplitudes.length ? i : arrayLorentzian.amplitudes.length -1; // may be exploited to avoid repeating if constant
 			const center = arrayLorentzian.centers[id_centers];
 			const dx = x - center;
 			const gamma = arrayLorentzian.widthsInHz[id_widthsInHz] / larmor;
