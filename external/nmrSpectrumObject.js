@@ -52,15 +52,15 @@ export class NMRspectrumObject extends ObjectBase {
 			values.push(realPart * spectralData.noiseLevel + mean);
 		}
 		function lorentzian(arrayLorentzian, larmor, x, i) {
-			const id_centers = i < arrayLorentzian.centers.length ? i : 0;
-			const id_widthsInHz = i < arrayLorentzian.widthsInHz.length ? i : 0;
-			const id_amplitudes = i < arrayLorentzian.amplitudes.length ? i : 0;
+			const id_centers = i < arrayLorentzian.centers.length ? i : arrayLorentzian.centers.length - 1; // should be useless (should not loop beyond i)
+			const id_amplitudes = i < arrayLorentzian.amplitudes.length ? i : arrayLorentzian.amplitudes.length -1; // may be exploited to avoid repeating if constant
+			const id_widthsInHz = i < arrayLorentzian.widthsInHz.length ? i : arrayLorentzian.widthsInHz.length - 1; // will often be exploited to avoid repeating if constant
 			const center = arrayLorentzian.centers[id_centers];
 			const dx = x - center;
 			const gamma = arrayLorentzian.widthsInHz[id_widthsInHz] / larmor;
-
+			const amplitude = arrayLorentzian.amplitudes[id_amplitudes];
 			return (
-				arrayLorentzian.amplitudes[id_amplitudes] /
+				amplitude /
 				(Math.PI * gamma * (1 + (dx / gamma) ** 2))
 			);
 		}
@@ -71,7 +71,23 @@ export class NMRspectrumObject extends ObjectBase {
 		for (let i = 0; i < arrayLorentzian.centers.length; i++) {
 			for (let index = 0; index < values.length; index++) {
 				const x = spectralData.firstPoint + increment * index;
-				values[index] += lorentzian(arrayLorentzian, spectralData.larmor, x, i);
+				const larmor = spectralData.larmor;
+				//values[index] += lorentzian(arrayLorentzian, larmor, x, i);
+				// may replace this will fall to function 
+				// values[index] += lorentzian(arrayLorentzian, larmor, x, i);
+					//function lorentzian(arrayLorentzian, larmor, x, i) {
+				const id_centers = i < arrayLorentzian.centers.length ? i : arrayLorentzian.centers.length - 1; // should be useless (should not loop beyond i)
+				const id_amplitudes = i < arrayLorentzian.amplitudes.length ? i : arrayLorentzian.amplitudes.length -1; // may be exploited to avoid repeating if constant
+				const id_widthsInHz = i < arrayLorentzian.widthsInHz.length ? i : arrayLorentzian.widthsInHz.length - 1; // will often be exploited to avoid repeating if constant
+				const center = arrayLorentzian.centers[id_centers];
+				const dx = x - center;
+				const gamma = arrayLorentzian.widthsInHz[id_widthsInHz] / larmor;
+				const amplitude = arrayLorentzian.amplitudes[id_amplitudes];
+				values[index] += (
+					amplitude /
+					(Math.PI * gamma * (1 + (dx / gamma) ** 2))
+				); // was returned
+				//}
 			}
 		}
 
