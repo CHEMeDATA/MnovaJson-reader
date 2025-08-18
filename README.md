@@ -93,7 +93,7 @@ When creating an object with the import method, use this syntax which maps the n
 	  , data);
 ```
 
-Simple example [html/mnovaOnlySpectrum.html](html/mnovaOnlySpectrum.html).
+A simple example only reader a Mnova spectrum [html/mnovaOnlySpectrum.html](html/mnovaOnlySpectrum.html).
 
-More complex example [html/mnovaFileDemo.html](html/mnovaFileDemo.html).
+A more complex example with assignement and the assigned molecule and interactions [html/mnovaFileDemo.html](html/mnovaFileDemo.html).
 
