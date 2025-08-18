@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+	<h4>Mnova json demonstration page</h4>
+	<p>This page reads the json serialization of Mnova document.</p>
+	<style>
+		.code-box {
+			background: #f4f4f4;
+			padding: 10px;
+			font-family: monospace;
+		}
+	</style>
+
+	<p id="textMainPage" style="height:20px">J-graph output</p>
+
+	<div id="my_dataviz"></div>
+	<script type="module">
+
+		var fName1 = "../data/santonin/santonin_spectrum.json";
+
+		import { initializeSettings } from "../external/nmrSpectrum.js";
+		import { createSVG } from "../external/nmrSpectrum.js";
+		import { NmrSpectrum } from "../external/nmrSpectrum.js";
+		import { NMRspectrumObject } from "../external/NMRspectrumObject.js";
+
+		const response = await fetch(fName1);
+		const dataSpectrum = await response.text();
+		const jsonSpectrum = JSON.parse(dataSpectrum);
+
+		const origin = {
+			timeStampConversion: "no timestamp for tests",
+			nmrJsonFileName: fName1,
+		};
+
+		// specifies the import methods
+		const param = {
+			creatorParam: {
+				editor: "djeanner",
+				version: "1",
+				source: "MnovaJson",
+				id: "none",
+			},
+		};
+
+		const spectrumObject = new NMRspectrumObject(param, {
+			jsonSpectrum: jsonSpectrum,
+			origin: origin,
+		});
+
+		const settings = initializeSettings({});
+		var svg = createSVG("my_dataviz", settings);
+		var spectrum = new NmrSpectrum(
+			spectrumObject,
+			svg,
+			settings,
+			settings.smallScreen,
+		);
+
+	</script>
+	Brush horizontally to zoom and double-click to restore the full spectrum.
+
+	<h4>Make your own view of Mnova spectra</h4>
+	Use "Save as" in Mnova >=15.1 and select the relevant (*.json) entries or use Mnova scripting:
+
+	<div class="code-box">
+		<pre><code>serialization.save("c:/santonin.mol", "mol"); // for JSmol
+serialization.save("c:/santonin_molecule.json", "JSON Molecule (*.json)") // for the J-graph
+serialization.save("c:/santonin_spectrum.json", "JSON NMR (*.json)") // for the spectrum</code> s</pre>
+	</div>
+</body>
+
+</html>
