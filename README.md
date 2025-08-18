@@ -3,7 +3,7 @@
 
 Import Mnova .json files exported by Mnova >=15.1 (not the main .mnova documents) into NMRspectrumObject and JgraphObject objects
 
-The molecules and NMR spectra data muss be stored in two separate files. In the current implementation, it is also recommend to save the molecules in the .mol format. We recommend naming them respectively FILENAME_molecule_.json, FILENAME_spectrum and FILENAME.mol. (to facilitate reading them in this repository)
+The molecules and NMR spectra data muss be stored in two separate files in the current implementation. It is also recommended to save the molecules in the .mol format. We recommend naming them respectively FILENAME_molecule_.json, FILENAME_spectrum and FILENAME.mol. (to facilitate reading them in this repository)
 
 Use "Save as ..." in the "File" menu and select the relevant (*.json).
 

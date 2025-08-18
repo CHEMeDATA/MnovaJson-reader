@@ -1,17 +1,15 @@
 #!/usr/bin/env zsh
 mkdir -p external
-curl -o -L external/nmrSpectrum.js https://raw.githubusercontent.com/CHEMeDATA/NMRspectrum-viewer/main/src/nmrSpectrum.js
-curl -o -L external/graphBase.js https://raw.githubusercontent.com/CHEMeDATA/NMRspectrum-viewer/main/src/graphBase.js
+echo "Fill ./external folder"
 
-curl -o -L external/jGraphObject.js https://raw.githubusercontent.com/CHEMeDATA/nmr-objects/dist/jGraphObject.js
-curl -o -L external/nmrSpectrumObject.js https://raw.githubusercontent.com/CHEMeDATA/nmr-objects/main/dist/nmrSpectrumObject.js
-echo 
-echo "finished curls commands"
-echo 
+echo "start getting https://raw.githubusercontent.com/CHEMeDATA/NMRspectrum-viewer"
+curl -s -L -o external/nmrSpectrum.js https://raw.githubusercontent.com/CHEMeDATA/NMRspectrum-viewer/main/src/nmrSpectrum.js 
+curl -s -L -o external/graphBase.js https://raw.githubusercontent.com/CHEMeDATA/NMRspectrum-viewer/main/src/graphBase.js 
 
-echo "copy mnovaJsonReader.js"
-cp src/mnovaJsonReader.js external/mnovaJsonReader.js 
+echo "get all files from https://raw.githubusercontent.com/CHEMeDATA/nmr-objects/dist/"
+for file in jGraphObject.js nmrSpectrumObject.js mnovaJsonReader.js; do
+    curl -s -L -o "external/$file" "https://raw.githubusercontent.com/CHEMeDATA/nmr-objects/main/dist/$file"
+done
 
 echo "copy ObjectBase.js"
 cp src/objFolder/ObjectBase.js external/ObjectBase.js 
-
