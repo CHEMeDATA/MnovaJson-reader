@@ -1,0 +1,3 @@
+//extraMethodsStatements.txt
+NMRspectrumObject import
+JgraphObject import
