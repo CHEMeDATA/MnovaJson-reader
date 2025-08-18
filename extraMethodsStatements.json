@@ -1,0 +1,19 @@
+{
+	"listObject": [
+		{
+			"object": "NMRspectrumObject",
+			"type": "import"
+		},
+		{
+			"object": "JgraphObject",
+			"type": "import"
+		}
+	],
+	"jsLibrary" : ["mnovaJsonReader.js"],
+	"creatorParam":{
+        "editor": "djeanner",
+        "version": "1",
+        "source": "MnovaJson",
+        "id": "none"
+      }
+}

@@ -1,5 +1,0 @@
-// insert here pairs of object / method
-// method can be : import export viewer
-NMRspectrumObject import
-JgraphObject import
-// end of file
