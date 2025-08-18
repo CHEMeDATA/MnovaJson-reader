@@ -59,7 +59,7 @@ The file listing the objects that should include the import is [extraMethodsStat
 
 These three files are used by the [nmr-objects repository](https://github.com/CHEMeDATA/nmr-objects) to import data objects is [src/importMethod.js](src/importMethod.js)
 
-When creating an object with the import method, use this syntax which maps the name of the import method:
+When creating an object with the import method, use this syntax which maps the name of the import method see ./extraMethodsStatements.json:
 
 ```js  
     const jGraph = new NMRspectrumObject({

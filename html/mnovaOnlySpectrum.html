@@ -66,13 +66,14 @@
 	Brush horizontally to zoom and double-click to restore the full spectrum.
 
 	<h4>Make your own view of Mnova spectra</h4>
-	Use "Save as" in Mnova >=15.1 and select the relevant (*.json) entries or use Mnova scripting:
+	- Use "Save as" in Mnova >=15.1 and select the relevant (*.json) entries or use Mnova scripting:
 
 	<div class="code-box">
 		<pre><code>serialization.save("c:/santonin.mol", "mol"); // for JSmol
 serialization.save("c:/santonin_molecule.json", "JSON Molecule (*.json)") // for the J-graph
-serialization.save("c:/santonin_spectrum.json", "JSON NMR (*.json)") // for the spectrum</code> s</pre>
+serialization.save("c:/santonin_spectrum.json", "JSON NMR (*.json)") // for the spectrum</code> </pre>
 	</div>
+	- Then edit this file to read your files.
 </body>
 
 </html>
