@@ -41,6 +41,14 @@ npm install puppeteer --save-dev
 
 # Requirements (common to all readers)
 
+These three files are needed to add an import to one (or more) classes.
+
+```
+src/importMethod.js
+src/importStatements.js
+extraMethodsStatements.txt
+``` 
+
 The method to read the external files and import them in object classes are in [src/importMethod.js](src/importMethod.js).
 For convenience, the same method is used for all objects. The name of the class of any object is given by `this.name`.
 
@@ -86,5 +94,6 @@ When creating an object with the import method, use this syntax which maps the n
 ```
 
 Simple example [html/mnovaOnlySpectrum.html](html/mnovaOnlySpectrum.html).
+
 More complex example [html/mnovaFileDemo.html](html/mnovaFileDemo.html).
 
