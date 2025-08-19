@@ -26,4 +26,6 @@ A simple example only reading a Mnova spectrum [html/mnovaOnlySpectrum.html](htm
 
 A more complex example with assignment and the assigned molecule and interactions [html/mnovaFileDemo.html](html/mnovaFileDemo.html).
 
-[technical details](./technicalDetails.md)
+# More information
+
+[Technical details](./technicalDetails.md)
