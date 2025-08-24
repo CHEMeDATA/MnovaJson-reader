@@ -2,18 +2,40 @@
 	"listObject": [
 		{
 			"object": "NMRspectrumObject",
-			"type": "import"
+			"type": "import",
+			"requiredInput": [
+				{
+					"dataPropertyName": "jsonSpectrum",
+					"label": "NMR file (.json)",
+					"type": "file",
+					"validationFileString1000": "https://mestrelab.com/json-schemas/mnova/2023-07/01/nmr/spec"
+				}
+			]
 		},
 		{
 			"object": "JgraphObject",
-			"type": "import"
+			"type": "import",
+			"requiredInput": [
+				{
+					"dataPropertyName": "jsonSpectrum",
+					"label": "NMR file (.json)",
+					"type": "file",
+					"validationFileString1000": "https://mestrelab.com/json-schemas/mnova/2023-07/01/nmr/spec"
+				},
+				{
+					"dataPropertyName": "jsonMolecule",
+					"label": "molecule file (.json)",
+					"type": "file",
+					"validationFileString1000": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule"
+				}
+			]
 		}
 	],
-	"jsLibrary" : ["mnovaJsonReader.js"],
-	"creatorParam":{
-        "editor": "djeanner",
-        "version": "1",
-        "source": "MnovaJson",
-        "id": "none"
-    }
+	"jsLibrary": ["mnovaJsonReader.js"],
+	"creatorParam": {
+		"editor": "djeanner",
+		"version": "1",
+		"source": "MnovaJson",
+		"id": "none"
+	}
 }

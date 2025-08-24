@@ -53,15 +53,15 @@ The name of the method specifies which importer should be used (the community ma
 	}
 ```  
 
-The list of `import` statements should be in a separate file: [src/importStatements.js](src/importStatements.js) so that they will apear in the header of the final class file. 
+The list of `import` statements should be in a separate file: [src/importStatements.js](src/importStatements.js) so that they will apear in the header of the final class file.
 
 The file listing the objects that should include the import is [extraMethodsStatements.json](extraMethodsStatements.json). The listObject lists the objects and type which can be `import` method (for readers of data), `export` method (for writer of data) or `viewer`. If necessary a list of .js files should be listed in the "jsLibrary" array.
 
 These three files are used by the [nmr-objects repository](https://github.com/CHEMeDATA/nmr-objects) to import data objects is [src/importMethod.js](src/importMethod.js)
 
-When creating an object with the import method, use this syntax which maps the name of the import method see ./extraMethodsStatements.json:
+When creating an object through the import method, pass a `creatorParam` field equal to the one in `./extraMethodsStatements.json`:
 
-```js  
+```js 
     const jGraph = new NMRspectrumObject({
       creatorParam: {
         editor: "djeanner",
@@ -71,3 +71,19 @@ When creating an object with the import method, use this syntax which maps the n
       }}
   , data);
 ```
+
+The second parameter (data) should have a field called "jsonSpectrum" including the content of a .json file (including the string of `validationFileString1000` within the first 1000 characters of the file) as the `requiredInput` field of `./extraMethodsStatements.json` indicates:
+
+```json  
+   "requiredInput": [
+    {
+     "dataPropertyName": "jsonSpectrum",
+     "label": "NMR file (.json)",
+     "type": "fileJson",
+     "validationFileString1000": "https://mestrelab.com/json-schemas/mnova/2023-07/01/nmr/spec"
+    }
+   ]
+```
+
+-- to be moved elsewhere --
+The `type` may be "float", "int", "string", "bool", or (NOT IMPLMEMENTED) "binaryFile" or "textFile".

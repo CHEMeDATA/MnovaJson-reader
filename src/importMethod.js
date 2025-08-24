@@ -10,7 +10,7 @@
 
 		if (this.name == "NMRspectrumObject") {
 			// Specify here the version number of the specific object (needed to allow version update)
-			this.versionData = 1;
+			this.versionDataFromReader = 1;
 			if (!dataInput.jsonSpectrum) {
 				console.error("No jsonSpectrum in dataInput", dataInput);
 				this.data = {};
@@ -138,7 +138,7 @@
 		}
 		if (this.name == "JgraphObject") {
 			// Specify here the version number of the specific object (needed to allow version update)
-			this.versionData = 1;
+			this.versionDataFromReader = 1;
 			/*if (!dataInput.jsonSpectrum) {
 				console.error("No jsonSpectrum in dataInput", dataInput);
 				this.data = {};
