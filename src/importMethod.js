@@ -139,13 +139,21 @@
 		if (this.name == "JgraphObject") {
 			// Specify here the version number of the specific object (needed to allow version update)
 			this.versionDataFromReader = 1;
-			/*if (!dataInput.jsonSpectrum) {
+			if (!dataInput.jsonSpectrum) {
 				console.error("No jsonSpectrum in dataInput", dataInput);
 				this.data = {};
 				return;
-			}*/
-
-			// create final data object
+			}
+			if (!dataInput.jsonMolecule) {
+				console.error("No jsonMolecule in dataInput", dataInput);
+				this.data = {};
+				return;
+			}
+			if (!dataInput.jsonDataInitial) {
+				console.error("No jsonDataInitial in dataInput", dataInput);
+				this.data = {};
+				return;
+			}
 
 			const jsonSpectrum = dataInput.jsonSpectrum;
 			const jsonMolecule = dataInput.jsonMolecule;

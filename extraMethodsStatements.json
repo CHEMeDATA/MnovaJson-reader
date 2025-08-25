@@ -29,6 +29,12 @@
 					"label": "molecule file (.json)",
 					"type": "file",
 					"validationFileString1000": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule"
+				},
+				
+				{
+					"dataPropertyName": "jsonDataInitial",
+					"label": "network file (.json)",
+					"type": "file",
 				}
 			]
 		}
