@@ -2,7 +2,7 @@
 	"listObject": [
 		{
 			"object": "nmrSpectrumObject",
-			"object2": "NMRspectrumObject",
+			"objectObj": "NMRspectrumObject",
 			"type": "import",
 			"requiredInput": [
 				{
@@ -15,7 +15,7 @@
 		},
 		{
 			"object": "jGraphObject",
-			"object2": "JgraphObject",
+			"objectObj": "JgraphObject",
 			"type": "import",
 			"requiredInput": [
 				{
@@ -30,11 +30,10 @@
 					"type": "file",
 					"validationFileString1000": "https://mestrelab.com/json-schemas/mnova/2023-07/01/molecule/molecule"
 				},
-				
 				{
 					"dataPropertyName": "jsonDataInitial",
 					"label": "network file (.json)",
-					"type": "file",
+					"type": "file"
 				}
 			]
 		}
