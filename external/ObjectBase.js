@@ -5,8 +5,12 @@ export class ObjectBase {
 		if (param.demo) {
 			this._handleLoadDemoData(param.demo);
 		} else {
-			this._validateParam(param.creatorParam);
-			this._loadImportedData(param, input);
+			if (param.creatorParam) {
+				this._validateParam(param.creatorParam);
+				this._loadImportedData(param, input);
+			} else {
+				this.data = input;
+			}
 		}
 	}
 	encodeArrayFieldWithRequestArrayEncoding(obj = this.data, encodeVersion = 1) {
