@@ -6,7 +6,7 @@
 			"type": "export",
 			"outputComponents": [
 				{
-					"ovjDataField" : [],
+					"objDataField" : [],
 					"label": "NMR file (.json)",
 					"type": "file"
 				}

@@ -472,8 +472,8 @@ if (all) {
 	];
 
 	for (const molec of molecules) {
-		console.log("===============================================");
-		console.log("Processing molecule:", molec);
+		console.log("=============================================== assigned");
+		console.log("===== start molecule:", molec);
 		// You can call your main function here, for example:
 		// await jGraph(`./data/${molec}/${molec}_spectrum.json`, `./data/${molec}/${molec}.json`, ...);
 
@@ -498,6 +498,7 @@ if (all) {
 		console.log("===== end Processing molecule _1_:", molec);
 	}
 	for (const molec of molecules) {
+		console.log("=============================================== unassigned");
 		console.log("===== start molecule:", molec);
 
 		var fNameSpectra =
