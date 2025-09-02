@@ -1,4 +1,4 @@
-// Example export method // Should not minimize
+//  export method // Should not minimize
 	export_Editordjeanner_Version1_SourceMnovaJson_IDnone(param, dataInput) {
 		if (param.requestedField) {
 			if (param.requestedField === "first") {

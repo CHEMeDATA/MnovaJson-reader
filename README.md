@@ -29,3 +29,6 @@ A more complex example with assignment and the assigned molecule and interaction
 # More information
 
 [Technical details](./technicalDetails.md)
+
+
+Manuel to add an exporter: add statgements in the extraMethodsStatements.json file and add exportMethod.js and exportStatements.js files
