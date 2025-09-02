@@ -11,5 +11,5 @@ for file in jGraphObject.js nmrSpectrumObject.js mnovaJsonReader.js; do
     curl -s -L -o "external/$file" "https://raw.githubusercontent.com/CHEMeDATA/nmr-objects/main/dist/$file"
 done
 
-echo "copy ObjectBase.js"
-cp src/objFolder/ObjectBase.js external/ObjectBase.js 
+echo "copy objectBase.js"
+cp src/objFolder/objectBase.js external/objectBase.js 
