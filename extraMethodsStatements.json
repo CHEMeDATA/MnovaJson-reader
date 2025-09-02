@@ -3,6 +3,17 @@
 		{
 			"object": "nmrSpectrumObject",
 			"objectObj": "NMRspectrumObject",
+			"type": "export",
+			"outputComponents": [
+				{
+					"ovjDataField" : [],
+					"label": "NMR file (.json)",
+					"type": "file"
+				}
+			]
+		},{
+			"object": "nmrSpectrumObject",
+			"objectObj": "NMRspectrumObject",
 			"type": "import",
 			"requiredInput": [
 				{
