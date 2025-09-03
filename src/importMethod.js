@@ -1,7 +1,7 @@
 //  import method // Should not minimize
 	import_Editordjeanner_Version1_SourceMnovaJson_IDnone(param, dataInput) {
 		if (!dataInput.origin) {
-			console.error("No origin data in dataInput", dataInput);
+			console.error("No origin data in dataInput for import", dataInput);
 			this.data = {};
 			// process.exit(1);
 		}

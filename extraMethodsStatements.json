@@ -3,6 +3,9 @@
 		{
 			"object": "nmrSpectrumObject",
 			"objectObj": "NMRspectrumObject",
+			"jsLibraryGet": [
+				{"repository":"CHEMeDATA/nmr-objects", "fileName": "src/nmrSpectrumObject.js", "include": "NMRspectrumObject"}
+			],
 			"type": "export",
 			"title": "Mnova json spectrum",
 			"type possible values" :"json binary txt",
