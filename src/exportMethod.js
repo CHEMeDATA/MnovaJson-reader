@@ -1,20 +1,12 @@
 //  export method // Should not minimize
-	export_Editordjeanner_Version1_SourceMnovaJson_IDnone(param, dataInput) {
+	export_Editordjeanner_Version1_SourceMnovaJson_IDnone(param) {
 
-		if (!dataInput.origin) {
-			console.error("No origin data in dataInput for import", dataInput);
-			this.data = {};
-			// process.exit(1);
-		}
-		this.origin = dataInput.origin;
-		this.conversionParameters = param;
-
-		if (param.requestedField) {
+		var retObj = {paramOfCall: param};
 			if (param.requestedField === "first") {
-				return {dummy_data : 1};
+				retObj.dummy_data = 1;
+				return retObj;
+			} else {
+				retObj.dummy_data = 2;
+				return retObj;			
 			}
-			if (param.requestedField === "second") {
-				return {dummy_data : 2};
-			}
-		}
 	}
