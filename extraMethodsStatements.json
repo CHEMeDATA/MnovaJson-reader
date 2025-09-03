@@ -11,13 +11,13 @@
 					"objDataField" : [],
 					"label": "NMR file (.json)",
 					"type": "json",
-					"defaultFileName": "output.spectrum.json"
+					"defaultFileName": "output.spectrum"
 				},
 				{
 					"objDataField" : [],
 					"label": "title (.txt)",
 					"type": "txt",
-					"defaultFileName": "output.title.txt"
+					"defaultFileName": "output.title"
 				}
 			]
 		},{
