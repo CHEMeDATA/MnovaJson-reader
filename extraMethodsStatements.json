@@ -3,30 +3,34 @@
 		{
 			"object": "nmrSpectrumObject",
 			"objectObj": "NMRspectrumObject",
+			"type": "export",
+			"title": "Mnova json spectrum",
 			"jsLibraryGet": [
 				{"repository":"CHEMeDATA/nmr-objects", "fileName": "src/nmrSpectrumObject.js", "include": "NMRspectrumObject"}
 			],
-			"type": "export",
-			"title": "Mnova json spectrum",
-			"type possible values" :"json binary txt",
 			"outputComponents": [
 				{
 					"objDataField" : [],
 					"label": "NMR file (.json)",
 					"type": "json",
-					"defaultFileName": "output.spectrum"
+					"defaultFileName": "output.spectrum",
+					"type possible values" :"json binary txt"
 				},
 				{
 					"objDataField" : [],
 					"label": "title (.txt)",
 					"type": "txt",
-					"defaultFileName": "output.title"
+					"defaultFileName": "output.title",
+					"type possible values" :"json binary txt"
 				}
 			]
 		},{
 			"object": "nmrSpectrumObject",
 			"objectObj": "NMRspectrumObject",
 			"type": "import",
+			"jsLibraryGet": [
+				{"repository":"CHEMeDATA/nmr-objects", "fileName": "src/nmrSpectrumObject.js", "include": "NMRspectrumObject"}
+			],
 			"requiredInput": [
 				{
 					"dataPropertyName": "jsonSpectrum",
