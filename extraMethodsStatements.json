@@ -4,11 +4,20 @@
 			"object": "nmrSpectrumObject",
 			"objectObj": "NMRspectrumObject",
 			"type": "export",
+			"title": "Mnova json spectrum",
+			"type possible values" :"json binary txt",
 			"outputComponents": [
 				{
 					"objDataField" : [],
 					"label": "NMR file (.json)",
-					"type": "file"
+					"type": "json",
+					"defaultFileName": "output.spectrum.json"
+				},
+				{
+					"objDataField" : [],
+					"label": "title (.txt)",
+					"type": "txt",
+					"defaultFileName": "output.title.txt"
 				}
 			]
 		},{
