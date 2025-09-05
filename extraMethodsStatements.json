@@ -10,14 +10,14 @@
 			],
 			"outputComponents": [
 				{
-					"objDataField" : [],
+					"objDataField" : {"passedList":["field1"]},
 					"label": "NMR file (.json)",
 					"type": "json",
 					"defaultFileName": "output.spectrum",
 					"type possible values" :"json binary txt"
 				},
 				{
-					"objDataField" : [],
+					"objDataField" : {"passedList":["field2"]},
 					"label": "title (.txt)",
 					"type": "txt",
 					"defaultFileName": "output.title",
