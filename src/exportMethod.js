@@ -1,5 +1,5 @@
 //  export method // Should not minimize
-	export_Editordjeanner_Version1_SourceMnovaJson_IDnone(param, obj) {
+	export_Editordjeanner_Version1_SourceMnovaJson_IDnone(param) {
 	/* param:
 	dataObj        : dataObj,
 	objDataField   : dataObj.item.objDataField,
@@ -8,6 +8,7 @@
 	object         : dataObj.objSource
 	objoutputFields
 	*/
+	const obj = this.data;
 	const objDataField = param.objDataField;
 	if (! param.objectObj) {
 		console.error("No objectObj in param from export_Editordjeanner_Version1_SourceMnovaJson_IDnone")
