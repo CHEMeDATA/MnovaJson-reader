@@ -90,8 +90,8 @@ export class NMRspectrumObject extends ObjectBase {
 				//} closing function
 			}
 		}
-
 		this.data = {
+			frequency: larmor,
 			values: values,
 			firstPoint: spectralData.firstPoint,
 			lastPoint: spectralData.lastPoint,
@@ -163,6 +163,7 @@ export class NMRspectrumObject extends ObjectBase {
 			}
 
 			var input = extractSpectrumData(allSpectraObjectsExtracted[0][0], "data");
+			const larmor = allSpectraObjectsExtracted?.[0]?.[0]?.data?.dimensional_parameters?.[0]?.spectrometer_frequency ?? 0.0;
 			if (param) {
 				if (param.filterSpectra) {
 					if (param.filterSpectra == "onlyFirst") {
@@ -231,6 +232,7 @@ export class NMRspectrumObject extends ObjectBase {
 
 			// create final data object
 			this.data = {
+				frequency: larmor,
 				values: values,
 				firstPoint: extremas_chemshift.max,
 				lastPoint: extremas_chemshift.min,

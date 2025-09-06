@@ -29,6 +29,7 @@
   },
   "versionData": 1,
   "data": {
+    "frequency": 399.971923828125,
     "values": {
       "compressionVersion": 1,
       "encoding": "float64-hex",

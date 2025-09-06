@@ -62,6 +62,7 @@
 			}
 
 			var input = extractSpectrumData(allSpectraObjectsExtracted[0][0], "data");
+			var larmor = input.larmor;
 			if (param) {
 				if (param.filterSpectra) {
 					if (param.filterSpectra == "onlyFirst") {
@@ -130,6 +131,7 @@
 
 			// create final data object
 			this.data = {
+				frequency: larmor,
 				values: values,
 				firstPoint: extremas_chemshift.max,
 				lastPoint: extremas_chemshift.min,
