@@ -45,7 +45,7 @@
         "ph1": 0.0, //2.9646546646811123
       }
     ];
-    const arrayOfPoints = []
+    const arrayOfPoints = obj.values;
     // Step 2: build the whole dataset using dimensionalParameters
     const mnovaDataset = {
       "$mnova_schema": "https://mestrelab.com/json-schemas/mnova/2023-07/01/nmr/dataset",
