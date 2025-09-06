@@ -30,8 +30,8 @@
     const nucleus = obj?.nucleus ?? "1H";
    
     const si = obj.values.length;
-    const lowest_frequency = spectrometer_frequency * obj.values[si - 1]//: -1644.45388739755,
-    const spectral_width =  (spectrometer_frequency * (obj.values[0] - obj.values[si - 1]) * si) / (si - 1); // 8012.82051282049
+    const lowest_frequency = spectrometer_frequency * obj.lastPoint//: -1644.45388739755,
+    const spectral_width =  (spectrometer_frequency * (obj.firstPoint - obj.lastPoint) * si) / (si - 1); // 8012.82051282049
     			// Step 1: build dimensional_parameters separately
     const dimensionalParameters = [
       {
