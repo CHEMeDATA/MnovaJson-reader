@@ -6,7 +6,8 @@
 			"type": "export",
 			"title": "Mnova json spectrum",
 			"jsLibraryGet": [
-				{"repository":"CHEMeDATA/nmr-objects", "fileName": "src/nmrSpectrumObject.js", "include": "NMRspectrumObject"}
+				{"repository":"CHEMeDATA/nmr-objects", "fileName": "src/nmrSpectrumObject.js", "include": "NMRspectrumObject"},
+				{"repository":"CHEMeDATA/nmr-objects", "fileName": "src/mnovaJasonBuilder.js", "include": "buildFromNMRspectrumObject"}
 			],
 			"outputComponents": [
 				{

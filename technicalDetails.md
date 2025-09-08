@@ -12,11 +12,21 @@ Notes about the Mnova .json files:
 - The `spectra.peaks.uuid` in the spectra json are used in the arrays `spectra.multiplets.list.peaks` and `molecule.assignments.shifts.assignedMultiplets`.
 - The molecules files include, atoms, bonds, assignments, predictions. The first two are quite similar to the content of .mol files.
 - It should be possible to reconstruct a .mol file from the molecule json file.
+  
 
+# Writer of CHEMedataObject (import to CHEMeDATA classes)
 
-```zsh
-node src/main.mjs
-```  
+## Requirements (common to all writer)
+
+These three files are needed to add an import to one (or more) classes.
+
+```
+src/exportMethod.js
+src/exportStatements.js
+extraMethodsStatements.json (common to readers and writers)
+``` 
+
+# Reader of CHEMedataObject (export to CHEMeDATA classes)
 
 # Requirements (common to all readers)
 
@@ -79,11 +89,13 @@ The second parameter (data) should have a field called "jsonSpectrum" including 
     {
      "dataPropertyName": "jsonSpectrum",
      "label": "NMR file (.json)",
-     "type": "fileJson",
+     "type": "file",
      "validationFileString1000": "https://mestrelab.com/json-schemas/mnova/2023-07/01/nmr/spec"
     }
    ]
 ```
 
--- to be moved elsewhere --
-The `type` may be "float", "int", "string", "bool", or (NOT IMPLMEMENTED) "binaryFile" or "textFile".
+Script using the reader
+```zsh
+node src/main.mjs
+```  

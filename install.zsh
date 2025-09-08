@@ -1,4 +1,11 @@
 #!/usr/bin/env zsh
+
+echo "Start install.zsh ... "
+echo "This script has to be generalized... "
+echo "Currently. Run first the scripts in nmr-objects to update changes here"
+echo
+echo
+
 mkdir -p external
 echo "Fill ./external folder"
 
@@ -13,3 +20,5 @@ done
 
 echo "copy objectBase.js"
 cp src/objFolder/objectBase.js external/objectBase.js 
+
+echo "End install.zsh ... "
