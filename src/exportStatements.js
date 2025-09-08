@@ -1,1 +1,1 @@
-import { buildFromNMRspectrumObject } "./mnovaJasonBuilder.js";
+import { buildFromNMRspectrumObject } from "./mnovaJasonBuilder.js";
