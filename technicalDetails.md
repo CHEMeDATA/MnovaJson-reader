@@ -26,6 +26,8 @@ src/exportStatements.js
 extraMethodsStatements.json (common to readers and writers)
 ``` 
 
+The Mnova json are generated using [src/mnovaJasonBuilder.js](src/mnovaJasonBuilder.js).
+
 # Reader of CHEMedataObject (export to CHEMeDATA classes)
 
 # Requirements (common to all readers)
