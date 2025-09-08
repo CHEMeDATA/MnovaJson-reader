@@ -31,6 +31,23 @@
 			return mnovaDataset;
 		}
 	}
+  if (objectObj === "setSpectra") {
+		if (objDataField.passedList[0] === "field1") {
+      var spectra = [];
+      if (Array.isArray(obj.members)) {
+        for (const member of obj.members) {
+          oneSpectrum = buildFromNMRspectrumObject(objDataField, member);
+          spectra.push(oneSpectrum);
+        }
+      }
+			const mnovaDataset = {
+				$mnova_schema:
+					"https://mestrelab.com/json-schemas/mnova/2023-07/01/nmr/dataset",
+				spectra: spectra,
+			};
+			return mnovaDataset;
+		}
+	}
 
 	if (objectObj === "ZZZZZZZZ") {
 		var retObj = {};

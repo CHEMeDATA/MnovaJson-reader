@@ -1,6 +1,31 @@
 {
 	"listObject": [
 		{
+			"object": "setSpectra",
+			"objectObj": "NMRspectrumObject",
+			"type": "export",
+			"title": "Mnova json spectra",
+			"jsLibraryGet": [
+				{"repository":"CHEMeDATA/nmr-objects", "fileName": "src/nmrSpectrumObject.js", "include": "NMRspectrumObject"},
+				{"repository":"CHEMeDATA/MnovaJson-reader", "fileName": "src/mnovaJasonBuilder.js", "include": "buildFromNMRspectrumObject"}
+			],
+			"outputComponents": [
+				{
+					"objDataField" : {"passedList":["field1"]},
+					"label": "NMR file (.json)",
+					"type": "json",
+					"defaultFileName": "output.spectrum",
+					"type possible values" :"json binary txt"
+				},
+				{
+					"objDataField" : {"passedList":["field2"]},
+					"label": "source not implemented (.txt)",
+					"type": "txt",
+					"defaultFileName": "output.source",
+					"type possible values" :"json binary txt"
+				}
+			]
+		},{
 			"object": "nmrSpectrumObject",
 			"objectObj": "NMRspectrumObject",
 			"type": "export",
@@ -19,9 +44,9 @@
 				},
 				{
 					"objDataField" : {"passedList":["field2"]},
-					"label": "title (.txt)",
+					"label": "source not implemented (.txt)",
 					"type": "txt",
-					"defaultFileName": "output.title",
+					"defaultFileName": "output.source",
 					"type possible values" :"json binary txt"
 				}
 			]
