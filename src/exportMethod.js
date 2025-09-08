@@ -31,12 +31,12 @@
 			return mnovaDataset;
 		}
 	}
-  if (objectObj === "setSpectra") {
+  if (objSource === "setSpectra") {
 		if (objDataField.passedList[0] === "field1") {
       var spectra = [];
       if (Array.isArray(obj.members)) {
         for (const member of obj.members) {
-          oneSpectrum = buildFromNMRspectrumObject(objDataField, member);
+          const oneSpectrum = buildFromNMRspectrumObject(objDataField, member);
           spectra.push(oneSpectrum);
         }
       }
@@ -63,7 +63,7 @@
 		return retObj;
 	}
 	console.error(
-		`objDataField : ${objSource} not implemented from export_Editordjeanner_Version1_SourceMnovaJson_IDnone`
+		`objSource : ${objSource} not implemented from export_Editordjeanner_Version1_SourceMnovaJson_IDnone`
 	);
 	return {};
 }
