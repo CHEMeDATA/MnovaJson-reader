@@ -1,10 +1,10 @@
 export function buildFromNMRspectrumObject(objDataField, obj) {
 	if (!obj.values) {
-		console.error(objDataField, " no obj.values");
+		console.error(objDataField, " no obj.values obj:", obj);
 		return {};
 	}
 	if (obj.values.length <= 3) {
-		console.error(objDataField, "min 3 values in obj.values");
+		console.error(objDataField, "min 3 values in obj.values obj.values: ", obj.values);
 		return {};
 	}
 
