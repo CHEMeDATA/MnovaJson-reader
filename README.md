@@ -1,9 +1,13 @@
 
 # MnovaJson-reader
 
-Import Mnova .json files exported by Mnova >=14.1 (not the main .mnova documents) into NMRspectrumObject and JgraphObject objects
+This repository includes the code to create CHEMeDATA objects from Mnova json files and create Mnova json spectra from CHEMeDATA spectra.
 
-The molecules and NMR spectra data muss be stored in two separate files in the current implementation. It is also recommended to save the molecules in the .mol format. We recommend naming them respectively FILENAME_molecule_.json, FILENAME_spectrum and FILENAME.mol. (to facilitate reading them in this repository)
+# Features
+
+Import Mnova .json files (saved as .json with Mnova >=14.1) into `NMRspectrumObject` and `JgraphObject` objects
+
+The molecules and NMR spectra data muss be stored in two separate files in the current implementation. It is also recommended to save the molecules in the .mol format. We recommend naming them respectively FILENAME_molecule.json, FILENAME_spectrum.json and FILENAME.mol. (to facilitate reading them in this repository)
 
 Use "Save as ..." in the "File" menu and select the relevant (*.json).
 
